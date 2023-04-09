@@ -1,5 +1,11 @@
 /* for styling the icons and other things */
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .icons {
     display: inline-block;
     width: 22px;

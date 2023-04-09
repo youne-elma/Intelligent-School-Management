@@ -54,6 +54,7 @@ module.exports = {
             'cornflower': '#1C4E80',
             'smoothgreen': '#618830',
             'bluecharcoal': '#22282E',
+            'buttonhover': '#1C4E80',
         },
     },
     plugins: [
