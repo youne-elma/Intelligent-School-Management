@@ -1,0 +1,41 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <title>{% block title %}{% endblock %} | Dashboard University</title>
+        {% tailwind_css %}
+    </head>
+    <body class="bg-lightcolor">
+        <div class="grid grid-cols-5">
+        
+            <div class="bg-bluecharcoal col-start-1 col-end-2">
+                <span
+                    class="absolute text-white text-4xl top-5 left-4 cursor-pointer"
+                onclick="openSidebar()"
+                >
+                    <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md icons announceIcon"></i>
+                </span>
+            </div>
+
+            {% block content %}
+            {% endblock %}
+            
+        </div>
+        <script type="text/javascript">
+            function dropdown() {
+                document.querySelector("#submenu").classList.toggle("hidden");
+                document.querySelector("#arrow").classList.toggle("rotate-0");
+            }
+            dropdown();
+
+            function openSidebar() {
+                document.querySelector(".sidebar").classList.toggle("hidden");
+            }
+    </script>
+    </body>
+</html>

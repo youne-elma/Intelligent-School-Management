@@ -1,0 +1,10 @@
+/* for styling the icons and other things */
+
+.icons {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+}
+.announceIcon {
+    background-image: url('/static/icons/AnnounceIcon.png');
+}
