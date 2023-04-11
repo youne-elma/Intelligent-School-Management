@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 .icons {
     display: inline-block;
     width: 22px;
@@ -13,4 +17,20 @@
 }
 .announceIcon {
     background-image: url('/static/icons/AnnounceIcon.png');
+}
+
+.navbar{
+    background-color: #22282E;
+}
+.navbar li{
+    background-color: #22282E;
+}
+
+/* Importing The fonts for tailwind work :: //Younelma Edited this. */
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: medium;
+    font-style: normal;
 }

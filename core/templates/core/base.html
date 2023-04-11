@@ -6,50 +6,64 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+        
+        {% comment %} FavIcon for all the platforms {% endcomment %}
+
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static '/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
         <title>{% block title %}{% endblock %} | Dashboard University</title>
         {% tailwind_css %}
+
     </head>
-    <body class="bg-lightcolor">
+    <body>
         <div class="flex flex-row justify-between">
-            <div class="flex flex-col w-1/5 bg-bluecharcoal h-screen">
+            <div class="flex flex-col w-1/5 h-screen navbar">
                 <div class="m-7">
                     <img alt="Logo Scolarite" src="{% static 'icons/LogoPng.png' %}"/>
                 </div>
+                <span class="border-t border-solid border-lightcolor opacity-50"></span>
                 {% comment %} <span class="border-[1px] border-[#f1f1f1]"></span> {% endcomment %}
-                <div class="mt-4 font-['Poppins']">
+                <div class="mt-4">
                     <ul>
-                        <li class="flex gap-[17px] pl-[40px] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
                             <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/DashboardIcon.png' %}" />
                             Administration
                         </li>
-                        <li class="flex gap-[17px] pl-[40px] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
                             <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/AnnounceIcon.png' %}" />
                             Annonce
                         </li>
-                        <li class="flex gap-[17px] pl-[40px] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
                             <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/SyllabusIcon.png' %}" />
                             Cours en ligne
                         </li>
-                        <li class="flex gap-[17px] pl-[40px] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
                             <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/SyllabusGraduatedIcon.png' %}" />
                             Notes
                         </li>
-                        <li class="flex gap-[17px] pl-[40px] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
                             <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/TestPassedIcon.png' %}" />
                             Scolarite
                         </li>
-                        <li class="flex gap-[17px] pl-[40px] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
                             <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/BotIcon.png' %}" />
                             Bot Support
                         </li>
                     </ul>
                 </div>
-                <div class="flex flex-col mt-auto gap-[22px] mr-[35px] ml-[32px] mb-[24px] justify-end">
-                    {% comment %} <span style="border: 0.5px solid #F1F1F1"></span> {% endcomment %}
+                <div class="flex flex-col mt-auto gap-5 pr-9 pl-[32px] pb-5 relative bottom-0 navbar">
+                    <span class="border-t border-solid border-lightcolor opacity-50"></span>
                     <span class="self-end text-lightcolor">univercell AE</span>
                 </div>
             </div>

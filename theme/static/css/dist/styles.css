@@ -720,12 +720,16 @@ select {
   position: static;
 }
 
-.bottom-0 {
-  bottom: 0px;
+.absolute {
+  position: absolute;
 }
 
-.right-0 {
-  right: 0px;
+.relative {
+  position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
 }
 
 .m-7 {
@@ -737,16 +741,8 @@ select {
   margin-right: auto;
 }
 
-.mt-4 {
-  margin-top: 1rem;
-}
-
-.mt-auto {
-  margin-top: auto;
-}
-
-.ml-\[24px\] {
-  margin-left: 24px;
+.mb-\[24px\] {
+  margin-bottom: 24px;
 }
 
 .ml-\[32px\] {
@@ -757,8 +753,12 @@ select {
   margin-right: 35px;
 }
 
-.mb-\[24px\] {
-  margin-bottom: 24px;
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-auto {
+  margin-top: auto;
 }
 
 .block {
@@ -773,16 +773,12 @@ select {
   display: none;
 }
 
-.h-\[25px\] {
-  height: 25px;
+.h-\[22px\] {
+  height: 22px;
 }
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[22px\] {
-  height: 22px;
 }
 
 .w-1\/5 {
@@ -791,10 +787,6 @@ select {
 
 .w-4\/5 {
   width: 80%;
-}
-
-.w-\[25px\] {
-  width: 25px;
 }
 
 .w-\[22px\] {
@@ -822,10 +814,6 @@ select {
   align-content: center;
 }
 
-.content-end {
-  align-content: flex-end;
-}
-
 .items-center {
   align-items: center;
 }
@@ -842,16 +830,16 @@ select {
   justify-content: space-between;
 }
 
-.justify-items-end {
-  justify-items: end;
-}
-
 .gap-\[17px\] {
   gap: 17px;
 }
 
 .gap-\[22px\] {
   gap: 22px;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .self-end {
@@ -862,11 +850,20 @@ select {
   border-width: 1px;
 }
 
-.border {
-  border-width: 1px;
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-solid {
+  border-style: solid;
 }
 
 .border-\[\#f1f1f1\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(241 241 241 / var(--tw-border-opacity));
+}
+
+.border-lightcolor {
   --tw-border-opacity: 1;
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
@@ -881,33 +878,40 @@ select {
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
 }
 
-.bg-loyalblue {
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
-}
-
 .pb-\[17px\] {
   padding-bottom: 17px;
 }
 
-.pl-\[40px\] {
-  padding-left: 40px;
+.pl-\[2\.7vw\] {
+  padding-left: 2.7vw;
 }
 
 .pt-\[17px\] {
   padding-top: 17px;
 }
 
-.font-serif {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+.pb-\[24px\] {
+  padding-bottom: 24px;
 }
 
-.font-\[\'Poppin\'\] {
-  font-family: 'Poppin';
+.pl-\[32px\] {
+  padding-left: 32px;
 }
 
-.font-\[\'Poppins\'\] {
-  font-family: 'Poppins';
+.pr-\[35px\] {
+  padding-right: 35px;
+}
+
+.pr-9 {
+  padding-right: 2.25rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.font-poppin {
+  font-family: Poppins;
 }
 
 .text-5xl {
@@ -927,14 +931,13 @@ select {
   letter-spacing: 0em;
 }
 
-.text-\[white\] {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .text-lightcolor {
   --tw-text-opacity: 1;
   color: rgb(241 241 241 / var(--tw-text-opacity));
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .hover\:bg-buttonhover:hover {

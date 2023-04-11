@@ -7,7 +7,7 @@ Uni Website Azrou
 
 # Problems Navbar
 
+- The favicon design must be changed ! bad quality
 - only working for 1440*900 px
-- font problem
 - responsive margins/paddings
 - logo responsive

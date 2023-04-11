@@ -43,6 +43,9 @@ module.exports = {
     ],
     theme: {
         extend: {},
+        fontFamily: {
+            poppin: ['Poppins'],
+        },
         colors: {
             'lightcolor': '#F1F1F1',
             'darkcolor': '#202020',
