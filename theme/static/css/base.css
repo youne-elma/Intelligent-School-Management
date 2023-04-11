@@ -1,36 +1,46 @@
 /* for styling the icons and other things */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .icons {
-    display: inline-block;
-    width: 22px;
-    height: 22px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
 }
 .announceIcon {
-    background-image: url('/static/icons/AnnounceIcon.png');
+  background-image: url("/static/icons/AnnounceIcon.png");
 }
 
-.navbar{
-    background-color: #22282E;
+.navbar {
+  background-color: #22282e;
 }
-.navbar li{
-    background-color: #22282E;
+.navbar li {
+  background-color: #22282e;
 }
 
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins-Medium.ttf') format('truetype');
-    font-weight: medium;
-    font-style: normal;
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.font-bold {
+  font-weight: 700;
 }

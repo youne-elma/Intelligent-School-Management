@@ -2,86 +2,113 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-        
-        {% comment %} FavIcon for all the platforms {% endcomment %}
 
-        <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
-        <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}">
-        <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}">
-        <link rel="mask-icon" href="{% static '/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
-        <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    {% comment %} FavIcon for all the platforms {% endcomment %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static '/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
 
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-        <title>{% block title %}{% endblock %} | Dashboard University</title>
-        {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>{% block title %}{% endblock %} | Dashboard University</title>
+    {% tailwind_css %}
 
-    </head>
-    <body>
-        <div class="flex flex-row justify-between">
-            <div class="flex flex-col w-1/5 h-screen navbar">
-                <div class="m-7">
-                    <img alt="Logo Scolarite" src="{% static 'icons/LogoPng.png' %}"/>
-                </div>
-                <span class="border-t border-solid border-lightcolor opacity-50"></span>
-                {% comment %} <span class="border-[1px] border-[#f1f1f1]"></span> {% endcomment %}
-                <div class="mt-4">
-                    <ul>
-                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
-                            <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/DashboardIcon.png' %}" />
-                            Administration
-                        </li>
-                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
-                            <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/AnnounceIcon.png' %}" />
-                            Annonce
-                        </li>
-                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
-                            <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/SyllabusIcon.png' %}" />
-                            Cours en ligne
-                        </li>
-                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
-                            <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/SyllabusGraduatedIcon.png' %}" />
-                            Notes
-                        </li>
-                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
-                            <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/TestPassedIcon.png' %}" />
-                            Scolarite
-                        </li>
-                        <li class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
-                            <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/BotIcon.png' %}" />
-                            Bot Support
-                        </li>
-                    </ul>
-                </div>
-                <div class="flex flex-col mt-auto gap-5 pr-9 pl-[32px] pb-5 relative bottom-0 navbar">
-                    <span class="border-t border-solid border-lightcolor opacity-50"></span>
-                    <span class="self-end text-lightcolor">univercell AE</span>
-                </div>
+</head>
+
+<body>
+    <div class="flex flex-row justify-between">
+        <div class="flex flex-col w-1/5 h-screen navbar">
+            <div class="m-7">
+                <img alt="Logo Scolarite" src="{% static 'icons/LogoPng.png' %}" />
             </div>
-            <div class="w-4/5">
-                {% block content %}
-                {% endblock %}
+            <span class="border-t border-solid border-lightcolor opacity-50"></span>
+            {% comment %} <span class="border-[1px] border-[#f1f1f1]"></span> {% endcomment %}
+            <div class="mt-4">
+                <ul>
+                    <li
+                        class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <img class="w-[22px] h-[22px]" alt="Dashboard Icon"
+                            src="{% static 'icons/DashboardIcon.png' %}" />
+                        Administration
+                    </li>
+                    <li
+                        class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <img class="w-[22px] h-[22px]" alt="Dashboard Icon"
+                            src="{% static 'icons/AnnounceIcon.png' %}" />
+                        Annonce
+                    </li>
+                    <li
+                        class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <img class="w-[22px] h-[22px]" alt="Dashboard Icon"
+                            src="{% static 'icons/SyllabusIcon.png' %}" />
+                        Cours en ligne
+                    </li>
+                    <li
+                        class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <img class="w-[22px] h-[22px]" alt="Dashboard Icon"
+                            src="{% static 'icons/SyllabusGraduatedIcon.png' %}" />
+                        Notes
+                    </li>
+                    <li
+                        class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <img class="w-[22px] h-[22px]" alt="Dashboard Icon"
+                            src="{% static 'icons/TestPassedIcon.png' %}" />
+                        Scolarite
+                    </li>
+                    <li
+                        class="flex gap-[17px] pl-[2.7vw] pt-[17px] pb-[17px] content-center text-[15px] text-lightcolor hover:bg-buttonhover cursor-pointer">
+                        <img class="w-[22px] h-[22px]" alt="Dashboard Icon" src="{% static 'icons/BotIcon.png' %}" />
+                        Bot Support
+                    </li>
+                </ul>
+            </div>
+            <div class="flex flex-col mt-auto gap-5 pr-9 pl-[32px] pb-5 relative bottom-0 navbar">
+                <span class="border-t border-solid border-lightcolor opacity-50"></span>
+                <span class="self-end text-lightcolor">univercell AE</span>
             </div>
         </div>
-        {% comment %} <script type="text/javascript">
-            function dropdown() {
-                document.querySelector("#submenu").classList.toggle("hidden");
-                document.querySelector("#arrow").classList.toggle("rotate-0");
-            }
-            dropdown();
+        <div class="w-4/5 flex flex-col gap-[60px] ml-11 mt-4 mr-11">
+            <!--Navigation (shows page path)-->
 
-            function openSidebar() {
-                document.querySelector(".sidebar").classList.toggle("hidden");
-            }
+            <!--Profile-->
+            <div class="Profile flex gap-[0.5rem] items-center ml-auto ">
+                <img class="" src="../../../theme/static/icons/notif.png" alt="">
+                <div class="User-Profile flex flex-col text-right">
+                    <span class="User text-[0.875rem] font-normal">Monir Chelh</span>
+                    <span class="Role text-[0.625rem] font-light opacity-50 ">Administrator</span>
+                </div>
+                <img src="../../../theme/static/icons/Group 4.png" alt="">
+
+
+
+            </div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    {% comment %} <script type="text/javascript">
+        function dropdown() {
+            document.querySelector("#submenu").classList.toggle("hidden");
+            document.querySelector("#arrow").classList.toggle("rotate-0");
+        }
+        dropdown();
+
+        function openSidebar() {
+            document.querySelector(".sidebar").classList.toggle("hidden");
+        }
     </script> {% endcomment %}
-    </body>
+</body>
+
 </html>
