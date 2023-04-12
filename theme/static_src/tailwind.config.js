@@ -59,6 +59,11 @@ module.exports = {
             'bluecharcoal': '#22282E',
             'buttonhover': '#1C4E80',
         },
+        screens: {
+            'navbarTab': {'min': '1000px', 'max': '1200px'},
+            'navbarMinTab': {'min': '760px', 'max': '1000px'},
+            'navbarPhone': {'max': '760px'},
+        },
     },
     plugins: [
         /**

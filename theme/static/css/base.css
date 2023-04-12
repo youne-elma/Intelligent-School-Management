@@ -26,6 +26,18 @@ body {
   background-color: #22282e;
 }
 
+.sidebar {
+  left: -296px;
+}
+
+.toggleNavbar{
+  left: 0;
+}
+
+.hoverButtonTransition {
+  transition: 0.3s ease-in-out all;
+}
+
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {
