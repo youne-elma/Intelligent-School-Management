@@ -11,3 +11,5 @@ Uni Website Azrou
 - only working for 1440*900 px
 - responsive margins/paddings
 - logo responsive
+
+# Structure Models
