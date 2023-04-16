@@ -58,6 +58,9 @@ module.exports = {
       smoothgreen: "#618830",
       bluecharcoal: "#22282E",
       buttonhover: "#1C4E80",
+      lightgreen:"#0BAF74",
+      white:"#FFFFFF",
+      blue:"#517ECD",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -74,6 +77,7 @@ module.exports = {
      * for forms. If you don't like it or have own styling for forms,
      * comment the line below to disable '@tailwindcss/forms'.
      */
+    
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
