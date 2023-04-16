@@ -58,6 +58,7 @@ module.exports = {
       smoothgreen: "#618830",
       bluecharcoal: "#22282E",
       buttonhover: "#1C4E80",
+      testColor: "#3b82f6",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
