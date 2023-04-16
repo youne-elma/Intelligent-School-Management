@@ -1,0 +1,40 @@
+{% load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="fr">
+<head> {% tailwind_css %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion</title>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css%22%3E">
+</head>
+<body class="bg-gray-100">
+  <div class="flex justify-center items-center h-screen">
+    <div class="bg-white p-8 rounded shadow-md">
+      <h1 class="text-2xl font-bold mb-4">Connexion</h1>
+      <form>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="email">
+            Adresse e-mail
+          </label>
+          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Entrez votre adresse e-mail">
+        </div>
+        <div class="mb-6">
+          <label class="block text-gray-700 font-bold mb-2" for="password">
+            Mot de passe
+          </label>
+          <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Entrez votre mot de passe">
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+            Se connecter
+          </button>
+          <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+            Mot de passe oublié ?
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -731,6 +731,18 @@ select {
   margin-bottom: 2.5rem;
 }
 
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .mb-\[8px\] {
   margin-bottom: 8px;
 }
@@ -767,6 +779,10 @@ select {
   margin-top: 10px;
 }
 
+.mt-\[50px\] {
+  margin-top: 50px;
+}
+
 .mt-\[6px\] {
   margin-top: 6px;
 }
@@ -779,12 +795,12 @@ select {
   margin-top: auto;
 }
 
-.mt-\[50px\] {
-  margin-top: 50px;
-}
-
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .flex {
@@ -859,6 +875,10 @@ select {
   width: 70px;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .min-w-\[179px\] {
   min-width: 179px;
 }
@@ -869,6 +889,12 @@ select {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .flex-row {
@@ -915,20 +941,28 @@ select {
   gap: 17px;
 }
 
-.gap-\[60px\] {
-  gap: 60px;
-}
-
 .gap-\[50px\] {
   gap: 50px;
+}
+
+.gap-\[60px\] {
+  gap: 60px;
 }
 
 .self-end {
   align-self: flex-end;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-\[5px\] {
   border-radius: 5px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-t {
@@ -959,6 +993,25 @@ select {
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -985,6 +1038,15 @@ select {
 
 .text-right {
   text-align: right;
+}
+
+.align-baseline {
+  vertical-align: baseline;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-5xl {
@@ -1016,8 +1078,17 @@ select {
   font-size: 24px;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-\[500\] {
   font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .font-light {
@@ -1030,6 +1101,10 @@ select {
 
 .leading-normal {
   line-height: 1.5;
+}
+
+.leading-tight {
+  line-height: 1.25;
 }
 
 .tracking-normal {
@@ -1068,6 +1143,11 @@ select {
 .hover\:bg-buttonhover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 @media (min-width: 1000px) and (max-width: 1200px) {
