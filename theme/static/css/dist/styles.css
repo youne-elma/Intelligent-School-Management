@@ -702,6 +702,10 @@ select {
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -767,6 +771,10 @@ select {
   margin-top: 10px;
 }
 
+.mt-\[50px\] {
+  margin-top: 50px;
+}
+
 .mt-\[6px\] {
   margin-top: 6px;
 }
@@ -777,10 +785,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-\[50px\] {
-  margin-top: 50px;
 }
 
 .block {
@@ -817,6 +821,10 @@ select {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-full {
+  height: 100%;
 }
 
 .max-h-\[15px\] {
@@ -915,12 +923,12 @@ select {
   gap: 17px;
 }
 
-.gap-\[60px\] {
-  gap: 60px;
-}
-
 .gap-\[50px\] {
   gap: 50px;
+}
+
+.gap-\[60px\] {
+  gap: 60px;
 }
 
 .self-end {
@@ -1147,12 +1155,20 @@ select {
 }
 
 @media (max-width: 760px) {
-  .navbarPhone\:absolute {
-    position: absolute;
+  .navbarPhone\:fixed {
+    position: fixed;
+  }
+
+  .navbarPhone\:left-\[-296px\] {
+    left: -296px;
   }
 
   .navbarPhone\:block {
     display: block;
+  }
+
+  .navbarPhone\:h-screen {
+    height: 100vh;
   }
 
   .navbarPhone\:w-\[296px\] {
@@ -1161,5 +1177,35 @@ select {
 
   .navbarPhone\:pl-10 {
     padding-left: 2.5rem;
+  }
+}
+
+@media (min-width: 760px) {
+  .navBarNotPhone\:fixed {
+    position: fixed;
+  }
+
+  .navBarNotPhone\:absolute {
+    position: absolute;
+  }
+
+  .navBarNotPhone\:relative {
+    position: relative;
+  }
+
+  .navBarNotPhone\:left-0 {
+    left: 0px;
+  }
+
+  .navBarNotPhone\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .navBarNotPhone\:top-0 {
+    top: 0px;
+  }
+
+  .navBarNotPhone\:w-1\/5 {
+    width: 20%;
   }
 }

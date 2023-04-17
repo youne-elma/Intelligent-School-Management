@@ -63,6 +63,7 @@ module.exports = {
       navbarTab: { min: "1000px", max: "1200px" },
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
+      navBarNotPhone: { min:"760px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
