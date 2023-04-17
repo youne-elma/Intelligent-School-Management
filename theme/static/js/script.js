@@ -14,3 +14,4 @@ function openSidebar() {
 function closeSidebar(){
     sideBar.classList.remove("toggleNavbar");
 }
+

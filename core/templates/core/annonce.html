@@ -3,7 +3,7 @@
 {% block title %} Annonce {% endblock %}
 {% block content %}
 
-<div class="flex flex-wrap gap-[5px]  -mt-20">
+<div class="flex flex-wrap gap-[5px]  -mt-20 md:-mt-16">
     <img src="../../../theme/static/icons/Home.png"  class=" w-5 h-4 "alt="">
     <img src="../../../theme/static/icons/doubleRight.png"  class=" w-3 h-3 mt-1 "alt="">
     <span > Annonce</span>
@@ -11,7 +11,7 @@
 
 </div>
 <div >
- <div class="Content flex gap-[50px] flex-wrap justify-between mt-[50px]  ">
+ <div class="Content flex gap-[50px] flex-wrap justify-between mt-[50px]   ">
         <button class="bg-lightgreen text-lightcolor font-bold py-3 px-4 rounded inline-flex items-start w-25 h-15"  >
             <svg  viewBox="0 0 20 20"><img src="../../../theme/static/icons/ComposeAnnonce.png"  width="20" height="20" alt="compose "></svg>
             <span class="ml-2 "> Compose</span>
@@ -19,82 +19,110 @@
 
            <div class="flex gap-[50px]  flex-wrap justify-end  space-x-3  ">
 
-          <button class="bg-bluecharcoal text-lightcolor font-bold py-2 px-4 rounded inline-flex items-start w-24 h-12">
-            <span> Filter</span>
-            <svg  viewBox="0 0 20 20"><img src="../../../theme/static/icons/Filter.png"    class="ml-2 w-5 h-5"alt="filter "></svg>
+          <button class="bg-bluecharcoal text-lightcolor font-bold py-2 px-4 rounded inline-flex items-start w-24 h-12 ">
+            <span class="mt-1"> Filter</span>
+            <svg  viewBox="0 0 20 20"><img src="../../../theme/static/icons/Filter.png"    class="ml-2 w-5 h-5 mt-1"alt="filter "></svg>
 
           </button>
           <button class="bg-bluecharcoal text-lightcolor font-bold py-2 px-4 rounded inline-flex items-start w-24 h-12">
-            <span > More</span>
-            <svg  viewBox="0 0 20 20"><img src="../../../theme/static/icons/More.png" class="ml-2 w-5 h-5" alt="More "></svg>
+            <span class="mt-1" > More</span>
+            <svg  viewBox="0 0 20 20"><img src="../../../theme/static/icons/More.png" class="ml-2 w-5 h-4 mt-1" alt="More "></svg>
           </button>
           
      </div>
  </div>
 </br>
    <!--- this an annonce -->
- <div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
 
-        <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-        <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
-        <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
-        <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-        <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
-        <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
- </div>
+   <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap 3xl:bg-bluecharcoal 2xl:bg-daredvilleorange bigSreen:bg-darkcolor xl:bg-loyalblue md:bg-smoothgreen ">
+
+    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
+    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
+  
+  </div>
+  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap 3xl:bg-bluecharcoal 2xl:bg-daredvilleorange bigSreen:bg-darkcolor xl:bg-loyalblue md:bg-smoothgreen ">
+
+    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
+    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
+  
+  </div>
+  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap 3xl:bg-bluecharcoal 2xl:bg-daredvilleorange bigSreen:bg-darkcolor xl:bg-loyalblue md:bg-smoothgreen ">
+
+    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
+    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
+  </div>
+  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap 3xl:bg-bluecharcoal 2xl:bg-daredvilleorange bigSreen:bg-darkcolor xl:bg-loyalblue md:bg-smoothgreen ">
+
+    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
+    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
+  
+  </div>
+  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap 3xl:bg-bluecharcoal 2xl:bg-daredvilleorange bigSreen:bg-darkcolor xl:bg-loyalblue md:bg-smoothgreen ">
+
+    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
+    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
+  
+  </div>
+  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap 3xl:bg-bluecharcoal 2xl:bg-daredvilleorange bigSreen:bg-darkcolor xl:bg-loyalblue md:bg-smoothgreen ">
+
+    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
+    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
+  
+  </div>
+
+<!--<div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
+
+    <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
+    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
+    <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
+    <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
+    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
+</div>-->
  
-   <!--- this an annonce -->
- <div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
-
-    <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
-    <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
-</div>
-  <!--- this an annonce -->
-<div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
-
-    <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
-    <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
-</div>
-  <!--- this an annonce -->
-<div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
-
-    <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
-    <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
-</div>
-
-  <!--- this an annonce -->
-<div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
-
-    <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
-    <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
-</div>
-<div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
-
-    <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5 "alt="">
-    <span class="mt-8 text-ellipsis text-lg  ml-5">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8 ml-44 text-lg">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
-</div>
- 
-   <div class="ml-[700px]">
+   <div class=" flex  items-center justify-center h-screen]">
   <button class="bg-blue hover:bg-cornflower  py-4 px-5 mt-9  text-ellipsis  text-white rounded"> Load more</button>
   
   </div>
