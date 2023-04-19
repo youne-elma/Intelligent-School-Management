@@ -6,6 +6,3 @@ from models import Etablissementbp
 def index(request):
     return render(request, 'core/index.html')
 
-def test(request):
-    record = Etablissementbp.objects.all()
-    return render(request, 'core/test.html',{'record',record})
