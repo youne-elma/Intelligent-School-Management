@@ -66,25 +66,25 @@ module.exports = {
       navbarTab: { min: "1000px", max: "1200px" },
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
-      'SmallScreen':{ min:"100px",max:'500px'},
-      'md': {min:"500px",max:"1000px"},
+      'SmallScreen':{ min:"1px",max:'645px'},
+      'md': {min:"645px",max:"1000px"},
       'xl':{min:"1000px",max:"1400px"},
       '2xl':{min:"1400px",max:"1777px"},
       '3xl':{min:"1777px", max:"2000px"},
-      'Big':{min:"1777px"}
-    
+      'Big':{min:"1777px"},
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     },
   },
+
   plugins: [
     /**
      * '@tailwindcss/forms' is the forms plugin that provides a minimal styling
      * for forms. If you don't like it or have own styling for forms,
      * comment the line below to disable '@tailwindcss/forms'.
      */
-    
+
     require("@tailwindcss/forms"),
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
