@@ -1,4 +1,5 @@
 {% load static tailwind_tags %}
+{% load django_browser_reload %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,13 +30,13 @@
 
 </head>
 
-<body class="bg-[#F1F1F1]">
+<body>
     <div class="flex flex-row justify-between">
-        <button class="hidden w-8 navbarPhone:block absolute mt-7 ml-11 " onclick="openSidebar()">
+        <button class="hidden w-8 navbarPhone:block absolute mt-7 ml-11" onclick="openSidebar()">
             <img src="{% static 'icons/HamburgerIcon.png' %}" alt="HamburgerIcon" />
         </button>
         <div id="sideBar"
-            class="flex flex-col w-1/5 h-screen navbar sidebar navbarPhone:w-[296px] navbarPhone:absolute hoverButtonTransition">
+            class="flex flex-col w-1/5 h-screen navbar sidebar navbarPhone:w-[296px] navbarPhone:absolute hoverButtonTransition z-10">
             <div
                 class="flex min-w-[179px] navbarMinTab:min-w-[100px] navbarMinTab:m-0 navbarMinTab:my-9 navbarTab:m-3 navbarTab:my-9 navbarTab:mb-12 m-7 mb-10">
                 <button class="hidden navbarPhone:block absolute w-6 h-6" onclick="closeSidebar()">
@@ -111,6 +112,7 @@
     </div>
     <script src="{% static 'js/script.js'%}" />
 
+    {% django_browser_reload_script %}
     </body>
 
 </html>

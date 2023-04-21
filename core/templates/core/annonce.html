@@ -3,175 +3,199 @@
 {% block title %} Annonce {% endblock %}
 {% block content %}
 
-<div class="flex flex-wrap gap-[5px]  -mt-20 md:-mt-16 SmallScreen:-mt-10">
-    <img src="../../../theme/static/icons/Home.png"  class=" w-5 h-4 "alt="">
-    <svg  class="w-4 -mt-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"></path>
-    </svg>
-    <span  class="h-10"> Annonce</span>
-
-
+<div class="flex flex-wrap justify-items-center gap-[5px] -mt-20 md:-mt-10 SmallScreen:-mt-6">
+  <img src="../../../theme/static/icons/Home.png"  class="w-5 h-4" alt="icon-home"/>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">Annonce</span>
 </div>
-<div >
- <div class="Content flex gap-[50px] flex-wrap justify-between mt-[50px]  items-center  ">
-        <button class="bg-lightgreen text-lightcolor font-bold py-3 px-4 rounded inline-flex items-start w-25 h-15"  >
-            <img src="../../../theme/static/icons/ComposeAnnonce.png"   class="h-4 mt-1 "  alt="compose ">
-            <span class="ml-2"> Compose</span>
-          </button>
 
-           <div class="flex gap-[50px]  flex-wrap justify-end  space-x-3  ">
+<div class="Content flex flex-wrap justify-between mt-[40px] items-center justify-items-center AnnounceViewport:gap-4 AnnounceViewport:mt-0">
+  <button class="bg-lightgreen hover:bg-smoothgreen text-lightcolor py-3 px-4 rounded inline-flex items-start w-25 hoverButtonTrasitionFast">
+    <img src="../../../theme/static/icons/ComposeAnnonce.png" class="h-4 mt-1" alt="compose ">
+    <span class="ml-2">Compose</span>
+  </button>
 
-          <button class="bg-bluecharcoal text-lightcolor font-bold py-2 px-4 rounded inline-flex items-start w-24 h-12 ">
-            <span class=""> Filter</span>
-            <img src="../../../theme/static/icons/Filter.png"    class="ml-2 w-5 h-4 mt-1"alt="filter ">
+  <div class="flex gap-[50px] flex-wrap justify-items-center items-center self-end AnnounceViewport:place-self-auto AnnounceViewport:gap-3">
+    <button class="bg-bluecharcoal hover:bg-cornflower text-lightcolor py-2.5 px-4 rounded flex justify-items-center items-center w-24 hoverButtonTrasitionFast">
+      <span class="font-poppinRegular">Filter</span>
+      <img src="../../../theme/static/icons/FilterIcon.png" class="ml-2 w-4 h-4"alt="filter Icon">
+    </button>
+    <button class="bg-bluecharcoal hover:bg-cornflower text-lightcolor py-2.5 px-4 rounded flex justify-items-center items-center w-24 hoverButtonTrasitionFast">
+      <span class="font-poppinRegular">More</span>
+      <img src="../../../theme/static/icons/downArrowIcon.png" class="ml-2 mt-0.5 w-3.5 h-2"alt="downArrow Icon">
+    </button>
+  </div>
+</div>
 
-          </button>
-          <button class="bg-bluecharcoal text-lightcolor font-bold py-2 px-4 rounded inline-flex items-start w-24 h-12">
-            <span class="" > More</span>
-            <svg class="w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
-            </svg>          </button>
-          
-     </div>
- </div>
-</br>
+<div class="bg-white rounded-[5px] font-poppinRegular pb-2  AnnounceViewport:z-0">
+
+    <!--- this an annonce -->
+  <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+
+    <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+
+    <div class="flex flex-wrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+      <img src="../../../theme/static/icons/UserPic.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User Pics">
+      <span class="text-ellipsis text-sm AnnounceViewport:text-base">ZAKI Taher</span>
+    </div>
+
+    <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
+    <div class="flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
+      <button class="w-4 h-5 hover:fill-blue">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="24" height="24"
+        viewBox="0 0 30 30">
+            <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+        </svg>
+      </button>
+      <button  class="w-4 h-5 hover:fill-daredvilleorange">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 24 24">
+          <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
    <!--- this an annonce -->
+  <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
 
-   <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap SmallScreen:hidden">
+    <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
 
-    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
-    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
-    <span class="   mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
-    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
-  
-  </div>
-  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap SmallScreen:hidden ">
+    <div class="flex flex-wrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+      <img src="../../../theme/static/icons/UserPic.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User Pics">
+      <span class="text-ellipsis text-sm AnnounceViewport:text-base">ZAKI Taher</span>
+    </div>
 
-    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
-    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
-    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
-  
-  </div>
-  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap SmallScreen:hidden">
-
-    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
-    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
-    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
-  </div>
-  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap SmallScreen:hidden">
-
-    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
-    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
-    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
-  
-  </div>
-  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap SmallScreen:hidden ">
-
-    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
-    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
-    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
-  
-  </div>
-  <div class="bg-white w-50 h-20  rounded-xl mt-[4px] Content flex flex-wrap SmallScreen:hidden ">
-
-    <input id="link-checkbox" type="checkbox" value="" class=" md:w-6 md:h-6 w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12  ml-9 mt-5  md:w-9 md:h-9 md:ml-7"alt="">
-    <span class="mt-8 text-ellipsis text-lg 3xl:text-base ml-5 2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </span>
-    <span class="text-ellipsis mt-8  ml-44 3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg ">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   md:ml-8 2xl:ml-14 xl:ml-6 Big:hidden  3xl:hidden">Avis import..<a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis mt-8   2xl:ml-20 xl:ml-7 3xl:text-base ml-48 text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
-    <span class="text-ellipsis mt-8  md:text-base md:ml-20 xl:ml-20  ml-48 2xl:hidden md:hidden Big:hidden xl:hidden">16-04-2023</span>
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 bigSreen:ml-20 mt-10 xl:ml-5 2xl:ml-32  md:hidden ml-56"alt="">
-    <img src="../../../theme/static/icons/Updel.png"  class=" w-5 h-2 bigSreen:ml-20 mt-10 xl:ml-9  2xl:ml-40  2xl:hidden xl:hidden md:ml-12 ml-56 Big:hidden"alt="">
-  
-  </div>
-
-
-
-  <div class="flex flex-wrap gap-4 ">
-<div class="w-full  bg-white  rounded-lg  hidden SmallScreen:block ">
-  <div class="relative inline-block text-left">
-    <div>
-      <button type="button" class=" inline-flex items-center justify-center w-full p-2 text-gray-400 rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M3 6a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zm0 5a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zm0 5a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2z" clip-rule="evenodd"></path>
+    <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
+    <div class="flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
+      <button class="w-4 h-5 hover:fill-blue">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="24" height="24"
+        viewBox="0 0 30 30">
+            <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+        </svg>
+      </button>
+      <button  class="w-4 h-5 hover:fill-daredvilleorange">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 24 24">
+          <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
         </svg>
       </button>
     </div>
-  
-    <div id="options-menu-items" class="origin-top-left absolute left-0 mt-2 w-24 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 hidden" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Update</a>
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Delete</a>
-    
+
+  </div>
+
+   <!--- this an annonce -->
+  <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+
+    <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+
+    <div class="flex flex-wrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+      <img src="../../../theme/static/icons/UserPic.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User Pics">
+      <span class="text-ellipsis text-sm AnnounceViewport:text-base">ZAKI Taher</span>
     </div>
-  </div>
-  <div class="flex flex-col items-center pb-10">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12    md:w-9 md:h-9 md:ml-7"alt="">
-    <p class=" text-ellipsis text-lg 3xl:text-base  2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </p>
-    <span class="text-ellipsis   3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg "> SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis   2xl:ml-20 xl:ml-7 3xl:text-base  text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
 
-  </div>
-</div>
-
-
-<div class="w-full  bg-white  rounded-lg  hidden SmallScreen:block">
-  <div class="relative inline-block text-left">
-    <div>
-      <button type="button" class=" inline-flex items-center justify-center w-full p-2 text-gray-400 rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M3 6a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zm0 5a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2zm0 5a2 2 0 012-2h10a2 2 0 110 4H5a2 2 0 01-2-2z" clip-rule="evenodd"></path>
+    <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
+    <div class="flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
+      <button class="w-4 h-5 hover:fill-blue">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="24" height="24"
+        viewBox="0 0 30 30">
+            <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+        </svg>
+      </button>
+      <button  class="w-4 h-5 hover:fill-daredvilleorange">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 24 24">
+          <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
         </svg>
       </button>
     </div>
-  
-    <div id="options-menu-items" class="origin-top-left absolute left-0 mt-2 w-24 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 hidden" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Update</a>
-      <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">Delete</a>
-    
+
+  </div>
+
+   <!--- this an annonce -->
+  <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+
+    <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+
+    <div class="flex flex-wrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+      <img src="../../../theme/static/icons/UserPic.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User Pics">
+      <span class="text-ellipsis text-sm AnnounceViewport:text-base">ZAKI Taher</span>
     </div>
-  </div>
-  <div class="flex flex-col items-center pb-10">
-    <img src="../../../theme/static/icons/UserPic.png"  class=" w-12 h-12    md:w-9 md:h-9 md:ml-7"alt="">
-    <p class=" text-ellipsis text-lg 3xl:text-base  2xl:text-base md:text-base md:ml-3 ">ZAKI Taher </p>
-    <span class="text-ellipsis   3xl:text-base 3xl:ml-28 2xl:ml-20 2xl:hidden md:hidden xl:hidden text-lg "> SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
-    <span class="text-ellipsis   2xl:ml-20 xl:ml-7 3xl:text-base  text-lg 2xl:text-base md:hidden"> 16-04-2023 05:24</span>
+
+    <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
+    <div class="flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
+      <button class="w-4 h-5 hover:fill-blue">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="24" height="24"
+        viewBox="0 0 30 30">
+            <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+        </svg>
+      </button>
+      <button  class="w-4 h-5 hover:fill-daredvilleorange">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 24 24">
+          <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
+        </svg>
+      </button>
+    </div>
 
   </div>
-</div>
+
+   <!--- this an annonce -->
+  <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+
+    <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+
+    <div class="flex flex-wrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+      <img src="../../../theme/static/icons/UserPic.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User Pics">
+      <span class="text-ellipsis text-sm AnnounceViewport:text-base">ZAKI Taher</span>
+    </div>
+
+    <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Avis important: SMI6 Présence aux TP <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+    <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> 16-04-2023 05:24</span>
+    <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
+    <div class="flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
+      <button class="w-4 h-5 hover:fill-blue">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+        width="24" height="24"
+        viewBox="0 0 30 30">
+            <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+        </svg>
+      </button>
+      <button  class="w-4 h-5 hover:fill-daredvilleorange">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+          width="24" height="24"
+          viewBox="0 0 24 24">
+          <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+  <div class=" flex  items-center justify-center m-10">
+    <button class="bg-blue hover:bg-cornflower  py-4 px-5 font-poppin  text-white rounded"> Load more</button>
+  </div>
 
 </div>
-</div>
 
+{% endblock%}
 <!--<div class="bg-white  w-50 h-20 rounded-xl mt-[4px] Content flex flex-wrap ">
 
     <input id="link-checkbox" type="checkbox" value="" class="w-8 h-8 text-blue-600 bg-gray-100 border-darkcolor rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600 ml-6 mt-6">
@@ -181,11 +205,3 @@
     <span class="text-ellipsis mt-8 ml-48 text-lg"> 16-04-2023 05:24</span>
     <img src="../../../theme/static/icons/Updel.png"  class=" w-6 h-3 ml-56 mt-10 "alt="">
 </div>-->
- 
-
-
-   <div class=" flex  items-center justify-center h-screen]">
-  <button class="bg-blue hover:bg-cornflower  py-4 px-5 font-poppin  text-white rounded"> Load more</button></div>
-</div>
-
-{% endblock%}

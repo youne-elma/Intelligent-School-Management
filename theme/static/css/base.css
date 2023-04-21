@@ -8,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: #F1F1F1;
 }
 
 .icons {
@@ -38,7 +39,22 @@ body {
   transition: 0.3s ease-in-out all;
 }
 
+.hoverButtonTrasitionFast {
+  transition: 0.2s ease-in all;
+}
+
+.borderBottomStyle {
+  border-bottom: 0.5px solid #202020;
+}
+
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
+
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
 
 @font-face {
   font-family: "Poppins";

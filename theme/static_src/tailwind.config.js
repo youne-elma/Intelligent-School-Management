@@ -45,6 +45,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       poppin: ["Poppins"],
+      poppinRegular: ["PoppinsRegular"],
     },
     colors: {
       lightcolor: "#F1F1F1",
@@ -66,6 +67,9 @@ module.exports = {
       navbarTab: { min: "1000px", max: "1200px" },
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
+
+      AnnounceViewport: {max:"1000px"},
+
       'SmallScreen':{ min:"1px",max:'645px'},
       'md': {min:"645px",max:"1000px"},
       'xl':{min:"1000px",max:"1400px"},
