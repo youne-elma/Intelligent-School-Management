@@ -33,7 +33,7 @@
 
         {% comment %} div For the containte {% endcomment %}
 
-        <div class="flex flex-col items-center justify-center rounded-md bg-clearwhite">
+        <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite" action="" method="post">
 
           <div class="flex flex-col justify-center items-center">
             <img  class="w-60 p-3" alt="image" src="{% static 'icons/logo.png' %}" />
@@ -42,10 +42,10 @@
           <div class="flex flex-col justify-center rounded  gap-1">
             <h2 class="font-bold text-[#202020]  text-5 center  p-4  ml-28" > Service de Scolarité</h2>
 
-            <input type="email" placeholder="Adresse e-mail" class= "w-80 h-9 ml-12 mr-6  bg-while px-2 py-2 mt-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0">
-            <input type="password" name="Password" placeholder="saisissez votre mot de passe" class= "w-80 h-9 ml-12 mr-6 bg-while px-2 py-2 mt-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0">
+            <input type="email" name="userEmail" placeholder="Adresse e-mail" class= "w-80 h-9 ml-12 mr-6  bg-while px-2 py-2 mt-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
+            <input type="password" name="Password" placeholder="saisissez votre mot de passe" class= "w-80 h-9 ml-12 mr-6 bg-while px-2 py-2 mt-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
 
-            <button class="bg-buttonhover rounded p-2 w-52 mt-5 ml-24 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2
+            <button type="Submit" class="bg-buttonhover rounded p-2 w-52 mt-5 ml-24 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2
             font-bold ">CONNEXION</button>
           </div>
 
@@ -58,7 +58,7 @@
           </footer>
 
         
-        </div>
+        </form>
 
                 {% comment %} div For the image {% endcomment %}
         <div class="slider relative ml-2 loginimagehide:hidden">
