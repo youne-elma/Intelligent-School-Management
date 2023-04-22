@@ -38,6 +38,105 @@ body {
   transition: 0.3s ease-in-out all;
 }
 
+/* This style is for the Login sliders */
+
+.slider {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.slides {
+  width: 500%;
+  height: 600px;
+  display: flex;
+}
+.slides input {
+  display: none;
+}
+
+.slide {
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  height: 600px;
+}
+
+.navigation-manual {
+  position: absolute;
+  margin-bottom: 0.5rem;
+  bottom: 0;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+
+}
+.manual-btn {
+  border: 2px solid #d9d9d9;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+  margin-right: 25px;
+}
+.manual-btn:hover{
+  background: #d9d9d9;
+}
+
+#radio1:checked ~ .first{
+  margin-left: 0;
+}
+#radio2:checked ~ .first{
+  margin-left: -20%;
+}
+#radio3:checked ~ .first{
+  margin-left: -40%;
+}
+#radio4:checked ~ .first{
+  margin-left: -60%;
+}
+
+/* css for automatic navigation */
+
+.navigation-auto{
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  margin-bottom: 0.5rem;
+  width: 400px;
+  justify-content: center;
+}
+
+.navigation-auto div{
+  border: 2px solid #d9d9d9;
+  padding: 5px;
+  border-radius: 10px;
+  transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 25px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background: #d9d9d9;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background: #d9d9d9;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background: #d9d9d9;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background: #d9d9d9;
+}
+
+
+/*---------------------------------------*/
+
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {

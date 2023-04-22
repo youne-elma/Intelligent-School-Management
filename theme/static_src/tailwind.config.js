@@ -63,13 +63,15 @@ module.exports = {
       while1 : "#f8fafc",
       whte2: "#f1f5f9",
       skybleu2 :"#93c5fd",
-      clearwhite:"#FFFFFF"
+      clearwhite:"#FFFFFF",
+      slidebuttonimage: "#D9D9D9",
+      slidebuttonimageactive: "#FFFFFF",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
-      loginimagehide: { max: "802px" },
+      loginimagehide: { max: "770px" },
 
     },
     boxShadow: {
