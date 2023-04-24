@@ -33,7 +33,7 @@
 
         {% comment %} div For the containte {% endcomment %}
 
-        <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite" action="" method="post">
+        <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite relative" action="" method="post">
 
           <div class="flex flex-col justify-center items-center">
             <img  class="w-60 p-3" alt="image" src="{% static 'icons/logo.png' %}" />
@@ -49,16 +49,18 @@
             font-bold ">CONNEXION</button>
           </div>
 
-          <div class=" p-2 mt-2 grid-cols-3 flex justify-center text-4  mr-1 ml-4 ">
+          <div class="p-2 mt-2 grid-cols-3 flex justify-center text-4  mr-1 ml-4 ">
           <button class= "text-[#1C4E80]">Mot de passe oublié ?</button>
           </div>
 
-          <footer class="text-[#EA6A47] text-center p-5 mr-2 ml-3">
-            <p>univercell AE</p>
+          
+          <footer class="absolute bottom-0 text-mediumcoolGray text-center p-5 mr-2 ml-3 loginimagehide:relative loginimagehide:pt-10">
+            <p class="text-xs">univercell AE</p>
           </footer>
-
         
         </form>
+
+
 
                 {% comment %} div For the image {% endcomment %}
         <div class="slider relative ml-2 loginimagehide:hidden">

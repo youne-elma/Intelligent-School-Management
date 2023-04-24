@@ -1174,6 +1174,11 @@ select {
   font-size: 24px;
 }
 
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
 .font-\[500\] {
   font-weight: 500;
 }
@@ -1218,11 +1223,6 @@ select {
   color: rgb(126 126 126 / var(--tw-text-opacity));
 }
 
-.text-\[\#EA6A47\] {
-  --tw-text-opacity: 1;
-  color: rgb(234 106 71 / var(--tw-text-opacity));
-}
-
 .text-\[\#f1f5f9\] {
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity));
@@ -1231,6 +1231,16 @@ select {
 .text-lightcolor {
   --tw-text-opacity: 1;
   color: rgb(241 241 241 / var(--tw-text-opacity));
+}
+
+.text-mediumcoolGray {
+  --tw-text-opacity: 1;
+  color: rgb(126 144 154 / var(--tw-text-opacity));
+}
+
+.text-\[\#EA6A47\] {
+  --tw-text-opacity: 1;
+  color: rgb(234 106 71 / var(--tw-text-opacity));
 }
 
 .opacity-100 {
@@ -1378,7 +1388,23 @@ select {
 }
 
 @media (max-width: 770px) {
+  .loginimagehide\:relative {
+    position: relative;
+  }
+
   .loginimagehide\:hidden {
     display: none;
+  }
+
+  .loginimagehide\:p-4 {
+    padding: 1rem;
+  }
+
+  .loginimagehide\:p-10 {
+    padding: 2.5rem;
+  }
+
+  .loginimagehide\:pt-10 {
+    padding-top: 2.5rem;
   }
 }
