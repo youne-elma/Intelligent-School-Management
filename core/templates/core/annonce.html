@@ -27,9 +27,16 @@
   </div>
 </div>
 
-<div class="bg-white rounded-[5px] font-poppinRegular pb-2  AnnounceViewport:z-0">
+<div class="bg-white rounded-[5px] font-poppinRegular AnnounceViewport:z-0">
 
-    <!--- this an annonce -->
+  <section class="modal hidden">
+    <div class="flex">
+      <img src="../../theme/static/image/TrachImage.png" width="" height="" />
+    </div>
+  </section>
+  <div class="overlay hidden"></div>
+
+  <!--- this an annonce -->
   <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
 
     <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
@@ -93,7 +100,7 @@
 
   </div>
 
-   <!--- this an annonce -->
+  <!--- this an annonce -->
   <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
 
     <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
@@ -125,7 +132,7 @@
 
   </div>
 
-   <!--- this an annonce -->
+  <!--- this an annonce -->
   <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
 
     <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
@@ -157,7 +164,7 @@
 
   </div>
 
-   <!--- this an annonce -->
+  <!--- this an annonce -->
   <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
 
     <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer w-4.5 text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0 AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
@@ -188,11 +195,9 @@
     </div>
 
   </div>
-
-  <div class=" flex  items-center justify-center m-10">
-    <button class="bg-blue hover:bg-cornflower  py-4 px-5 font-poppin  text-white rounded"> Load more</button>
-  </div>
-
+</div>
+<div class="flex items-center justify-center m-10 pb-2">
+  <button class="bg-blue hover:bg-cornflower py-3 px-4 text-white rounded font-poppinRegular">Load more</button>
 </div>
 
 {% endblock%}
