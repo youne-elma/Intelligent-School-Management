@@ -46,6 +46,7 @@ module.exports = {
     fontFamily: {
       poppin: ["Poppins"],
       poppinRegular: ["PoppinsRegular"],
+      poppinSemiBold: ["PoppinsMedium"],
     },
     colors: {
       lightcolor: "#F1F1F1",
