@@ -718,6 +718,10 @@ select {
   top: -10%;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .m-7 {
   margin: 1.75rem;
 }
@@ -725,6 +729,11 @@ select {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .mb-10 {
@@ -739,28 +748,8 @@ select {
   margin-left: 2.75rem;
 }
 
-.ml-12 {
-  margin-left: 3rem;
-}
-
 .ml-2 {
   margin-left: 0.5rem;
-}
-
-.ml-24 {
-  margin-left: 6rem;
-}
-
-.ml-28 {
-  margin-left: 7rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
 }
 
 .ml-\[16px\] {
@@ -771,20 +760,8 @@ select {
   margin-left: auto;
 }
 
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .mr-11 {
   margin-right: 2.75rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.mr-6 {
-  margin-right: 1.5rem;
 }
 
 .mr-\[16px\] {
@@ -797,10 +774,6 @@ select {
 
 .mt-4 {
   margin-top: 1rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
 }
 
 .mt-7 {
@@ -825,6 +798,14 @@ select {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .block {
@@ -999,6 +980,10 @@ select {
   gap: 60px;
 }
 
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .self-end {
   align-self: flex-end;
 }
@@ -1113,6 +1098,11 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1179,6 +1169,11 @@ select {
   line-height: 1rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-\[500\] {
   font-weight: 500;
 }
@@ -1236,11 +1231,6 @@ select {
 .text-mediumcoolGray {
   --tw-text-opacity: 1;
   color: rgb(126 144 154 / var(--tw-text-opacity));
-}
-
-.text-\[\#EA6A47\] {
-  --tw-text-opacity: 1;
-  color: rgb(234 106 71 / var(--tw-text-opacity));
 }
 
 .opacity-100 {
@@ -1392,16 +1382,20 @@ select {
     position: relative;
   }
 
+  .loginimagehide\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .loginimagehide\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .loginimagehide\:mt-5 {
+    margin-top: 1.25rem;
+  }
+
   .loginimagehide\:hidden {
     display: none;
-  }
-
-  .loginimagehide\:p-4 {
-    padding: 1rem;
-  }
-
-  .loginimagehide\:p-10 {
-    padding: 2.5rem;
   }
 
   .loginimagehide\:pt-10 {

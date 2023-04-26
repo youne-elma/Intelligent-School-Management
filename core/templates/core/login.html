@@ -36,25 +36,25 @@
         <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite relative" action="" method="post">
 
           <div class="flex flex-col justify-center items-center">
-            <img  class="w-60 p-3" alt="image" src="{% static 'icons/logo.png' %}" />
+            <img  class="w-60 mb-5 loginimagehide:mb-0 loginimagehide:mt-5" alt="image" src="{% static 'icons/logo.png' %}" />
           </div>
 
-          <div class="flex flex-col justify-center rounded  gap-1">
-            <h2 class="font-bold text-[#202020]  text-5 center  p-4  ml-28" > Service de Scolarité</h2>
+          <div class="flex flex-col items-center justify-center rounded gap-6">
+            <h2 class="font-bold text-[#202020]  text-5 center py-4" > Service de Scolarité</h2>
 
-            <input type="email" name="userEmail" placeholder="Adresse e-mail" class= "w-80 h-9 ml-12 mr-6  bg-while px-2 py-2 mt-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
-            <input type="password" name="Password" placeholder="saisissez votre mot de passe" class= "w-80 h-9 ml-12 mr-6 bg-while px-2 py-2 mt-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
+            <input type="email" name="userEmail" placeholder="Adresse e-mail" class= "text-sm w-80 h-9  bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0 mx-10" required>
+            <input type="password" name="Password" placeholder="saisissez votre mot de passe" class= "text-sm w-80 h-9 bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
 
-            <button type="Submit" class="bg-buttonhover rounded p-2 w-52 mt-5 ml-24 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2
+            <button type="Submit" class="bg-buttonhover mt-2 rounded w-52 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2
             font-bold ">CONNEXION</button>
           </div>
 
-          <div class="p-2 mt-2 grid-cols-3 flex justify-center text-4  mr-1 ml-4 ">
-          <button class= "text-[#1C4E80]">Mot de passe oublié ?</button>
+          <div class="p-2 mt-2 grid-cols-3 flex justify-center text-4 ">
+          <button class= "text-[#1C4E80] text-sm">Mot de passe oublié ?</button>
           </div>
 
           
-          <footer class="absolute bottom-0 text-mediumcoolGray text-center p-5 mr-2 ml-3 loginimagehide:relative loginimagehide:pt-10">
+          <footer class="absolute bottom-0 text-mediumcoolGray text-center p-5 loginimagehide:relative loginimagehide:pt-10">
             <p class="text-xs">univercell AE</p>
           </footer>
         
