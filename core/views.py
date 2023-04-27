@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'core/index.html')
+
+def gestiondabsence(request):
+    return render(request, 'core/gestiondabsence.html')
