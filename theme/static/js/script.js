@@ -8,7 +8,6 @@ function openSidebar() {
     mainContent.addEventListener('click', function(event) {
         sideBar.classList.remove('toggleNavbar');
     });
-    
 }
         
 function closeSidebar(){

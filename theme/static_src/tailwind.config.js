@@ -58,12 +58,21 @@ module.exports = {
       smoothgreen: "#618830",
       bluecharcoal: "#22282E",
       buttonhover: "#1C4E80",
+      testColor: "#3b82f6",
+      skybleau :"#e0f2fe",
+      while1 : "#f8fafc",
+      whte2: "#f1f5f9",
+      skybleu2 :"#93c5fd",
+      clearwhite:"#FFFFFF",
+      slidebuttonimage: "#D9D9D9",
+      slidebuttonimageactive: "#FFFFFF",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
       navBarNotPhone: { min:"760px" },
+      loginimagehide: { max: "770px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -79,5 +88,6 @@ module.exports = {
     require("@tailwindcss/typography"),
     require("@tailwindcss/line-clamp"),
     require("@tailwindcss/aspect-ratio"),
+    require('postcss-simple-vars'),
   ],
 };
