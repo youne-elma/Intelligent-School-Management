@@ -57,6 +57,75 @@ class Annonce(models.Model):
         db_table = 'annonce'
 
 
+class AuthGroup(models.Model):
+    name = models.CharField(unique=True, max_length=150)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group'
+
+
+class AuthGroupPermissions(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+    permission = models.ForeignKey('AuthPermission', models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_group_permissions'
+        unique_together = (('group', 'permission'),)
+
+
+class AuthPermission(models.Model):
+    name = models.CharField(max_length=255)
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING)
+    codename = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_permission'
+        unique_together = (('content_type', 'codename'),)
+
+
+class AuthUser(models.Model):
+    password = models.CharField(max_length=128)
+    last_login = models.DateTimeField(blank=True, null=True)
+    is_superuser = models.IntegerField()
+    username = models.CharField(unique=True, max_length=150)
+    first_name = models.CharField(max_length=150)
+    last_name = models.CharField(max_length=150)
+    email = models.CharField(max_length=254)
+    is_staff = models.IntegerField()
+    is_active = models.IntegerField()
+    date_joined = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user'
+
+
+class AuthUserGroups(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    group = models.ForeignKey(AuthGroup, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_groups'
+        unique_together = (('user', 'group'),)
+
+
+class AuthUserUserPermissions(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+    permission = models.ForeignKey(AuthPermission, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'auth_user_user_permissions'
+        unique_together = (('user', 'permission'),)
+
+
 class Bac(models.Model):
     codebac = models.CharField(db_column='CODEBAC', primary_key=True, max_length=30)  # Field name made lowercase.
     serie = models.CharField(db_column='SERIE', max_length=30, blank=True, null=True)  # Field name made lowercase.
@@ -101,14 +170,59 @@ class DetailEnum(models.Model):
 
 class Diplome(models.Model):
     codediplome = models.IntegerField(db_column='CODEDIPLOME', primary_key=True)  # Field name made lowercase.
-    id_detail = models.ForeignKey(DetailEnum, models.DO_NOTHING, db_column='ID_DETAIL', blank=True, null=True)  # Field name made lowercase.
     intitulediplomefr = models.CharField(db_column='INTITULEDIPLOMEFR', max_length=50, blank=True, null=True)  # Field name made lowercase.
     intitulediplomear = models.CharField(db_column='INTITULEDIPLOMEAR', max_length=50, blank=True, null=True)  # Field name made lowercase.
-    niveau = models.CharField(db_column='NIVEAU', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    id_detail = models.ForeignKey(DetailEnum, models.DO_NOTHING, db_column='ID_DETAIL', blank=True, null=True)  # Field name made lowercase.
+    niveau = models.CharField(db_column='Niveau', max_length=20, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'diplome'
+
+
+class DjangoAdminLog(models.Model):
+    action_time = models.DateTimeField()
+    object_id = models.TextField(blank=True, null=True)
+    object_repr = models.CharField(max_length=200)
+    action_flag = models.PositiveSmallIntegerField()
+    change_message = models.TextField()
+    content_type = models.ForeignKey('DjangoContentType', models.DO_NOTHING, blank=True, null=True)
+    user = models.ForeignKey(AuthUser, models.DO_NOTHING)
+
+    class Meta:
+        managed = False
+        db_table = 'django_admin_log'
+
+
+class DjangoContentType(models.Model):
+    app_label = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'django_content_type'
+        unique_together = (('app_label', 'model'),)
+
+
+class DjangoMigrations(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    app = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    applied = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_migrations'
+
+
+class DjangoSession(models.Model):
+    session_key = models.CharField(primary_key=True, max_length=40)
+    session_data = models.TextField()
+    expire_date = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'django_session'
 
 
 class Enum(models.Model):
@@ -148,6 +262,10 @@ class Etudiant(models.Model):
     ddn = models.CharField(db_column='DDN', max_length=30, blank=True, null=True)  # Field name made lowercase.
     villenaissfr = models.CharField(db_column='VILLENAISSFR', max_length=50, blank=True, null=True)  # Field name made lowercase.
     villenaissar = models.CharField(db_column='VILLENAISSAR', max_length=50, blank=True, null=True)  # Field name made lowercase.
+    adresse_fr = models.CharField(db_column='Adresse_FR', max_length=50)  # Field name made lowercase.
+    adresse_ar = models.CharField(db_column='Adresse_AR', max_length=50)  # Field name made lowercase.
+    adresse_ur_fr = models.CharField(db_column='Adresse_UR_FR', max_length=50)  # Field name made lowercase.
+    adresse_ur_ar = models.CharField(db_column='Adresse_UR_AR', max_length=50)  # Field name made lowercase.
     rib = models.CharField(db_column='RIB', max_length=40, blank=True, null=True)  # Field name made lowercase.
     boursier = models.IntegerField(db_column='BOURSIER', blank=True, null=True)  # Field name made lowercase.
     telephone = models.CharField(db_column='TELEPHONE', max_length=20, blank=True, null=True)  # Field name made lowercase.
@@ -168,11 +286,12 @@ class Etudiant(models.Model):
 
 
 class Examen(models.Model):
-    id_local = models.OneToOneField('Local', models.DO_NOTHING, db_column='ID_LOCAL', primary_key=True)  # Field name made lowercase. The composite primary key (ID_LOCAL, APOGEE, ID_MODMAT) found, that is not supported. The first column is selected.
+    id_local = models.OneToOneField('Local', models.DO_NOTHING, db_column='ID_LOCAL', primary_key=True)  # Field name made lowercase. The composite primary key (ID_LOCAL, APOGEE, ID_MODMAT, N_EXAMEN, h_Debut) found, that is not supported. The first column is selected.
     apogee = models.ForeignKey(Etudiant, models.DO_NOTHING, db_column='APOGEE')  # Field name made lowercase.
     id_modmat = models.ForeignKey('Module', models.DO_NOTHING, db_column='ID_MODMAT')  # Field name made lowercase.
-    n_examen = models.IntegerField(db_column='N_EXAMEN', blank=True, null=True)  # Field name made lowercase.
-    horaire = models.DateTimeField(db_column='HORAIRE', blank=True, null=True)  # Field name made lowercase.
+    n_examen = models.IntegerField(db_column='N_EXAMEN')  # Field name made lowercase.
+    h_debut = models.DateTimeField(db_column='h_Debut')  # Field name made lowercase.
+    h_fin = models.DateTimeField(db_column='h_Fin')  # Field name made lowercase.
     note = models.DecimalField(db_column='NOTE', max_digits=4, decimal_places=2, blank=True, null=True)  # Field name made lowercase.
     resultat = models.IntegerField(db_column='RESULTAT', blank=True, null=True)  # Field name made lowercase.
     session = models.CharField(db_column='SESSION', max_length=150, blank=True, null=True)  # Field name made lowercase.
@@ -180,7 +299,7 @@ class Examen(models.Model):
     class Meta:
         managed = False
         db_table = 'examen'
-        unique_together = (('id_local', 'apogee', 'id_modmat'),)
+        unique_together = (('id_local', 'apogee', 'id_modmat', 'n_examen', 'h_debut'),)
 
 
 class Filiere(models.Model):
@@ -433,15 +552,6 @@ class TypeEnseigner(models.Model):
     class Meta:
         managed = False
         db_table = 'type_enseigner'
-
-
-class TypeHandicapes(models.Model):
-    code = models.CharField(max_length=3)
-    handicape = models.CharField(max_length=30)
-
-    class Meta:
-        managed = False
-        db_table = 'type_handicapes'
 
 
 class Universofpp(models.Model):
