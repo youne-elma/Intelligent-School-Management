@@ -45,6 +45,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       poppin: ["Poppins"],
+      semiBold: ["PoppinsSemiBold"]
     },
     colors: {
       lightcolor: "#F1F1F1",
@@ -64,6 +65,7 @@ module.exports = {
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
       navBarNotPhone: { min:"760px" },
+      gestionMdabsence: { max: "570px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",

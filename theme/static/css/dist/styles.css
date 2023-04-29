@@ -718,12 +718,21 @@ select {
   bottom: 0px;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .top-\[-10\%\] {
   top: -10%;
 }
 
 .m-7 {
   margin: 1.75rem;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .mx-auto {
@@ -735,6 +744,10 @@ select {
   margin-bottom: 2.5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .mb-\[8px\] {
   margin-bottom: 8px;
 }
@@ -743,12 +756,12 @@ select {
   margin-left: 2.75rem;
 }
 
-.ml-\[16px\] {
-  margin-left: 16px;
+.ml-5 {
+  margin-left: 1.25rem;
 }
 
-.ml-\[20px\] {
-  margin-left: 20px;
+.ml-\[16px\] {
+  margin-left: 16px;
 }
 
 .ml-\[35px\] {
@@ -763,16 +776,24 @@ select {
   margin-right: 2.75rem;
 }
 
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mr-\[16px\] {
   margin-right: 16px;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .mt-7 {
@@ -887,10 +908,6 @@ select {
   width: 70px;
 }
 
-.w-\[90\%\] {
-  width: 90%;
-}
-
 .w-\[90px\] {
   width: 90px;
 }
@@ -939,6 +956,10 @@ select {
   gap: 0.25rem;
 }
 
+.gap-24 {
+  gap: 6rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -957,10 +978,6 @@ select {
 
 .gap-\[60px\] {
   gap: 60px;
-}
-
-.place-self-center {
-  place-self: center;
 }
 
 .self-end {
@@ -989,16 +1006,6 @@ select {
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#618830\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(97 136 48 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#7E909A\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 144 154 / var(--tw-bg-opacity));
-}
-
 .bg-\[\#F1F1F1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
@@ -1014,8 +1021,31 @@ select {
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
 }
 
-.p-\[2\%\] {
-  padding: 2%;
+.bg-mediumcoolGray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 144 154 / var(--tw-bg-opacity));
+}
+
+.bg-smoothgreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(97 136 48 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pb-5 {
@@ -1024,14 +1054,6 @@ select {
 
 .pb-\[17px\] {
   padding-bottom: 17px;
-}
-
-.pb-\[5\%\] {
-  padding-bottom: 5%;
-}
-
-.pl-\[120px\] {
-  padding-left: 120px;
 }
 
 .pl-\[2\.7vw\] {
@@ -1050,10 +1072,6 @@ select {
   padding-top: 17px;
 }
 
-.pt-\[20px\] {
-  padding-top: 20px;
-}
-
 .text-right {
   text-align: right;
 }
@@ -1062,9 +1080,8 @@ select {
   font-family: Poppins;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+.font-semiBold {
+  font-family: PoppinsSemiBold;
 }
 
 .text-5xl {
@@ -1094,6 +1111,16 @@ select {
 
 .text-\[24px\] {
   font-size: 24px;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-\[500\] {
@@ -1272,5 +1299,40 @@ select {
 
   .navBarNotPhone\:w-1\/5 {
     width: 20%;
+  }
+}
+
+@media (max-width: 570px) {
+  .gestionMdabsence\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .gestionMdabsence\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .gestionMdabsence\:mr-2 {
+    margin-right: 0.5rem;
+  }
+
+  .gestionMdabsence\:h-\[90px\] {
+    height: 90px;
+  }
+
+  .gestionMdabsence\:h-full {
+    height: 100%;
+  }
+
+  .gestionMdabsence\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .gestionMdabsence\:gap-12 {
+    gap: 3rem;
+  }
+
+  .gestionMdabsence\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
