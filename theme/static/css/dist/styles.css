@@ -747,6 +747,14 @@ select {
   margin-left: 16px;
 }
 
+.ml-\[20px\] {
+  margin-left: 20px;
+}
+
+.ml-\[35px\] {
+  margin-left: 35px;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -757,6 +765,10 @@ select {
 
 .mr-\[16px\] {
   margin-right: 16px;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-4 {
@@ -803,6 +815,10 @@ select {
   height: 1.5rem;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
 .h-\[22px\] {
   height: 22px;
 }
@@ -819,12 +835,12 @@ select {
   height: 70px;
 }
 
-.h-screen {
-  height: 100vh;
+.h-\[90px\] {
+  height: 90px;
 }
 
-.h-full {
-  height: 100%;
+.h-screen {
+  height: 100vh;
 }
 
 .max-h-\[15px\] {
@@ -859,12 +875,24 @@ select {
   width: 26px;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
 .w-\[50\%\] {
   width: 50%;
 }
 
 .w-\[70px\] {
   width: 70px;
+}
+
+.w-\[90\%\] {
+  width: 90%;
+}
+
+.w-\[90px\] {
+  width: 90px;
 }
 
 .min-w-\[179px\] {
@@ -931,6 +959,10 @@ select {
   gap: 60px;
 }
 
+.place-self-center {
+  place-self: center;
+}
+
 .self-end {
   align-self: flex-end;
 }
@@ -952,6 +984,21 @@ select {
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
 
+.bg-\[\#1C4E80\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#618830\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(97 136 48 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#7E909A\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 144 154 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#F1F1F1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
@@ -967,12 +1014,24 @@ select {
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
 }
 
+.p-\[2\%\] {
+  padding: 2%;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
 }
 
 .pb-\[17px\] {
   padding-bottom: 17px;
+}
+
+.pb-\[5\%\] {
+  padding-bottom: 5%;
+}
+
+.pl-\[120px\] {
+  padding-left: 120px;
 }
 
 .pl-\[2\.7vw\] {
@@ -991,8 +1050,21 @@ select {
   padding-top: 17px;
 }
 
+.pt-\[20px\] {
+  padding-top: 20px;
+}
+
 .text-right {
   text-align: right;
+}
+
+.font-poppin {
+  font-family: Poppins;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-5xl {
@@ -1052,6 +1124,11 @@ select {
 .text-\[\#7e7e7e\] {
   --tw-text-opacity: 1;
   color: rgb(126 126 126 / var(--tw-text-opacity));
+}
+
+.text-darkcolor {
+  --tw-text-opacity: 1;
+  color: rgb(32 32 32 / var(--tw-text-opacity));
 }
 
 .text-lightcolor {
@@ -1159,10 +1236,6 @@ select {
     position: fixed;
   }
 
-  .navbarPhone\:left-\[-296px\] {
-    left: -296px;
-  }
-
   .navbarPhone\:block {
     display: block;
   }
@@ -1181,24 +1254,16 @@ select {
 }
 
 @media (min-width: 760px) {
-  .navBarNotPhone\:fixed {
-    position: fixed;
-  }
-
-  .navBarNotPhone\:absolute {
-    position: absolute;
-  }
-
   .navBarNotPhone\:relative {
     position: relative;
   }
 
-  .navBarNotPhone\:left-0 {
-    left: 0px;
-  }
-
   .navBarNotPhone\:bottom-0 {
     bottom: 0px;
+  }
+
+  .navBarNotPhone\:left-0 {
+    left: 0px;
   }
 
   .navBarNotPhone\:top-0 {

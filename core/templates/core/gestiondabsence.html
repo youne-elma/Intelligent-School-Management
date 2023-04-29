@@ -1,13 +1,37 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-
-    <div class="w-[800px] h-[236px] relative bg-[white] rounded-[5px] shadow-sm justify-center items-center">
-        <div    class="shadow-sm absolute bg-black ml-[16px] top-[-10%] w-[500px] h-[70px]  rounded-[5px] flex  items-center">
-            <p class="m-32 text-3xl font-poppin"> Gestion d'Absence .! </p>
+  
+<!-- Suprior Card -->
+    <div class="w-[90%] pb-[5%] relative bg-[white] rounded-[5px] shadow-sm place-self-center justify-center flex items-center">
+        <div  class="shadow-sm w-[90%] h-[70px] absolute bg-[#1C4E80] ml-[20px] top-[-10%]  place-self-center rounded-[5px] flex items-center">
+            <p class="ml-[35px] text-2xl text-lightcolor font-poppin"> Gestion d'Absence </p>
         </div>
-       
 
+
+        <div class="mt-20 Content flex gap-[50px] flex-wrap justify-center " >
+
+             <!--This is option02-->
+             <a href="">
+             <div class="w-[400px] h-[100px] relative bg-[#F1F1F1] rounded-[5px] shadow-sm place-self-center justify-center items-center">
+                <div  class="shadow-sm w-[90px] h-[90px] absolute bg-[#7E909A] ml-[20px] top-[-10%] rounded-[5px] flex items-center  p-[2%]">
+                    <img  src="/theme/static/icons/teacher.png" alt="icon" >
+                </div>
+                  <p class="text-darkcolor text-2xl font-poppin pl-[120px] pt-[20px]"> Mes Séances.</p>
+             </div>
+            </a>
+
+             <!--This is option01-->
+             <a href=""> 
+             <div class="w-[400px] h-[100px] relative bg-[#F1F1F1] rounded-[5px] shadow-sm place-self-center">
+
+                <div  class="shadow-sm w-[90px] h-[90px] absolute bg-[#618830] ml-[20px] top-[-10%] rounded-[5px] flex items-center p-[2%]">
+                    <img  src="/theme/static/icons/teacher.png" alt="icon" >
+                </div>
+                  <p class="text-darkcolor text-2xl font-poppin pl-[120px] pt-[20px]"> Ajout d’une <br> &emsp; nouvelle séance.</p>
+             </div>
+            </a>
+
+        </div>
     </div>
-
 {% endblock %}
