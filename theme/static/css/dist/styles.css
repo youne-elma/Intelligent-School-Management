@@ -1303,6 +1303,11 @@ select {
 }
 
 @media (max-width: 570px) {
+  .gestionMdabsence\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .gestionMdabsence\:mb-0 {
     margin-bottom: 0px;
   }
@@ -1327,6 +1332,10 @@ select {
     width: 250px;
   }
 
+  .gestionMdabsence\:justify-center {
+    justify-content: center;
+  }
+
   .gestionMdabsence\:gap-12 {
     gap: 3rem;
   }
@@ -1334,5 +1343,10 @@ select {
   .gestionMdabsence\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .gestionMdabsence\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
