@@ -9,3 +9,5 @@ def index(request):
 def login(request):
     return render(request, 'core/login.html')
 
+def homeProf(request):
+    return render(request, 'Prof/home-prof.html')

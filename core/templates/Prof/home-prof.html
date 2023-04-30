@@ -1,0 +1,25 @@
+{% extends '../core/base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+<div class="flex flex-col gap-8">
+    {% load static %}
+    <div>
+        <h1 class="text-[2rem] font-medium">Welcome, </h1>
+        <span class="text-[1.8rem] font-normal">To your Dashboard</span>
+    </div>
+    <img class="self-center" src="{% static 'image/homeprof.png'%}" alt="">
+
+    <span class="text-xl font-normal text-center self-center">Need help with something? try and ask our virtual
+        assistant
+        he’ll be happy to help.</span>
+
+
+    <button
+        class="text-[1.25rem]  w-48 h-14 bg-loyalblue text-[white] font-medium px-6 py-3 rounded-lg self-center">Quick
+        Access</button>
+</div>
+{% endblock %}
