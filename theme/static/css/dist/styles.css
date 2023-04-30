@@ -714,12 +714,21 @@ select {
   bottom: 0px;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .top-\[-10\%\] {
   top: -10%;
 }
 
 .m-7 {
   margin: 1.75rem;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .mx-auto {
@@ -731,6 +740,10 @@ select {
   margin-bottom: 2.5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .mb-\[8px\] {
   margin-bottom: 8px;
 }
@@ -739,8 +752,16 @@ select {
   margin-left: 2.75rem;
 }
 
+.ml-5 {
+  margin-left: 1.25rem;
+}
+
 .ml-\[16px\] {
   margin-left: 16px;
+}
+
+.ml-\[35px\] {
+  margin-left: 35px;
 }
 
 .ml-auto {
@@ -751,6 +772,18 @@ select {
   margin-right: 2.75rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
+}
+
 .mr-\[16px\] {
   margin-right: 16px;
 }
@@ -759,12 +792,20 @@ select {
   margin-top: 1rem;
 }
 
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
 .mt-7 {
   margin-top: 1.75rem;
 }
 
 .mt-\[10px\] {
   margin-top: 10px;
+}
+
+.mt-\[50px\] {
+  margin-top: 50px;
 }
 
 .mt-\[6px\] {
@@ -777,10 +818,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.mt-\[50px\] {
-  margin-top: 50px;
 }
 
 .block {
@@ -799,6 +836,10 @@ select {
   height: 1.5rem;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
 .h-\[22px\] {
   height: 22px;
 }
@@ -813,6 +854,10 @@ select {
 
 .h-\[70px\] {
   height: 70px;
+}
+
+.h-\[90px\] {
+  height: 90px;
 }
 
 .h-screen {
@@ -851,12 +896,20 @@ select {
   width: 26px;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
 .w-\[50\%\] {
   width: 50%;
 }
 
 .w-\[70px\] {
   width: 70px;
+}
+
+.w-\[90px\] {
+  width: 90px;
 }
 
 .min-w-\[179px\] {
@@ -903,6 +956,10 @@ select {
   gap: 0.25rem;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -915,12 +972,12 @@ select {
   gap: 17px;
 }
 
-.gap-\[60px\] {
-  gap: 60px;
-}
-
 .gap-\[50px\] {
   gap: 50px;
+}
+
+.gap-\[60px\] {
+  gap: 60px;
 }
 
 .self-end {
@@ -944,6 +1001,11 @@ select {
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
 
+.bg-\[\#1C4E80\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#F1F1F1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
@@ -954,9 +1016,41 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-daredvilleorange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 106 71 / var(--tw-bg-opacity));
+}
+
 .bg-denimcolor {
   --tw-bg-opacity: 1;
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
+}
+
+.bg-lightcolor {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
+}
+
+.bg-smoothgreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(97 136 48 / var(--tw-bg-opacity));
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pb-5 {
@@ -985,6 +1079,10 @@ select {
 
 .text-right {
   text-align: right;
+}
+
+.font-poppin {
+  font-family: Poppins;
 }
 
 .text-5xl {
@@ -1016,6 +1114,16 @@ select {
   font-size: 24px;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-\[500\] {
   font-weight: 500;
 }
@@ -1044,6 +1152,11 @@ select {
 .text-\[\#7e7e7e\] {
   --tw-text-opacity: 1;
   color: rgb(126 126 126 / var(--tw-text-opacity));
+}
+
+.text-darkcolor {
+  --tw-text-opacity: 1;
+  color: rgb(32 32 32 / var(--tw-text-opacity));
 }
 
 .text-lightcolor {
@@ -1161,5 +1274,54 @@ select {
 
   .navbarPhone\:pl-10 {
     padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .gestionnotesmenuadmin\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .gestionnotesmenuadmin\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .gestionnotesmenuadmin\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .gestionnotesmenuadmin\:mr-2 {
+    margin-right: 0.5rem;
+  }
+
+  .gestionnotesmenuadmin\:h-\[90px\] {
+    height: 90px;
+  }
+
+  .gestionnotesmenuadmin\:h-full {
+    height: 100%;
+  }
+
+  .gestionnotesmenuadmin\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .gestionnotesmenuadmin\:justify-center {
+    justify-content: center;
+  }
+
+  .gestionnotesmenuadmin\:gap-12 {
+    gap: 3rem;
+  }
+
+  .gestionnotesmenuadmin\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .gestionnotesmenuadmin\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }

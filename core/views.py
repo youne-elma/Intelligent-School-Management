@@ -5,3 +5,6 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'core/index.html')
+
+def gestionnotesmenuadmin(request):
+    return render(request, 'core/gestionnotesmenuadmin.html')
