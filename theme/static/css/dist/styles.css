@@ -731,6 +731,11 @@ select {
   margin-right: 0.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -750,6 +755,10 @@ select {
 
 .ml-11 {
   margin-left: 2.75rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
 }
 
 .ml-5 {
@@ -786,6 +795,14 @@ select {
 
 .mr-\[16px\] {
   margin-right: 16px;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .mt-4 {
@@ -852,6 +869,10 @@ select {
   height: 26px;
 }
 
+.h-\[57px\] {
+  height: 57px;
+}
+
 .h-\[70px\] {
   height: 70px;
 }
@@ -902,6 +923,10 @@ select {
 
 .w-\[50\%\] {
   width: 50%;
+}
+
+.w-\[62px\] {
+  width: 62px;
 }
 
 .w-\[70px\] {
@@ -956,8 +981,8 @@ select {
   gap: 0.25rem;
 }
 
-.gap-16 {
-  gap: 4rem;
+.gap-11 {
+  gap: 2.75rem;
 }
 
 .gap-5 {
@@ -1085,6 +1110,10 @@ select {
   font-family: Poppins;
 }
 
+.font-semiBold {
+  font-family: PoppinsSemiBold;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1114,9 +1143,9 @@ select {
   font-size: 24px;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-xl {
@@ -1278,49 +1307,49 @@ select {
 }
 
 @media (max-width: 570px) {
-  .gestionnotesmenuadmin\:mx-0 {
+  .gestionMnotes\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
   }
 
-  .gestionnotesmenuadmin\:mb-0 {
+  .gestionMnotes\:mb-0 {
     margin-bottom: 0px;
   }
 
-  .gestionnotesmenuadmin\:ml-0 {
+  .gestionMnotes\:ml-0 {
     margin-left: 0px;
   }
 
-  .gestionnotesmenuadmin\:mr-2 {
+  .gestionMnotes\:mr-2 {
     margin-right: 0.5rem;
   }
 
-  .gestionnotesmenuadmin\:h-\[90px\] {
+  .gestionMnotes\:h-\[90px\] {
     height: 90px;
   }
 
-  .gestionnotesmenuadmin\:h-full {
+  .gestionMnotes\:h-full {
     height: 100%;
   }
 
-  .gestionnotesmenuadmin\:w-\[250px\] {
-    width: 250px;
+  .gestionMnotes\:w-\[240px\] {
+    width: 240px;
   }
 
-  .gestionnotesmenuadmin\:justify-center {
+  .gestionMnotes\:justify-center {
     justify-content: center;
   }
 
-  .gestionnotesmenuadmin\:gap-12 {
+  .gestionMnotes\:gap-12 {
     gap: 3rem;
   }
 
-  .gestionnotesmenuadmin\:text-lg {
+  .gestionMnotes\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .gestionnotesmenuadmin\:text-sm {
+  .gestionMnotes\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }

@@ -41,6 +41,13 @@ body {
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {
+  font-family: "PoppinsSemiBold";
+  src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: semibold;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: medium;
