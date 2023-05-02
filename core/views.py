@@ -11,3 +11,6 @@ def login(request):
 
 def homeProf(request):
     return render(request, 'Prof/home-prof.html')
+
+def chatbot(request):
+    return render(request, 'chatbot/chatbot.html')
