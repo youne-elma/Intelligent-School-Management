@@ -45,6 +45,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       poppin: ["Poppins"],
+      semiPoppin: ["semiPoppins"],
     },
     colors: {
       lightcolor: "#F1F1F1",
@@ -66,6 +67,7 @@ module.exports = {
       clearwhite:"#FFFFFF",
       slidebuttonimage: "#D9D9D9",
       slidebuttonimageactive: "#FFFFFF",
+      gray69: "#B0B0B0",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -73,6 +75,9 @@ module.exports = {
       navbarPhone: { max: "760px" },
       navBarNotPhone: { min:"760px" },
       loginimagehide: { max: "770px" },
+      ajoutSeanceBig: { min:"1300px", max: "1430px" },
+      ajoutSeanceTab: { max:"1300px" },
+      ajoutSeanceMobile: { max: "700px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
