@@ -9,3 +9,5 @@ def index(request):
 def login(request):
     return render(request, 'core/login.html')
 
+def annonce(request):
+    return render(request, 'core/annonce.html')

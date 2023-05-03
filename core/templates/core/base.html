@@ -1,4 +1,5 @@
 {% load static tailwind_tags %}
+{% load django_browser_reload %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +30,9 @@
 
 </head>
 
-<body class="bg-[#F1F1F1]">
+<body>
     <div class="flex flex-row justify-between">
-        <button class="hidden w-8 navbarPhone:block absolute mt-7 ml-11 " onclick="openSidebar()">
+        <button class="hidden w-8 navbarPhone:block absolute mt-7 ml-11" onclick="openSidebar()">
             <img src="{% static 'icons/HamburgerIcon.png' %}" alt="HamburgerIcon" />
         </button>
         <div class="navBarNotPhone:relative navBarNotPhone:w-1/5">
@@ -113,6 +114,7 @@
     </div>
     <script src="{% static 'js/script.js'%}" />
 
+    {% django_browser_reload_script %}
     </body>
 
 </html>
