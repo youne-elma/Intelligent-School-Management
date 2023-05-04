@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="Container flex flex-col chatonlywide:mx-20">
+<div class="Container flex flex-col chatonlywide:mx-20 gap-14 h-[80vh]">
     {% load static %}
 
     <div class="chat-hist flex flex-col gap-14">
@@ -55,8 +55,17 @@
                 </span>
             </div>
         </div>
+
     </div>
-    <div class="chat-input">
+    <div class="bottom-form h-[52px]  flex flex-row justify-between gap-3 mt-auto">
+        <input class="w-[90%] px-5 text-[15px] rounded-[60px] border-none shadow-input" type="text"
+            placeholder="Ask something..." />
+        <button
+            class="shrink-0 bg-[white] rounded-[50%] w-[51px] h-[51px] flex justify-center items-center shadow-input"><img
+                src="{% static 'icons/send.png'%}" alt=""></button>
+        <button
+            class="shrink-0 bg-[white] rounded-[50%] w-[35px] h-[35px]  shadow-input flex justify-center items-center self-center"><img
+                src=" {% static 'icons/Vector.png'%}" alt=""></button>
 
     </div>
 </div>

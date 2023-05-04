@@ -848,8 +848,24 @@ select {
   height: 3.188rem;
 }
 
+.h-\[35px\] {
+  height: 35px;
+}
+
+.h-\[51px\] {
+  height: 51px;
+}
+
+.h-\[52px\] {
+  height: 52px;
+}
+
 .h-\[70px\] {
   height: 70px;
+}
+
+.h-\[80vh\] {
+  height: 80vh;
 }
 
 .h-screen {
@@ -912,12 +928,24 @@ select {
   width: 3.188rem;
 }
 
+.w-\[35px\] {
+  width: 35px;
+}
+
 .w-\[50\%\] {
   width: 50%;
 }
 
+.w-\[51px\] {
+  width: 51px;
+}
+
 .w-\[70px\] {
   width: 70px;
+}
+
+.w-\[90\%\] {
+  width: 90%;
 }
 
 .min-w-\[179px\] {
@@ -988,6 +1016,10 @@ select {
   gap: 3.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -1036,6 +1068,10 @@ select {
   border-radius: 5px;
 }
 
+.rounded-\[60px\] {
+  border-radius: 60px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1081,6 +1117,10 @@ select {
 
 .border-solid {
   border-style: solid;
+}
+
+.border-none {
+  border-style: none;
 }
 
 .border-lightcolor {
@@ -1342,6 +1382,12 @@ select {
 
 .opacity-50 {
   opacity: 0.5;
+}
+
+.shadow-input {
+  --tw-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 1px 1px 20px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-lm {

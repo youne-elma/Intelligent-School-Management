@@ -81,6 +81,7 @@ module.exports = {
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
       lm: "2px 2px 11px rgba(0, 0, 0, 0.25)",
+      input: "1px 1px 20px rgba(0, 0, 0, 0.1)",
     },
     dropShadow: {
       sm: " 2px 2px 10px rgba(0, 0, 0, 0.08)",
