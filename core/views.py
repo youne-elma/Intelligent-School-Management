@@ -14,3 +14,6 @@ def homeProf(request):
 
 def chatbot(request):
     return render(request, 'chatbot/chatbot.html')
+
+def addAnounce(request):
+    return render(request, 'core/addanounce.html')
