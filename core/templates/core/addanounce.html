@@ -5,7 +5,7 @@
 {% block content %}
 
 
-<div class="bg-lightcolor flex flex-col items-align ajoutAnnonceBig:px-10 ajoutAnnonceMobile:mx-0">
+<div class="bg-lightcolor flex flex-col items-align ajoutAnnonceBig:mx-10">
     <div
         class="bg-loyalblue rounded-md flex flex-col pt-4 pb-3 px-6 mx-7 text-lightcolor z-[2] ajoutAnnonceMobile:px-0 ajoutAnnonceTab:justify-center ajoutAnnonceTab:items-center">
         <h1 class="font-semiPoppin text-xl ajoutAnnonceMobile:text-base">Gestion des annonces</h1>
@@ -29,43 +29,21 @@
                         placeholder="Enter Text"></textarea>
                 </div>
             </div>
-            <div class="flex gap-14 items-center justify-between ajoutAnnonceTab:flex-col ajoutAnnonceTab:gap-7">
-                <div class="inputClass inputFSM flex items-center gap-7">
-                    <label for="filiere"
-                        class="text-bluecharcoal text-base pt-1 w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Filiere</label>
-                    <input id="filiere" type="text"
-                        class="inputStyle ajoutAnnonceMobile:w-full ajoutAnnonceMobile:max-w-[200px]"
-                        placeholder="Enter Text" />
-                </div>
-                <div class="inputClass inputFSM flex items-center gap-7">
-                    <label for="semestre"
-                        class="text-bluecharcoal text-base pt-1 w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Semestre</label>
-                    <input id="semestre" type="text"
-                        class="inputStyle ajoutAnnonceMobile:w-full ajoutAnnonceMobile:max-w-[200px]"
-                        placeholder="Enter Text" />
-                </div>
-                <div class="inputClass inputFSM flex items-center gap-7">
-                    <label for="module"
-                        class="text-bluecharcoal text-base pt-1 w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Module</label>
-                    <input id="module" type="text"
-                        class="inputStyle ajoutAnnonceMobile:w-full ajoutAnnonceMobile:max-w-[200px]"
-                        placeholder="Enter Text" />
-                </div>
-            </div>
+
             <div class="flex gap-9 items-center ajoutAnnonceTab:gap-7 ajoutAnnonceTab:flex-col">
                 <div class="inputClass flex items-center gap-7">
                     <label for="title"
-                        class="text-bluecharcoal text-base w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Groupe</label>
+                        class="text-bluecharcoal text-base w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Filiere</label>
                     <input id="title" type="text"
                         class="inputStyle ajoutAnnonceMobile:w-full ajoutAnnonceMobile:max-w-[150px]"
-                        placeholder="(optionnal)" />
+                        placeholder="(SMI)" />
                 </div>
                 <div class="inputClass flex items-center gap-7">
                     <label for="salle"
-                        class="text-bluecharcoal text-base w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Section</label>
+                        class="text-bluecharcoal text-base w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Semestre</label>
                     <input id="salle" type="text"
                         class="inputStyle ajoutAnnonceMobile:w-full ajoutAnnonceMobile:max-w-[150px]"
-                        placeholder="(optionnal)" />
+                        placeholder="(S1..)" />
                 </div>
             </div>
 
