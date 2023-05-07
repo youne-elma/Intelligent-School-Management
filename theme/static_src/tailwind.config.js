@@ -58,11 +58,21 @@ module.exports = {
       smoothgreen: "#618830",
       bluecharcoal: "#22282E",
       buttonhover: "#1C4E80",
+      white:"#FFFFFF",
+      blue:"#517ECD",
+      greyS:"#636363",
+      lightGrey:"#D9D9D9",
+      BroderGris:"#d9d9d985",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
       navbarMinTab: { min: "760px", max: "1000px" },
       navbarPhone: { max: "760px" },
+      
+      ecoursScreen: { min:"500px", max: "1150px" },
+      ecoursMScreen: {  max: "500px" },
+      smScreen:{min:"1px",max:"300px"}
+      
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",

@@ -1,0 +1,238 @@
+{% extends 'core/base.html' %}
+{% block title %} Correction du Notes {% endblock  %}
+
+{% block content %}
+
+<div class="Content flex justify-center sScreen:block mr-6 mt-0 ">
+  <div class="sScreen:items-center w-full">
+      <div class="relative bg-loyalblue flex-col rounded-md    shadow-sm mx-8 z-[2] ecoursMScreen:justify-center">
+          <p class="font-poppin   text-lightcolor m-3 p-2 text-sm ">Demandes de Correction des notes </p>
+          <p class="font-poppin   text-lightcolor  ml-5 -m-3 text-sm">Liste des demandes </p>
+      </div>
+  
+      
+        <form class="relative flex flex-col items-center justify-center bg-white pt-20 pb-8 gap-12 bottom-8 mt-4">
+            <div class="grid grid-cols-2 ecoursScreen:grid-cols-1 ecoursMScreen:grid-cols-1 ecoursMScreen:mx-auto items-center justify-center gap-10 ecoursScreen:flex-col ecoursMScreen:flex-col ecoursMScreen:text-sm">
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64">
+
+                    <label for="examen" class="  -mt-9 ml-2 text-sm ">Examen </label>   
+                       
+                    <select name="AnneeUni"  id="examen" name="examen" class="bg-grayBachground w-32 -mt-9 mr-2  py-0 px-3 flex rounded-full bg-opacity-50  bg-BroderGris text-gray-800 outline-none border-BroderGris cursor-pointer  smScreen:w-1/4 smScreen:mx-auto ecoursMScreen:px-2 ecoursMScreen:text-sm">
+                        <option selected disabled hidden classe="text-sm">Select</option>
+                        <option value="normal">Normal</option>
+                        <option value="rattrapage">Rattrapage</option>
+                    </select>
+
+                
+                   </div>
+
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
+                    <label class="  -mt-9  text-sm">Semestre</label>
+
+                    <select class="flex rounded-full bg-opacity-50  w-32 -mt-9  mr-2  py-0 px-3 bg-BroderGris border-BroderGris text-gray-800 outline-none cursor-pointer ecoursMScreen:px-2  smScreen:w-1/4 smScreen:mx-auto ecoursMScreen:text-sm">                  
+
+                        <option selected disabled hidden>Select</option>
+                      <option value="1">Semester 1</option>
+                           <option value="2">Semester 2</option>
+                           <option value="3">Semester 3</option>
+                             <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                             <option value="6">Semester 6</option>
+
+                    </select>
+                </div>
+
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
+                  <label class="font-poppin  ml-0 text-sm">Rechercher</label>
+                  <select class="bg-grayBachground flex w-32 rounded-full bg-opacity-50 bg-BroderGris mr-2 border-BroderGris outline-none cursor-pointer  smScreen:w-20 smScreen:mx-auto py-0 px-3 ecoursMScreen:px-2 ecoursMScreen:text-sm">
+                      <option selected disabled hidden>Select</option>
+
+                      <option value="nom">Num_examen </option>
+                      <option value="nom">CNE</option>
+                       <option value="prenom">CIN</option>
+                       <option value="matiere">Nom</option>
+                       <option value="note">Prénom</option>
+                       <option value="note">Salle</option>
+                       <option value="note">Groupe</option>
+                  </select>
+              </div>
+
+              <div class="flex flex-row items-center justify-center  ml-20  ecoursMScreen:mx-auto ecoursScreen:mx-auto ecoursScreen:items-center ecoursMScreen:justify-center ecoursMScreen:w-64 ecoursMScreen:text-sm  ">
+                 
+                <div >
+                    <input class=" bg-BroderGris w-36 mr-5  h-6  border-none py-1  px-3  border  300 rounded-md ml focus:outline-none "placeholder=" " >
+                      </div> 
+
+                <button id="submit" class="bg-loyalblue  hover:bg-lightblue text-white rounded-md   py-1  px-14 ">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                    <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                  </svg>
+
+            </div>
+            
+        </form>
+      
+
+    </div>
+   
+    <div class=" justify-center rounded  ">
+      <div class="flex flex-col ">
+          <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+              <div class="overflow-hidden">
+                <table class=" bg-white ">
+
+                    <thead class="border-b border-l-greyS">
+                      <tr>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                          num_Etudiant
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                          num_d'inscription
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                          Etudiant
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                          Situation_de_l'etudiant
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                          Session
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Type_du_demande
+                          </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Num_Examen
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Salle
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Groupe
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4">
+                            Data_de_la_demande
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            La_note
+                        </th>
+                        <th scope="col" class=" ex items-center text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            la_note_après_correction
+                        </th>
+                          
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Les_remarques
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Date_de_la_correction
+                        </th>
+                        <th scope="col" class="text-sm font-medium  text-loyalblue px-6 py-4 ">
+                            Changer_la_Note
+                        </th>
+                      </tr>
+                      
+                    </thead>
+                    
+                    <tbody>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-mediumcoolGray">
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">324561</td>
+                          <td class="text-sm  text-greyS0 font-light px-6 py-4 whitespace-nowrap">
+                            1002
+                          </td>
+                          <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                            IDBOUCAIR MERYEM
+                          </td>
+                          <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                            Etudiante
+                          </td>
+                          <td class="text-sm  text-greySfont-light px-6 py-4 whitespace-nowrap">
+                              Normal
+                            </td>
+                            <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                          Correction d'une note
+                            </td>
+                            <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                              30
+                                </td>
+                            <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                  11 
+                            </td>
+                            <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                              G1 
+                            </td>
+                            <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                              02/02/2023
+                             </td>
+                             <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">12
+                             </td>
+                             <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">12
+                             </td>
+                             <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">Votre réponse manque de précision
+                            
+                             </td>
+                             <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">05/02/2023
+                            
+                             </td>
+                            </td>
+                            <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">Non
+                           
+                            </td>
+                            <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-mediumcoolGray">
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">324561</td>
+                              <td class="text-sm  text-greyS0 font-light px-6 py-4 whitespace-nowrap">
+                                1002
+                              </td>
+                              <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                IDBOUCAIR MERYEM
+                              </td>
+                              <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                Etudiante
+                              </td>
+                              <td class="text-sm  text-greySfont-light px-6 py-4 whitespace-nowrap">
+                                  Normal
+                                </td>
+                                <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                              Correction d'une note
+                                </td>
+                                <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                  30
+                                    </td>
+                                <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                      11 
+                                </td>
+                                <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                  G1 
+                                </td>
+                                <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">
+                                  02/02/2023
+                                 </td>
+                                 <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">12
+                                 </td>
+                                 <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">12
+                                 </td>
+                                 <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">Votre réponse manque de précision
+                                
+                                 </td>
+                                 <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">05/02/2023
+                                
+                                 </td>
+                                </td>
+                                <td class="text-sm  text-greyS font-light px-6 py-4 whitespace-nowrap">Non
+                               
+                                </td>
+                            
+                        </tr>
+                        
+                      
+                        
+                      </tbody>
+                </table>
+              </div>
+  </div>
+ 
+</div>
+
+
+
+{% endblock %}
