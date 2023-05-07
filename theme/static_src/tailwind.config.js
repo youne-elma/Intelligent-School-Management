@@ -46,6 +46,13 @@ module.exports = {
     fontFamily: {
       poppin: ["Poppins"],
       poppinRegular: ["PoppinsRegular"],
+      poppinSemiBold: ["PoppinsMedium"],
+ 
+    },
+    variants:{
+      extend: {
+        display:['group-focus']
+      },
     },
     colors: {
       lightcolor: "#F1F1F1",
@@ -61,7 +68,8 @@ module.exports = {
       buttonhover: "#1C4E80",
       lightgreen:"#0BAF74",
       white:"#FFFFFF",
-      blue:"#517ECD",
+      BroderGris:"#d9d9d985",
+  
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -76,6 +84,9 @@ module.exports = {
       '2xl':{min:"1400px",max:"1777px"},
       '3xl':{min:"1777px", max:"2000px"},
       'Big':{min:"1777px"},
+       ecoursScreen: { min:"500px", max: "1150px" },
+       ecoursMScreen: {  max: "500px" },
+       smScreen:{min:"1px",max:"300px"}
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
