@@ -23,3 +23,5 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
     path('', include("core.urls")),
 ]
+
+handler404 = 'core.views.handling_404'

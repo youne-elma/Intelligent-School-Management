@@ -11,3 +11,6 @@ def login(request):
 
 def annonce(request):
     return render(request, 'core/annonce.html')
+
+def handling_404(request, exception):
+    return render(request, 'core/404.html', status=404)

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-#lalhzielnc1*-&vhtfxxe_jdlaib&m*+7$o=*uwj)l&&drn7i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gestion_fsa',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'root123',
         'HOST':'127.0.0.1',
     }
 }
@@ -134,6 +134,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+STATIC_ROOT = ''
+
+STATICFILES_DIRS = ('theme/static',)
 
 STATIC_URL = 'theme/static/'
 
