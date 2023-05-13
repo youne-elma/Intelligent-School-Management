@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,6 +602,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -649,6 +652,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -782,10 +788,6 @@ select {
   margin-top: -5rem;
 }
 
-.-mt-4 {
-  margin-top: -1rem;
-}
-
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -796,10 +798,6 @@ select {
 
 .ml-1 {
   margin-left: 0.25rem;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
 }
 
 .ml-11 {
@@ -836,10 +834,6 @@ select {
 
 .ml-64 {
   margin-left: 16rem;
-}
-
-.ml-7 {
-  margin-left: 1.75rem;
 }
 
 .ml-9 {
@@ -1312,10 +1306,6 @@ select {
 
 .p-4 {
   padding: 1rem;
-}
-
-.p-5 {
-  padding: 1.25rem;
 }
 
 .px-10 {
@@ -1854,11 +1844,6 @@ select {
 
   .ecoursScreen\:items-center {
     align-items: center;
-  }
-
-  .ecoursScreen\:bg-denimcolor {
-    --tw-bg-opacity: 1;
-    background-color: rgb(0 145 213 / var(--tw-bg-opacity));
   }
 }
 
