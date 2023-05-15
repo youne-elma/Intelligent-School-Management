@@ -11,3 +11,7 @@ def login(request):
 
 def annonce(request):
     return render(request, 'core/annonce.html')
+
+
+def SearchNote(request):
+    return render(request, 'core/SearchNote.html')

@@ -202,6 +202,25 @@ body {
   background: #841220;
 }
 
+/* ----------Style the ecours page-------- */
+
+.selectStyle {
+  width: 150px;
+  border-style: none;
+  border-radius: 20px;
+  background-color: rgba(217, 217, 217, 0.53);
+  color: rgba(0, 0, 0, 0.83);
+  outline: none;
+}
+.selectStyle:focus {
+  border-color: rgba(217, 217, 217, 0.7);
+}
+.rechercheButton {
+  transition: 0.3s all ease-in;
+}
+.rechercheButton:hover{
+  background-color: #0F2D4B;
+}
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {
