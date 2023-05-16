@@ -47,6 +47,7 @@ module.exports = {
       poppin: ["Poppins"],
       poppinRegular: ["PoppinsRegular"],
       poppinSemiBold: ["PoppinsMedium"],
+      poppinMedium: ["PoppinsMedium"],
     },
     variants:{
       extend: {
