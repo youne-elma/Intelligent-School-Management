@@ -58,24 +58,51 @@ module.exports = {
       smoothgreen: "#618830",
       bluecharcoal: "#22282E",
       buttonhover: "#1C4E80",
+      testColor: "#3b82f6",
+      skybleau: "#e0f2fe",
+      while1: "#f8fafc",
+      whte2: "#f1f5f9",
+      skybleu2: "#93c5fd",
+      clearwhite: "#FFFFFF",
+      slidebuttonimage: "#D9D9D9",
+      slidebuttonimageactive: "#FFFFFF",
+      lightgreen:"#0BAF74",
       white:"#FFFFFF",
-      blue:"#517ECD",
-      greyS:"#636363",
-      lightGrey:"#D9D9D9",
       BroderGris:"#d9d9d985",
+      gris:"#94a3b8",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
-      navbarMinTab: { min: "760px", max: "1000px" },
-      navbarPhone: { max: "760px" },
+    navbarMinTab: { min: "760px", max: "1000px" },
+    navbarPhone: { max: "760px" },
+    navBarNotPhone: { min: "760px" },
+    loginimagehide: { max: "770px" },
+    AnnounceViewport: {max:"1000px"},
+    'SmallScreen':{ min:"1px",max:'645px'},
+    'md': {min:"645px",max:"1000px"},
+    'xl':{min:"1000px",max:"1400px"},
+    '2xl':{min:"1400px",max:"1777px"},
+    '3xl':{min:"1777px", max:"2000px"},
+    'Big':{min:"1777px"},
+    ecoursScreen: { min:"500px", max: "1150px" },
+    ecoursMScreen: {  max: "500px" },
+    smScreen:{min:"1px",max:"300px"},
+    chatonlywide: { min: "1000px" },
+    chatonlytab: { min: "760px", max: "1000px" },
+    chatonlyphone: { max: "760px" },
+    chattextportable: { max: "1000px" },
+    ajoutAnnonceBig: { min: "1300px", max: "1430px" },
+    ajoutAnnonceTab: { max: "1300px" },
+    ajoutAnnonceMobile: { max: "700px" },
       
-      ecoursScreen: { min:"500px", max: "1150px" },
-      ecoursMScreen: {  max: "500px" },
-      smScreen:{min:"1px",max:"300px"}
       
     },
     boxShadow: {
+     
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      lm: "2px 2px 11px rgba(0, 0, 0, 0.25)",
+      input: "1px 1px 20px rgba(0, 0, 0, 0.1)",
+      
     },
   },
   plugins: [
@@ -90,3 +117,5 @@ module.exports = {
     require("@tailwindcss/aspect-ratio"),
   ],
 };
+
+

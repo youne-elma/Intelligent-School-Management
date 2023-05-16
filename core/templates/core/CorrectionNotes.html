@@ -3,21 +3,26 @@
 
 {% block content %}
 
-<div class="Content flex justify-center sScreen:block mr-6 mt-0 ">
-  <div class="sScreen:items-center w-full">
-      <div class="relative bg-loyalblue flex-col rounded-md    shadow-sm mx-8 z-[2] ecoursMScreen:justify-center">
-          <p class="font-poppin   text-lightcolor m-3 p-2 text-sm ">Demandes de Correction des notes </p>
-          <p class="font-poppin   text-lightcolor  ml-5 -m-3 text-sm">Liste des demandes </p>
-      </div>
-  
-      
+
+      <div class="Content flex justify-center sScreen:block mr-4  ">
+        
+        <div class="sScreen:items-center w-full ">
+         
+            <div  class="relative bg-loyalblue flex flex-col  rounded-md shadow-sm  mx-8  z-[2] ecoursMScreen:justify-center p-2 ">
+                <p class="font-poppin text-justify text-lg text-lightcolor ml-3 mb-0  "  >Correction des notes</p>
+                <p class="font-poppin text-justify text-sm text-lightcolor  m-3 ">Liste des demandes</p>
+                
+           
+
+            </div>
+
         <form class="relative flex flex-col items-center justify-center bg-white pt-20 pb-8 gap-12 bottom-8 mt-4">
             <div class="grid grid-cols-2 ecoursScreen:grid-cols-1 ecoursMScreen:grid-cols-1 ecoursMScreen:mx-auto items-center justify-center gap-10 ecoursScreen:flex-col ecoursMScreen:flex-col ecoursMScreen:text-sm">
                 <div class="flex items-center justify-between w-96 ecoursMScreen:w-64">
 
-                    <label for="examen" class="  -mt-9 ml-2 text-sm ">Examen </label>   
+                    <label for="examen" class=" -mt-9 ml-2 text-sm "style="color:#94a3b8;">Examen </label>   
                        
-                    <select name="AnneeUni"  id="examen" name="examen" class="bg-grayBachground w-32 -mt-9 mr-2  py-0 px-3 flex rounded-full bg-opacity-50  bg-BroderGris text-gray-800 outline-none border-BroderGris cursor-pointer  smScreen:w-1/4 smScreen:mx-auto ecoursMScreen:px-2 ecoursMScreen:text-sm">
+                    <select name="AnneeUni"  id="examen" name="examen" class="bg-grayBachground  w-36 -mt-9 mr-2  py-1 px-4 flex rounded-full bg-opacity-50  bg-BroderGris text-gray-800 outline-none border-BroderGris cursor-pointer  smScreen:w-1/4 smScreen:mx-auto ecoursMScreen:px-2 ecoursMScreen:text-sm">
                         <option selected disabled hidden classe="text-sm">Select</option>
                         <option value="normal">Normal</option>
                         <option value="rattrapage">Rattrapage</option>
@@ -27,9 +32,9 @@
                    </div>
 
                 <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
-                    <label class="  -mt-9  text-sm">Semestre</label>
+                    <label class="  -mt-9 opacity-3 text-sm  " style="color:#94a3b8;">Semestre</label>
 
-                    <select class="flex rounded-full bg-opacity-50  w-32 -mt-9  mr-2  py-0 px-3 bg-BroderGris border-BroderGris text-gray-800 outline-none cursor-pointer ecoursMScreen:px-2  smScreen:w-1/4 smScreen:mx-auto ecoursMScreen:text-sm">                  
+                    <select class="flex rounded-full bg-opacity-50  w-36 -mt-9  mr-2  py-1 px-4 bg-BroderGris border-BroderGris text-gray-800 outline-none cursor-pointer ecoursMScreen:px-2  smScreen:w-1/4 smScreen:mx-auto ecoursMScreen:text-sm">                  
 
                         <option selected disabled hidden>Select</option>
                       <option value="1">Semester 1</option>
@@ -43,8 +48,8 @@
                 </div>
 
                 <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
-                  <label class="font-poppin  ml-0 text-sm">Rechercher</label>
-                  <select class="bg-grayBachground flex w-32 rounded-full bg-opacity-50 bg-BroderGris mr-2 border-BroderGris outline-none cursor-pointer  smScreen:w-20 smScreen:mx-auto py-0 px-3 ecoursMScreen:px-2 ecoursMScreen:text-sm">
+                  <label class=" font-poppin  ml-0  text-sm" style="color:#94a3b8;">Rechercher par</label>
+                  <select class="bg-grayBachground flex w-36 rounded-full bg-opacity-50 bg-BroderGris mr-2 border-BroderGris outline-none cursor-pointer  smScreen:w-20 smScreen:mx-auto py-1 px-4 ecoursMScreen:px-2 ecoursMScreen:text-sm">
                       <option selected disabled hidden>Select</option>
 
                       <option value="nom">Num_examen </option>
@@ -56,19 +61,20 @@
                        <option value="note">Groupe</option>
                   </select>
               </div>
+              <div class="flex  items-center justify-center  ml-0 ecoursMScreen:mx-auto ecoursScreen:mx-auto ecoursScreen:items-center ecoursMScreen:justify-center ecoursMScreen:w-64 ecoursMScreen:text-sm  ">
 
-              <div class="flex flex-row items-center justify-center  ml-20  ecoursMScreen:mx-auto ecoursScreen:mx-auto ecoursScreen:items-center ecoursMScreen:justify-center ecoursMScreen:w-64 ecoursMScreen:text-sm  ">
-                 
-                <div >
-                    <input class=" bg-BroderGris w-36 mr-5  h-6  border-none py-1  px-3  border  300 rounded-md ml focus:outline-none "placeholder=" " >
+              <div class="flex flex-row items-center justify-center mr-8 w-64 ecoursMScreen:mx-auto ecoursScreen:mx-auto ecoursScreen:items-center ecoursMScreen:justify-center ecoursMScreen:w-64 ecoursMScreen:text-sm  ">
+                    <input  type="search" name="serch" placeholder="Search" class="bg-BroderGris w-full mr-14 border-BroderGris  h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" >
                       </div> 
+                  
 
-                <button id="submit" class="bg-loyalblue  hover:bg-lightblue text-white rounded-md   py-1  px-14 ">
+                <button id="submit" class="bg-loyalblue hover:bg-lightblue text-white rounded-md   py-2  px-6">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                     <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
                   </svg>
-
-            </div>
+                  
+                
+              </div> 
             
         </form>
       
