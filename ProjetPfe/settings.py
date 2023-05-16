@@ -95,7 +95,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'gestion_fsa',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'root123',
         'HOST':'127.0.0.1',
     }
 }

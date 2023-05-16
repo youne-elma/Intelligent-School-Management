@@ -231,7 +231,7 @@ body {
 }
 
 @font-face {
-  font-family: "PoppinsMedium";
+  font-family: "Poppins";
   src: url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: medium;
   font-style: normal;
