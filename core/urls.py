@@ -7,6 +7,8 @@ urlpatterns = [
     path("login/", views.login, name="login"),    
     path("annonce/",views.annonce,name="annonce"),
     path("searchNote/",views.SearchNote,name="SearchNote"),
-    path("homeProf/", views.homeProf, name="homeProf")
-    
+    path("homeProf/", views.homeProf, name="homeProf"),
+    path("chatbot/", views.chatbot, name="chatbot"),
+    path("addanounce/", views.addAnounce, name="addAnounce"),
+
 ]

@@ -1,0 +1,85 @@
+{% extends 'core/base.html' %}
+{% block title %} Cours en ligne {% endblock  %}
+
+{% block content %}
+
+<div class="Content flex justify-center sScreen:block">
+    <div class="sScreen:items-center w-full">
+        <div class="relative bg-loyalblue flex rounded-md shadow-sm mx-8 z-[2] ecoursMScreen:justify-center">
+            <p class="font-poppinSemiBold text-justify text-xl text-lightcolor p-5">Cours en ligne</p>
+        </div>
+        <form class="relative flex flex-col items-center justify-center bg-white pt-20 pb-8 gap-12 bottom-8">
+            <div class="flex items-center justify-center gap-10 ecoursScreen:flex-col ecoursMScreen:flex-col ecoursMScreen:text-sm">
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64">
+                    <label class="font-poppin opacity-30">Année universitaire</label>
+                    <select name="AnneeUni" class="flex selectStyle cursor-pointer py-1 px-4 ecoursMScreen:px-2 ecoursMScreen:text-sm">
+                        <option selected disabled hidden>Select</option>
+                        <option>Test1</option>
+                        <option>Test2</option>
+                        <option>Test3</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
+                    <label class="font-poppin opacity-30">Semestre</label>
+                    <select class="flex selectStyle cursor-pointer py-1 px-4 ecoursMScreen:px-2 ecoursMScreen:text-sm">
+                        <option selected disabled hidden>Select</option>
+                        <option>Test1</option>
+                        <option>Test2</option>
+                        <option>Test3</option>
+                        <option>Test4</option>
+                    </select>
+                </div>
+            </div>
+            <input class="rechercheButton text-sm bg-loyalblue px-5 py-3 text-white rounded-md cursor-pointer" type="submit" value="Recherche"/>
+        </form>
+        {% comment %} <table id="myTable" class=" relative shadow-sm align-center rounded-lg overflow-hidden justify-center md:table-fixed table-auto ">
+            <thead class="bg-loyalblue text-white">
+                <tr>
+                    <th class="px-2 py-2">Année universitaire</th>
+                    <th class="px-2 py-2">Semestre</th>
+                    <th class="px-2 py-2">Cours</th>
+                    <th class="px-2 py-2">Description</th>
+                </tr>
+            </thead>
+            <tbody class="bg-lightcolor">
+                <tr class="hover:bg-mediumcoolGray">
+                    <td class="px-2 py-2">2022-2023</td>
+                    <td class="px-2 py-2">S3</td>
+                    <td class="px-2 py-2">Analyse 3</td>
+                    <td class="px-2 py-2">Cours pour les etudiants du S3</td>
+                </tr>
+                <tr class="hover:bg-mediumcoolGray">
+                    <td class="px-2 py-2">2022-2023</td>
+                    <td class="px-2 py-2">S3</td>
+                    <td class="px-2 py-2">Analyse 3</td>
+                    <td class="px-2 py-2">Cours pour les etudiants du S3</td>
+                </tr>
+                <tr class="hover:bg-mediumcoolGray">
+                    <td class="px-2 py-2">2022-2023</td>
+                    <td class="px-2 py-2">S3</td>
+                    <td class="px-2 py-2">Analyse 3</td>
+                    <td class="px-2 py-2">Cours pour les etudiants du S3</td>
+                </tr>
+                <tr class="hover:bg-mediumcoolGray">
+                    <td class="px-2 py-2">2022-2023</td>
+                    <td class="px-2 py-2">S3</td>
+                    <td class="px-2 py-2">Analyse 3</td>
+                    <td class="px-2 py-2">Cours pour les etudiants du S3</td>
+                </tr>
+            </tbody>
+        </table> {% endcomment %}
+    </div>
+</div>
+
+{% comment %} <script>
+    function toggleTable() {
+      var table = document.getElementById("myTable");
+      if (table.classList.contains("hidden")) {
+        table.classList.remove("hidden");
+      } else {
+        table.classList.add("hidden");
+      }
+    }
+  </script> {% endcomment %}
+
+{% endblock %}

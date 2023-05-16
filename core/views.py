@@ -16,3 +16,9 @@ def SearchNote(request):
     
 def homeProf(request):
     return render(request, 'Prof/home-prof.html')
+
+def chatbot(request):
+    return render(request, 'chatbot/chatbot.html')
+
+def addAnounce(request):
+    return render(request, 'core/addanounce.html')
