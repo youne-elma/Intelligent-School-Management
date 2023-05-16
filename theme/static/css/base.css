@@ -141,7 +141,14 @@ body {
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {
-  font-family: "Poppins";
+  font-family: "PoppinsRegular";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PoppinsMedium";
   src: url("../fonts/Poppins-Medium.ttf") format("truetype");
   font-weight: medium;
   font-style: normal;
