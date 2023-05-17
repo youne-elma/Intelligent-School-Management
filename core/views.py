@@ -11,8 +11,8 @@ def login(request):
 def annonce(request):
     return render(request, 'core/annonce.html')
 
-def SearchNote(request):
-    return render(request, 'core/SearchNote.html')
+def searchNote(request):
+    return render(request, 'core/searchNote.html')
     
 def homeProf(request):
     return render(request, 'Prof/home-prof.html')
@@ -22,3 +22,7 @@ def chatbot(request):
 
 def addAnounce(request):
     return render(request, 'core/addanounce.html')
+
+def correctionNote(request):
+    return render(request, 'core/correctionNote.html')
+

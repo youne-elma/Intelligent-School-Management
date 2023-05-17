@@ -77,7 +77,7 @@ module.exports = {
       lightgreen:"#0BAF74",
       white:"#FFFFFF",
       BroderGris:"#d9d9d985",
-  
+      gris:"#94a3b8",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -127,3 +127,5 @@ module.exports = {
     require("postcss-simple-vars"),
   ],
 };
+
+
