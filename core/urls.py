@@ -10,5 +10,6 @@ urlpatterns = [
     path("homeProf/", views.homeProf, name="homeProf"),
     path("chatbot/", views.chatbot, name="chatbot"),
     path("addanounce/", views.addAnounce, name="addAnounce"),
-
+    path("ecours/", views.ecours, name="ecours"),
+    
 ]

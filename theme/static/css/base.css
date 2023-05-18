@@ -221,6 +221,20 @@ body {
 .rechercheButton:hover{
   background-color: #0F2D4B;
 }
+
+
+/* ---------- Style the error 404 page -------- */
+
+.goBackButton{
+  transition: 0.3s all ease-in;
+}
+
+.goBackButton:hover{
+  background-color: #202020;
+}
+
+
+
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {

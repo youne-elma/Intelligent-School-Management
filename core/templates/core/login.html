@@ -1,5 +1,5 @@
 {% load static tailwind_tags %}
-
+{% load static %}
 {% load django_browser_reload %}
 
 <!DOCTYPE html>
@@ -9,21 +9,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion</title>
 
-    {% comment %} FavIcon for all the platforms {% endcomment %}
+  {% comment %} FavIcon for all the platforms {% endcomment %}
 
   <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}">
   <link rel="mask-icon" href="{% static '/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
-  <link rel="stylesheet" type="text/css" href="../../../theme/static/css/base.css">
+  <link rel="stylesheet" type="text/css" href="{% static '/css/base.css' %}">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
-
 
   {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css%22%3E"> {% endcomment %}
   {% tailwind_css %}
 </head>
+
+  {% load static %}
   <body>
     <section class="bg-lightcolor min-h-screen flex items-center justify-center">
       {% comment %} login container{% endcomment %}
@@ -60,9 +61,7 @@
         
         </form>
 
-
-
-                {% comment %} div For the image {% endcomment %}
+        {% comment %} div For the image {% endcomment %}
         <div class="slider relative ml-2 loginimagehide:hidden">
           
           <div class="slides">
@@ -72,16 +71,16 @@
             <input type="radio" name="radio-btn" id="radio4">
 
             <div class="slide first">
-              <img src="../../../theme/static/image/Img1.png" alt="" />
+              <img src="{% static 'image/Img1.png' %}" alt="PNG School Image 1" />
             </div>
             <div class="slide">
-              <img src="../../../theme/static/image/Img2.png" alt="" /> 
+              <img src="{% static 'image/Img2.png' %}" alt="PNG School Image 2" /> 
             </div>
             <div class="slide">
-              <img src="../../../theme/static/image/Img3.png" alt="" /> 
+              <img src="{% static 'image/Img3.png' %}" alt="PNG School Image 3" /> 
             </div>
             <div class="slide">
-              <img src="../../../theme/static/image/Img4.png" alt="" /> 
+              <img src="{% static 'image/Img4.png' %}" alt="PNG School Image 4" /> 
             </div>
             
             <div class="navigation-auto">
@@ -104,7 +103,7 @@
       </div>
 
     </section>
-
+    
     <script src="{% static 'js/loginAnimation.js'%}" />
     {% django_browser_reload_script %}
   </body>

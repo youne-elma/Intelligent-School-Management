@@ -1116,6 +1116,10 @@ select {
   width: 13rem;
 }
 
+.w-56 {
+  width: 14rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1158,6 +1162,10 @@ select {
 
 .w-\[3\.188rem\] {
   width: 3.188rem;
+}
+
+.w-\[30rem\] {
+  width: 30rem;
 }
 
 .w-\[35px\] {
@@ -1474,6 +1482,11 @@ select {
   background-color: rgb(80 90 181 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#A33840\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(163 56 64 / var(--tw-bg-opacity));
+}
+
 .bg-\[white\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1682,6 +1695,11 @@ select {
   font-family: PoppinsMedium;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1798,6 +1816,16 @@ select {
 .text-\[\#7e7e7e\] {
   --tw-text-opacity: 1;
   color: rgb(126 126 126 / var(--tw-text-opacity));
+}
+
+.text-\[\#903F45\] {
+  --tw-text-opacity: 1;
+  color: rgb(144 63 69 / var(--tw-text-opacity));
+}
+
+.text-\[\#913F45\] {
+  --tw-text-opacity: 1;
+  color: rgb(145 63 69 / var(--tw-text-opacity));
 }
 
 .text-\[\#f1f5f9\] {
@@ -1936,6 +1964,22 @@ select {
 
 .hover\:fill-daredvilleorange:hover {
   fill: #EA6A47;
+}
+
+.hover\:fill-white:hover {
+  fill: #FFFFFF;
+}
+
+.hover\:fill-lightblue:hover {
+  fill: #A5D8DD;
+}
+
+.hover\:fill-loyalblue:hover {
+  fill: #1C4E80;
+}
+
+.hover\:fill-denimcolor:hover {
+  fill: #0091D5;
 }
 
 .focus\:bg-skybleau:focus {
@@ -2145,8 +2189,30 @@ select {
     display: none;
   }
 
+  .loginimagehide\:w-80 {
+    width: 20rem;
+  }
+
+  .loginimagehide\:w-\[270px\] {
+    width: 270px;
+  }
+
   .loginimagehide\:pt-10 {
     padding-top: 2.5rem;
+  }
+
+  .loginimagehide\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .loginimagehide\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .loginimagehide\:font-bold {
+    font-weight: 700;
   }
 }
 

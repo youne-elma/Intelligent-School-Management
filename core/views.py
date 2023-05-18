@@ -22,3 +22,9 @@ def chatbot(request):
 
 def addAnounce(request):
     return render(request, 'core/addanounce.html')
+
+def ecours(request):
+    return render(request, 'core/ecours.html')
+
+def handler404View(request, exception):
+    return render(request, 'error/404.html' ,{})
