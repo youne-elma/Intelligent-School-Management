@@ -26,3 +26,6 @@ def addAnounce(request):
 def correctionNote(request):
     return render(request, 'core/correctionNote.html')
 
+def ecours(request):
+    return render(request, 'core/ecours.html')
+

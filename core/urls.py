@@ -11,6 +11,7 @@ urlpatterns = [
     path("chatbot/", views.chatbot, name="chatbot"),
     path("addanounce/", views.addAnounce, name="addAnounce"),
     path("correctionNote/", views.correctionNote, name="correctionNote"),
+    path("ecours/", views.ecours, name="ecours"),
 
 ]
 
