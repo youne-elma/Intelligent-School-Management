@@ -12,8 +12,8 @@ This is a complete university website, fully optimized for _desktop_ and _mobile
 
 > Home Page
 
-![Home page, UniWebsiteAdmin](/theme/static/screens/HomePageAdmin.png)
-![Home page, UniWebsiteProfesseur](/theme/static/screens/HomePageProfesseur.png)
+![Home page, UniWebsiteAdmin](/theme/static/image/screens/HomePageAdmin.png)
+![Home page, UniWebsiteProfesseur](/theme/static/image/screens/HomePageProfesseur.png)
 
 ## Table of contents
 
@@ -50,11 +50,11 @@ and here is the Figma Design that we did by ourselves [https://www.figma.com/fil
 
 > ChatBot Page
 
-![Chatbot Page](/theme/static/screens/ChatbotPage.png)
+![Chatbot Page](/theme/static/image/screens/ChatbotPage.png)
 
 > Announcement Page
 
-![Announcement Page](/theme/static/screens/AnnouncementPage.png)
+![Announcement Page](/theme/static/image/screens/AnnouncementPage.png)
 
 ## Development
 
