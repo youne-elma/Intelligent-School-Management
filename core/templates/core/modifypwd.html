@@ -1,37 +1,45 @@
 {% extends 'core/base.html' %}
 
-{% block title %}Gestion de notes{% endblock %}
+{% block title %}Modifier Mot de Passe{% endblock %}
 
 {% block content %}
-  
+
 <!-- Suprior Card -->
     <div class="rounded-[5px] shadow-sm bg-white pb-20 mx-3 mt-7 ">
         <div  class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 ">
             <p class="ml-[35px] text-xl text-lightcolor font-semiBold ">Modifier Votre Mot de Passe</p>
         </div>
-       
-            <form class="items-center justify-center bg-white pt-20 pb-8 gap-12 bottom-8 mt-4">
 
-                <div class="justify-center">
-                    <label for="password" class=" -mt-9 ml-2 text-sm " style="color:#94a3b8;">Password Actuel</label>
-                    <input  type="password" name="#"  class="bg-mediumcoolGray w-[2700px] h-7  mr-14 border-BroderGris px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8; ">       
+
+        <div class="flex  items-center " >
+
+            <form class="">
+                <div class=" m-2 " >
+                    <label for="password" class=" text-sm " style="color:#94a3b8;">Password Actuel</label>
+                    <input  type="password" name="#"  class=" w-[270px] h-7   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">       
                 </div>
             
-                <div>
-                    <label for="password" class=" -mt-9 ml-2 text-sm " style="color:#94a3b8;">Nouveau Password</label>
-                    <input  type="password" name="#"  class="bg-BroderGris w-[270px] h-7 mr-14 border-BroderGris   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8; " >
+                <div class="m-2">
+                    <label for="password" class="  text-sm " style="color:#94a3b8;">Nouveau Password</label>
+                    <input  type="password" name="#"  class=" w-[270px] h-7   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;" >
                 </div>
 
-                <div>
+                <div class="m-2 ">
                     <label for="password" class="text-sm " style="color:#97a4b6;">Reconfirmez Nouveau Password</label>
-                    <input  type="password" name="#"  class=" bg-darkcolor  w-[270px] h-7 mr-14 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8; ">
+                    <input  type="password" name="#"  class=" w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">
                 </div>
 
-                <button id="submit" class="bg-loyalblue hover:bg-lightblue text-white rounded-md left-1  py-2  px-6">Changer Password</button>
-                         
+                <div class="m-2">
+                    <input type="checkbox" name="confirmation"  class="rounded-md border-x-mediumcoolGray bg-[#e2e2e2]" >
+                    <label for="confirmation" class="text-sm " style="color:#97a4b6;">Je Confirme</label>
+                </div>
+              
+
+                <button id="submit" class="bg-loyalblue hover:bg-lightblue text-white text-sm rounded-md  py-2  px-5">Changer Password</button>
+                        
                     
             </form>
+        </div> 
 
-        </div>
     </div>
 {% endblock %}
