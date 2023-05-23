@@ -837,6 +837,26 @@ select {
   margin-top: auto;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -847,6 +867,10 @@ select {
 
 .hidden {
   display: none;
+}
+
+.h-0 {
+  height: 0px;
 }
 
 .h-6 {
@@ -937,12 +961,44 @@ select {
   width: 90px;
 }
 
+.w-\[80\%\] {
+  width: 80%;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-\[100px\] {
+  width: 100px;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
 .min-w-\[179px\] {
   min-width: 179px;
 }
 
+.min-w-\[50\%\] {
+  min-width: 50%;
+}
+
 .max-w-\[15px\] {
   max-width: 15px;
+}
+
+.basis-\[100\%\] {
+  flex-basis: 100%;
 }
 
 .cursor-pointer {
@@ -981,6 +1037,10 @@ select {
   gap: 0.25rem;
 }
 
+.gap-10 {
+  gap: 2.5rem;
+}
+
 .gap-11 {
   gap: 2.75rem;
 }
@@ -1005,12 +1065,28 @@ select {
   gap: 60px;
 }
 
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
 .self-end {
   align-self: flex-end;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .rounded-\[5px\] {
   border-radius: 5px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-t {
@@ -1024,6 +1100,11 @@ select {
 .border-lightcolor {
   --tw-border-opacity: 1;
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
+}
+
+.border-\[\#e4dfdf\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(228 223 223 / var(--tw-border-opacity));
 }
 
 .bg-\[\#1C4E80\] {
@@ -1061,6 +1142,21 @@ select {
   background-color: rgb(97 136 48 / var(--tw-bg-opacity));
 }
 
+.bg-darkcolor {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+}
+
+.bg-cornflower {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.bg-loyalblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -1069,9 +1165,44 @@ select {
   padding: 0.625rem;
 }
 
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-\[35px\] {
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .pb-20 {
@@ -1102,8 +1233,16 @@ select {
   padding-top: 17px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-right {
   text-align: right;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
 
 .font-poppin {
@@ -1153,6 +1292,30 @@ select {
   line-height: 1.75rem;
 }
 
+.text-\[16px\] {
+  font-size: 16px;
+}
+
+.text-\[2rem\] {
+  font-size: 2rem;
+}
+
+.text-\[0\.5rem\] {
+  font-size: 0.5rem;
+}
+
+.text-\[0\.8rem\] {
+  font-size: 0.8rem;
+}
+
+.text-\[1rem\] {
+  font-size: 1rem;
+}
+
+.text-\[0\.9rem\] {
+  font-size: 0.9rem;
+}
+
 .font-\[500\] {
   font-weight: 500;
 }
@@ -1181,6 +1344,11 @@ select {
 .text-\[\#7e7e7e\] {
   --tw-text-opacity: 1;
   color: rgb(126 126 126 / var(--tw-text-opacity));
+}
+
+.text-\[white\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-darkcolor {
@@ -1352,5 +1520,23 @@ select {
   .gestionMnotes\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .gestionEtudiants\:flex-col {
+    flex-direction: column;
+  }
+
+  .gestionEtudiants\:justify-center {
+    justify-content: center;
+  }
+
+  .gestionEtudiants\:gap-9 {
+    gap: 2.25rem;
+  }
+
+  .gestionEtudiants\:self-center {
+    align-self: center;
   }
 }

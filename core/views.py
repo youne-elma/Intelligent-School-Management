@@ -6,5 +6,8 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'core/index.html')
 
-def gestionNotes(request):
-    return render(request, 'core/gestionNotes.html')
+def gestionEtudiant(request):
+    return render(request, 'core/gestionEtudiant.html')
+
+def uplaodStudentList(request):
+    return render(request, 'core/uplaodStudentList.html')

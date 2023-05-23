@@ -1,0 +1,113 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Gestion des etudiants{% endblock %}
+
+{% block content %}
+
+<!-- Suprior Card -->
+<div class="rounded-[5px] shadow-sm bg-[white] pb-20 mx-3 mt-7 gestionMnotes:mx-0">
+    <div
+        class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 gestionMnotes:justify-center">
+        <p class="ml-[35px] text-xl text-lightcolor font-semiBold gestionMnotes:text-lg gestionMnotes:ml-0">Gestion des
+            notes</p>
+    </div>
+
+
+    <div class="Content flex gap-11 flex-wrap justify-center mt-6 gestionMnotes:gap-12">
+
+        <!--This is option01-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] flex bg-[#F1F1F1] rounded-[5px] shadow-sm justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-denimcolor rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-1" src="/theme/static/icons/correctionNotes.png" alt="icon">
+                </div>
+                <p
+                    class="text-darkcolor text-base font-poppin mr-8 gestionMnotes:mr-2 gestionMnotes:text-sm text-right">
+                    Télécharger la liste des étudiants</p>
+            </div>
+        </a>
+
+        <!--This is option02-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] bg-[#F1F1F1] rounded-[5px] shadow-sm flex justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-smoothgreen rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-2 w-[62px] h-[57px]" src="/theme/static/icons/suiviNotes.png" alt="icon">
+                </div>
+                <p
+                    class="text-darkcolor text-base font-poppin mr-8 gestionMnotes:mr-2 gestionMnotes:text-sm text-right">
+                    Telecharger informations d'inscription</p>
+            </div>
+        </a>
+
+        <!--This is option03-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] bg-[#F1F1F1] rounded-[5px] shadow-sm flex justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-daredvilleorange rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-1 w-[62px] h-[57px]" src="/theme/static/icons/maquettenotes.png" alt="icon">
+                </div>
+                <p
+                    class="text-darkcolor text-base font-poppin mr-8 gestionMnotes:mr-2 gestionMnotes:text-sm text-right">
+                    Télécharger liste d'une filiere</p>
+            </div>
+        </a>
+
+        <!--This is option04-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] bg-[#F1F1F1] rounded-[5px] shadow-sm flex justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-denimcolor rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-1 w-[62px] h-[57px]" src="/theme/static/icons/finalNotes.png" alt="icon">
+                </div>
+                <p class="text-darkcolor text-base font-poppin mr-8 gestionMnotes:mr-2 gestionMnotes:text-sm">Notes
+                    finales</p>
+            </div>
+        </a>
+
+        <!--This is option05-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] bg-lightcolor rounded-[5px] shadow-sm flex justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-smoothgreen rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-1 w-[62px] h-[57px]" src="/theme/static/icons/rattnotes.png" alt="icon">
+                </div>
+                <p class="text-darkcolor text-base font-poppin mr-4 gestionMnotes:mr-2 gestionMnotes:text-sm">Session
+                    <br> &emsp;de rattrapages</p>
+            </div>
+        </a>
+
+        <!--This is option06-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] bg-[#F1F1F1] rounded-[5px] shadow-sm flex justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-daredvilleorange rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-1 w-[62px] h-[57px]" src="/theme/static/icons/sessionormal.png" alt="icon">
+                </div>
+                <p class="text-darkcolor text-base font-poppin mr-8 gestionMnotes:mr-2 gestionMnotes:text-sm">Session
+                    <br> &emsp;normale</p>
+            </div>
+        </a>
+        <!--This is option05-->
+        <a href="">
+            <div
+                class="w-[300px] h-[100px] bg-lightcolor rounded-[5px] shadow-sm flex justify-between items-center gestionMnotes:w-[240px] gestionMnotes:h-[90px] mx-4">
+                <div
+                    class="shadow-sm w-[90px] h-[90px] bg-smoothgreen rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMnotes:ml-0 gestionMnotes:mb-0 gestionMnotes:h-full">
+                    <img class="ml-2 mt-1 w-[62px] h-[57px]" src="/theme/static/icons/rattnotes.png" alt="icon">
+                </div>
+                <p class="text-darkcolor text-base font-poppin mr-4 gestionMnotes:mr-2 gestionMnotes:text-sm">Session
+                    <br> &emsp;de rattrapages</p>
+            </div>
+        </a>
+
+    </div>
+</div>
+{% endblock %}
