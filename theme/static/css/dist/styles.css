@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,9 +602,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -652,9 +649,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -748,6 +742,14 @@ select {
   bottom: 0px;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
 .top-\[-10\%\] {
   top: -10%;
 }
@@ -761,6 +763,11 @@ select {
   margin-right: 2.5rem;
 }
 
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -768,6 +775,10 @@ select {
 
 .-mt-20 {
   margin-top: -5rem;
+}
+
+.-mt-9 {
+  margin-top: -2.25rem;
 }
 
 .mb-10 {
@@ -826,12 +837,24 @@ select {
   margin-left: 16px;
 }
 
+.ml-\[35px\] {
+  margin-left: 35px;
+}
+
 .ml-auto {
   margin-left: auto;
 }
 
 .mr-11 {
   margin-right: 2.75rem;
+}
+
+.mr-14 {
+  margin-right: 3.5rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
 }
 
 .mr-7 {
@@ -962,6 +985,10 @@ select {
   height: 1.5rem;
 }
 
+.h-7 {
+  height: 1.75rem;
+}
+
 .h-8 {
   height: 2rem;
 }
@@ -1070,6 +1097,14 @@ select {
   width: 26px;
 }
 
+.w-\[2700px\] {
+  width: 2700px;
+}
+
+.w-\[270px\] {
+  width: 270px;
+}
+
 .w-\[50\%\] {
   width: 50%;
 }
@@ -1138,6 +1173,10 @@ select {
   gap: 0.25rem;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1198,6 +1237,10 @@ select {
   border-radius: 5px;
 }
 
+.rounded-full {
+  border-radius: 9999px;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -1252,6 +1295,11 @@ select {
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
 
+.bg-\[\#1C4E80\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
 .bg-\[white\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1277,6 +1325,11 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-darkcolor {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+}
+
 .bg-denimcolor {
   --tw-bg-opacity: 1;
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
@@ -1290,6 +1343,16 @@ select {
 .bg-lightgreen {
   --tw-bg-opacity: 1;
   background-color: rgb(11 175 116 / var(--tw-bg-opacity));
+}
+
+.bg-loyalblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.bg-mediumcoolGray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 144 154 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1328,6 +1391,16 @@ select {
   padding-right: 1rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -1348,12 +1421,25 @@ select {
   padding-bottom: 1rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
 
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .pb-5 {
   padding-bottom: 1.25rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .pb-\[17px\] {
@@ -1368,8 +1454,16 @@ select {
   padding-left: 32px;
 }
 
+.pr-10 {
+  padding-right: 2.5rem;
+}
+
 .pr-9 {
   padding-right: 2.25rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
 }
 
 .pt-\[17px\] {
@@ -1433,6 +1527,11 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -1539,6 +1638,11 @@ select {
 .hover\:bg-cornflower:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-lightblue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(165 216 221 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-skybleu2:hover {
