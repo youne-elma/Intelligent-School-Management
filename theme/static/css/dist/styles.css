@@ -1325,6 +1325,10 @@ select {
   border-style: solid;
 }
 
+.border-none {
+  border-style: none;
+}
+
 .border-darkcolor {
   --tw-border-opacity: 1;
   border-color: rgb(32 32 32 / var(--tw-border-opacity));
@@ -1634,6 +1638,11 @@ select {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-\[\#97a4b6\] {
+  --tw-text-opacity: 1;
+  color: rgb(151 164 182 / var(--tw-text-opacity));
+}
+
 .opacity-100 {
   opacity: 1;
 }
@@ -1836,6 +1845,11 @@ select {
     position: fixed;
   }
 
+  .navbarPhone\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .navbarPhone\:block {
     display: block;
   }
@@ -1848,8 +1862,20 @@ select {
     width: 296px;
   }
 
+  .navbarPhone\:w-\[150px\] {
+    width: 150px;
+  }
+
+  .navbarPhone\:justify-center {
+    justify-content: center;
+  }
+
   .navbarPhone\:pl-10 {
     padding-left: 2.5rem;
+  }
+
+  .navbarPhone\:text-center {
+    text-align: center;
   }
 }
 
@@ -1963,6 +1989,22 @@ select {
 @media (min-width: 1px) and (max-width: 645px) {
   .SmallScreen\:-mt-6 {
     margin-top: -1.5rem;
+  }
+
+  .SmallScreen\:flex-col {
+    flex-direction: column;
+  }
+
+  .SmallScreen\:justify-center {
+    justify-content: center;
+  }
+
+  .SmallScreen\:self-auto {
+    align-self: auto;
+  }
+
+  .SmallScreen\:text-center {
+    text-align: center;
   }
 }
 
