@@ -12,6 +12,8 @@ urlpatterns = [
     path("addanounce/", views.addAnounce, name="addAnounce"),
     path("correctionNote/", views.correctionNote, name="correctionNote"),
     path("ecours/", views.ecours, name="ecours"),
+    path("sessionRattrapage/", views.sessionRattrapage, name="sessionRattrapage"),
+    path("sessionNormale/", views.sessionNormale, name="sessionNormale"),
 
 ]
 
