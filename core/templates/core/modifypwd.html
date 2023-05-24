@@ -11,35 +11,31 @@
         </div>
 
 
-        <div class="flex  items-center " >
 
-            <form class="">
-                <div class=" m-2 " >
-                    <label for="password" class=" text-sm " style="color:#94a3b8;">Password Actuel</label>
-                    <input  type="password" name="#"  class=" w-[270px] h-7   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">       
-                </div>
-            
-                <div class="m-2">
-                    <label for="password" class="  text-sm " style="color:#94a3b8;">Nouveau Password</label>
-                    <input  type="password" name="#"  class=" w-[270px] h-7   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;" >
-                </div>
+        <form class="flex flex-col m-10  gap-4">
+            <div class=" m-2 flex flex-row justify-center" >
+                <label for="password" class=" w-60 text-sm block" style="color:#94a3b8;">Password Actuel</label>
+                <input  type="password" name="#"  class=" w-[270px] h-7   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">       
+            </div>
+        
+            <div class="m-2 flex flex-row justify-center">
+                <label for="password" class=" w-60  text-sm" style="color:#94a3b8;">Nouveau Password</label>
+                <input  type="password" name="#"  class=" w-[270px] h-7   px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;" >
+            </div>
 
-                <div class="m-2 ">
-                    <label for="password" class="text-sm " style="color:#97a4b6;">Reconfirmez Nouveau Password</label>
-                    <input  type="password" name="#"  class=" w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">
-                </div>
+            <div class="m-2 flex flex-row justify-center">
+                <label for="password" class=" w-60 text-sm " style="color:#97a4b6;">Reconfirmez Nouveau Password</label>
+                <input  type="password" name="#"  class=" w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">
+            </div>
 
-                <div class="m-2">
-                    <input type="checkbox" name="confirmation"  class="rounded-md border-x-mediumcoolGray bg-[#e2e2e2]" >
-                    <label for="confirmation" class="text-sm " style="color:#97a4b6;">Je Confirme</label>
-                </div>
-              
-
-                <button id="submit" class="bg-loyalblue hover:bg-lightblue text-white text-sm rounded-md  py-2  px-5">Changer Password</button>
-                        
+            <div class="m-2 flex flex-row self-end" >
+                <input type="checkbox" name="confirmation"  class="rounded-md  bg-[#e2e2e2] mr-2 " style="border:0;">
+                <label for="confirmation" class="text-sm " style="color:#97a4b6;">Je Confirme</label>
+            </div>
+            <button id="submit" class=" max-w-[270px] bg-loyalblue hover:bg-lightblue text-white text-sm rounded-md  py-2  px-5 self-end">Changer Password</button>
                     
-            </form>
-        </div> 
+                
+        </form>
 
     </div>
 {% endblock %}
