@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Upload Inscriptions informations{% endblock %}
+
+{% block content %}
+<!-- Suprior Card -->
+<div class="rounded-[5px] shadow-sm bg-[white] pb-20 mx-3 mt-7 gestionMnotes:mx-0 ">
+    <div
+        class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 gestionMnotes:justify-center">
+        <p class="px-[35px] text-xl text-lightcolor gestionMnotes:text-lg ">
+            Télécharger
+            la liste des informations d'inscription</p>
+    </div>
+    <form>
+        <div class=" px-8 flex flex-col gap-4">
+            <div class="mt-6 flex flex-col gap-4">
+                <span class="text-[1rem]">Exemple de contenu du dossier d'inscription</span>
+                <img class="w-[100%]" src="/theme/static/icons/exemple2.png" alt="icon">
+            </div>
+
+            <button
+                class="gestionEtudiants:self-center rounded-[5px] bg-daredvilleorange text-[white] text-[0.9rem] w-[200px] py-2">Telecharger
+                le
+                template</button>
+
+            <span class="mt-20">Liste des informations d'inscription</span>
+            <input type="file" name="file" id="file" class="py-2 px-4 rounded-[5px] border border-[#e4dfdf]">
+            <input type="submit" value="Submit"
+                class="cursor-pointer gestionEtudiants:self-center rounded-[5px] bg-smoothgreen text-[white] text-[0.9rem] w-[200px] py-2">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
