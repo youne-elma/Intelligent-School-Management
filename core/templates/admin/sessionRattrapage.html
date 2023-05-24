@@ -1,0 +1,40 @@
+{% extends '../core/base.html' %}
+
+{% block title %} Session Rattrapage {% endblock %}
+
+{% block content %}
+
+<div class="bg-lightcolor flex flex-col items-align ajoutAnnonceBig:mx-10">
+    <div
+        class="bg-loyalblue rounded-md flex flex-col pt-4 pb-3 px-6 mx-7 text-lightcolor z-[2] ajoutAnnonceMobile:px-0 ajoutAnnonceTab:justify-center ajoutAnnonceTab:items-center">
+        <h1 class="font-semiPoppin text-xl ajoutAnnonceMobile:text-base">Session de Rattrapage</h1>
+    </div>
+    <div class="flex flex-col bg-clearwhite relative bottom-8 rounded-md px-10 gap-6">
+        <div class="flex flex-col justify-center pt-16">
+            <h1 class="text-informationColor text-lg">Help :</h1>
+            <span class="bg-informationColor w-16 h-[2px]"></span>
+        </div>
+        <div class="flex flex-col ml-[28px]">
+            <p class="text-informationColor ">Vous pouvez telecharger les notes de la session de rattrapage en utilisant un fichier CSV</p>
+            <p class="text-informationColor ">Le fichier doit respecter les cases suivantes:</p>
+        </div>
+        <div class="flex flex-col mt-4">
+            <div class="flex text-loyalblue gap-10 justify-between mx-2">
+                <p class="">Numero d'inscrip</p>
+                <p class="">N° Session</p>
+                <p class="">Note</p>
+                <p class="">Resultat</p>
+            </div>
+            <span class="bg-loyalblue w-full h-[2px]"></span>
+        </div>
+        <div class="flex flex-col gap-5 mt-5 inputFileSession">
+            <h2 class="text-informationColor text-lg">Fichier de Notes: </h2>
+            <div class="borderSessionButton">
+                <input id="inputTag" type="file" name="Choisir un fichier" required/>
+            </div>
+        </div>
+        <button class="text-white bg-loyalblue my-5 h-10 w-24 rechercheButton uploadButtonSession">Upload</button>
+    </div>
+</div>
+
+{% endblock %}

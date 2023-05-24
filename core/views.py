@@ -29,3 +29,8 @@ def correctionNote(request):
 def ecours(request):
     return render(request, 'core/ecours.html')
 
+def sessionRattrapage(request):
+    return render(request, 'admin/sessionRattrapage.html')
+
+def sessionNormale(request):
+    return render(request, 'admin/sessionNormale.html')
