@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,9 +602,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -652,9 +649,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -748,6 +742,14 @@ select {
   bottom: 0px;
 }
 
+.bottom-14 {
+  bottom: 3.5rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .top-\[-10\%\] {
   top: -10%;
 }
@@ -756,14 +758,43 @@ select {
   margin: 1.75rem;
 }
 
+.m-16 {
+  margin: 4rem;
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
 
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.mx-28 {
+  margin-left: 7rem;
+  margin-right: 7rem;
+}
+
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .-mt-20 {
@@ -914,6 +945,22 @@ select {
   margin-top: auto;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.-mb-20 {
+  margin-bottom: -5rem;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
 .block {
   display: block;
 }
@@ -926,8 +973,16 @@ select {
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
 .hidden {
   display: none;
+}
+
+.h-1\/2 {
+  height: 50%;
 }
 
 .h-10 {
@@ -992,6 +1047,10 @@ select {
 
 .max-h-\[15px\] {
   max-height: 15px;
+}
+
+.max-h-\[171px\] {
+  max-height: 171px;
 }
 
 .min-h-screen {
@@ -1078,6 +1137,10 @@ select {
   width: 70px;
 }
 
+.w-9 {
+  width: 2.25rem;
+}
+
 .min-w-\[179px\] {
   min-width: 179px;
 }
@@ -1088,6 +1151,20 @@ select {
 
 .max-w-\[15px\] {
   max-width: 15px;
+}
+
+.max-w-\[166px\] {
+  max-width: 166px;
+}
+
+.max-w-\[270px\] {
+  max-width: 270px;
+}
+
+.border-spacing-6 {
+  --tw-border-spacing-x: 1.5rem;
+  --tw-border-spacing-y: 1.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
 }
 
 .cursor-pointer {
@@ -1138,6 +1215,10 @@ select {
   gap: 0.25rem;
 }
 
+.gap-16 {
+  gap: 4rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1182,6 +1263,25 @@ select {
   gap: 60px;
 }
 
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-x-28 {
+  -moz-column-gap: 7rem;
+       column-gap: 7rem;
+}
+
+.gap-x-10 {
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+}
+
+.gap-x-9 {
+  -moz-column-gap: 2.25rem;
+       column-gap: 2.25rem;
+}
+
 .self-end {
   align-self: flex-end;
 }
@@ -1196,6 +1296,10 @@ select {
 
 .rounded-\[5px\] {
   border-radius: 5px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-lg {
@@ -1252,6 +1356,16 @@ select {
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
 
+.border-loyalblue {
+  --tw-border-opacity: 1;
+  border-color: rgb(28 78 128 / var(--tw-border-opacity));
+}
+
+.border-bluecharcoal {
+  --tw-border-opacity: 1;
+  border-color: rgb(34 40 46 / var(--tw-border-opacity));
+}
+
 .bg-\[white\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1292,6 +1406,11 @@ select {
   background-color: rgb(11 175 116 / var(--tw-bg-opacity));
 }
 
+.bg-loyalblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1318,6 +1437,10 @@ select {
   padding: 2.25rem;
 }
 
+.p-6 {
+  padding: 1.5rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1326,6 +1449,11 @@ select {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-2 {
@@ -1348,8 +1476,27 @@ select {
   padding-bottom: 1rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pb-5 {
@@ -1376,12 +1523,20 @@ select {
   padding-top: 17px;
 }
 
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .text-center {
   text-align: center;
 }
 
 .text-right {
   text-align: right;
+}
+
+.font-poppin {
+  font-family: Poppins;
 }
 
 .font-poppinRegular {
@@ -1433,6 +1588,11 @@ select {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -1499,6 +1659,11 @@ select {
   color: rgb(241 241 241 / var(--tw-text-opacity));
 }
 
+.text-loyalblue {
+  --tw-text-opacity: 1;
+  color: rgb(28 78 128 / var(--tw-text-opacity));
+}
+
 .text-mediumcoolGray {
   --tw-text-opacity: 1;
   color: rgb(126 144 154 / var(--tw-text-opacity));
@@ -1525,6 +1690,11 @@ select {
   --tw-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --tw-shadow-colored: 0px 4px 4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.drop-shadow-2xl {
+  --tw-drop-shadow: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .filter {
@@ -1831,8 +2001,49 @@ select {
 }
 
 @media (min-width: 1px) and (max-width: 645px) {
+  .SmallScreen\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .SmallScreen\:-mt-6 {
     margin-top: -1.5rem;
+  }
+
+  .SmallScreen\:mb-7 {
+    margin-bottom: 1.75rem;
+  }
+
+  .SmallScreen\:mt-4 {
+    margin-top: 1rem;
+  }
+
+  .SmallScreen\:block {
+    display: block;
+  }
+
+  .SmallScreen\:flex {
+    display: flex;
+  }
+
+  .SmallScreen\:flex-none {
+    flex: none;
+  }
+
+  .SmallScreen\:flex-col {
+    flex-direction: column;
+  }
+
+  .SmallScreen\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .SmallScreen\:justify-center {
+    justify-content: center;
+  }
+
+  .SmallScreen\:self-auto {
+    align-self: auto;
   }
 }
 

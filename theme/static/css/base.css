@@ -201,8 +201,21 @@ body {
 .deleteButton:hover {
   background: #841220;
 }
+/* Profile Page */
 
-/* Importing The fonts for tailwind work :: //Younelma Edited this. */
+#profileInfos td{
+  height: 50px;
+  width: 250px;
+}
+
+.changePasswordButton {
+  transition: 0.3s all ease-in;
+}
+.changePasswordButton:hover{
+  background-color: #0F2D4B;
+}
+
+/* Importing The fonts for tailwind work ::*/
 
 @font-face {
   font-family: "PoppinsRegular";

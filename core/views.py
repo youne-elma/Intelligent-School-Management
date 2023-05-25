@@ -11,3 +11,6 @@ def login(request):
 
 def annonce(request):
     return render(request, 'core/annonce.html')
+
+def profile(request):
+    return render(request, 'core/profile.html')
