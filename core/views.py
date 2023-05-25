@@ -9,8 +9,8 @@ def index(request):
 def gestionEtudiant(request):
     return render(request, 'core/gestionEtudiant.html')
 
-def uplaodStudentList(request):
-    return render(request, 'core/uploadInscriptionList.html')
+def uploadStudentList(request):
+    return render(request, 'core/uploadStudentList.html')
 
 def uplaodInscriptionInfos(request):
     return render(request, 'core/uploadInscriptionInfos.html')
