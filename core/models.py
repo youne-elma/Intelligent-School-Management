@@ -286,9 +286,10 @@ class Etudiant(models.Model):
 
 
 class Examen(models.Model):
-    id_local = models.OneToOneField('Local', models.DO_NOTHING, db_column='ID_LOCAL', primary_key=True)  # Field name made lowercase. The composite primary key (ID_LOCAL, APOGEE, ID_MODMAT, N_EXAMEN, h_Debut) found, that is not supported. The first column is selected.
-    apogee = models.ForeignKey(Etudiant, models.DO_NOTHING, db_column='APOGEE')  # Field name made lowercase.
-    id_modmat = models.ForeignKey('Module', models.DO_NOTHING, db_column='ID_MODMAT')  # Field name made lowercase.
+    id = models.AutoField(primary_key=True)
+    id_local = models.OneToOneField('Local', models.DO_NOTHING, db_column='ID_LOCAL')  # Field name made lowercase. The composite primary key (ID_LOCAL, APOGEE, ID_MODMAT, N_EXAMEN, h_Debut) found, that is not supported. The first column is selected.
+    apogee = models.OneToOneField(Etudiant, models.DO_NOTHING, db_column='APOGEE')  # Field name made lowercase.
+    id_modmat = models.OneToOneField('Module', models.DO_NOTHING, db_column='ID_MODMAT')  # Field name made lowercase.
     n_examen = models.IntegerField(db_column='N_EXAMEN')  # Field name made lowercase.
     h_debut = models.DateTimeField(db_column='h_Debut')  # Field name made lowercase.
     h_fin = models.DateTimeField(db_column='h_Fin')  # Field name made lowercase.
