@@ -785,6 +785,11 @@ select {
   margin-right: 2.5rem;
 }
 
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -880,6 +885,10 @@ select {
   margin-left: 16px;
 }
 
+.ml-\[35px\] {
+  margin-left: 35px;
+}
+
 .ml-auto {
   margin-left: auto;
 }
@@ -896,8 +905,8 @@ select {
   margin-right: 0.5rem;
 }
 
-.mr-4 {
-  margin-right: 1rem;
+.mr-5 {
+  margin-right: 1.25rem;
 }
 
 .mr-7 {
@@ -982,14 +991,6 @@ select {
 
 .mt-auto {
   margin-top: auto;
-}
-
-.ml-10 {
-  margin-left: 2.5rem;
-}
-
-.ml-16 {
-  margin-left: 4rem;
 }
 
 .block {
@@ -1216,6 +1217,10 @@ select {
   width: 51px;
 }
 
+.w-\[60\%\] {
+  width: 60%;
+}
+
 .w-\[70px\] {
   width: 70px;
 }
@@ -1294,6 +1299,10 @@ select {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1513,6 +1522,11 @@ select {
   background-color: #d9d9d985;
 }
 
+.bg-\[\#1C4E80\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#505AB5\] {
   --tw-bg-opacity: 1;
   background-color: rgb(80 90 181 / var(--tw-bg-opacity));
@@ -1584,6 +1598,10 @@ select {
   padding: 1.25rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .p-9 {
   padding: 2.25rem;
 }
@@ -1613,6 +1631,11 @@ select {
   padding-right: 1.5rem;
 }
 
+.px-\[50px\] {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1636,6 +1659,11 @@ select {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .pb-10 {
@@ -1726,6 +1754,11 @@ select {
   font-family: PoppinsMedium;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
@@ -1814,6 +1847,10 @@ select {
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .leading-normal {
@@ -2134,6 +2171,11 @@ select {
     position: fixed;
   }
 
+  .navbarPhone\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .navbarPhone\:block {
     display: block;
   }
@@ -2146,8 +2188,16 @@ select {
     width: 296px;
   }
 
+  .navbarPhone\:justify-center {
+    justify-content: center;
+  }
+
   .navbarPhone\:pl-10 {
     padding-left: 2.5rem;
+  }
+
+  .navbarPhone\:text-center {
+    text-align: center;
   }
 }
 
@@ -2265,6 +2315,41 @@ select {
 @media (min-width: 1px) and (max-width: 645px) {
   .SmallScreen\:-mt-6 {
     margin-top: -1.5rem;
+  }
+
+  .SmallScreen\:w-auto {
+    width: auto;
+  }
+
+  .SmallScreen\:justify-center {
+    justify-content: center;
+  }
+
+  .SmallScreen\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .SmallScreen\:px-\[24px\] {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .SmallScreen\:text-\[11px\] {
+    font-size: 11px;
+  }
+
+  .SmallScreen\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .SmallScreen\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .SmallScreen\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 

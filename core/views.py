@@ -29,3 +29,5 @@ def correctionNote(request):
 def ecours(request):
     return render(request, 'core/ecours.html')
 
+def annonceinfos(request):
+    return render(request, 'core/annonceinfos.html')
