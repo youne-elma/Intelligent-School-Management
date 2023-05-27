@@ -31,3 +31,9 @@ def ecours(request):
 
 def annonceinfos(request):
     return render(request, 'core/annonceinfos.html')
+
+def sessionRattrapage(request):
+    return render(request, 'admin/sessionRattrapage.html')
+
+def sessionNormale(request):
+    return render(request, 'admin/sessionNormale.html')

@@ -13,6 +13,8 @@ urlpatterns = [
     path("correctionNote/", views.correctionNote, name="correctionNote"),
     path("ecours/", views.ecours, name="ecours"),
     path("annonceinfos/", views.annonceinfos, name="annonceinfos"),
+    path("sessionRattrapage/", views.sessionRattrapage, name="sessionRattrapage"),
+    path("sessionNormale/", views.sessionNormale, name="sessionNormale"),
 
 ]
 

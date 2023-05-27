@@ -78,6 +78,7 @@ module.exports = {
       white:"#FFFFFF",
       BroderGris:"#d9d9d985",
       gris:"#94a3b8",
+      informationColor:"#7A7A7A",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },

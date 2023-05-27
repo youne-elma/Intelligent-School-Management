@@ -790,6 +790,11 @@ select {
   margin-right: 0.75rem;
 }
 
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -803,6 +808,11 @@ select {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .-mt-20 {
@@ -887,6 +897,10 @@ select {
 
 .ml-\[35px\] {
   margin-left: 35px;
+}
+
+.ml-\[28px\] {
+  margin-left: 28px;
 }
 
 .ml-auto {
@@ -1077,6 +1091,10 @@ select {
   height: 26px;
 }
 
+.h-\[2px\] {
+  height: 2px;
+}
+
 .h-\[3\.188rem\] {
   height: 3.188rem;
 }
@@ -1119,6 +1137,10 @@ select {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-16 {
+  width: 4rem;
 }
 
 .w-2 {
@@ -1557,6 +1579,11 @@ select {
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
 }
 
+.bg-informationColor {
+  --tw-bg-opacity: 1;
+  background-color: rgb(122 122 122 / var(--tw-bg-opacity));
+}
+
 .bg-lightcolor {
   --tw-bg-opacity: 1;
   background-color: rgb(241 241 241 / var(--tw-bg-opacity));
@@ -1904,6 +1931,11 @@ select {
 .text-denimcolor {
   --tw-text-opacity: 1;
   color: rgb(0 145 213 / var(--tw-text-opacity));
+}
+
+.text-informationColor {
+  --tw-text-opacity: 1;
+  color: rgb(122 122 122 / var(--tw-text-opacity));
 }
 
 .text-lightcolor {
@@ -2449,6 +2481,11 @@ select {
   .ecoursMScreen\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .ecoursMScreen\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
