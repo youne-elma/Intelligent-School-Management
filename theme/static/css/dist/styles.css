@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,9 +602,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -652,9 +649,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -748,6 +742,10 @@ select {
   bottom: 0px;
 }
 
+.bottom-8 {
+  bottom: 2rem;
+}
+
 .top-\[-10\%\] {
   top: -10%;
 }
@@ -759,6 +757,11 @@ select {
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .mx-auto {
@@ -826,12 +829,20 @@ select {
   margin-left: 16px;
 }
 
+.ml-\[35px\] {
+  margin-left: 35px;
+}
+
 .ml-auto {
   margin-left: auto;
 }
 
 .mr-11 {
   margin-right: 2.75rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
 }
 
 .mr-7 {
@@ -1074,6 +1085,10 @@ select {
   width: 50%;
 }
 
+.w-\[60\%\] {
+  width: 60%;
+}
+
 .w-\[70px\] {
   width: 70px;
 }
@@ -1120,6 +1135,10 @@ select {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1252,6 +1271,11 @@ select {
   border-color: rgb(241 241 241 / var(--tw-border-opacity));
 }
 
+.bg-\[\#1C4E80\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
 .bg-\[white\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1314,8 +1338,16 @@ select {
   padding: 1.25rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .p-9 {
   padding: 2.25rem;
+}
+
+.p-10 {
+  padding: 2.5rem;
 }
 
 .px-2 {
@@ -1326,6 +1358,11 @@ select {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-\[50px\] {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .py-2 {
@@ -1348,8 +1385,22 @@ select {
   padding-bottom: 1rem;
 }
 
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .pb-5 {
@@ -1376,6 +1427,10 @@ select {
   padding-top: 17px;
 }
 
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1384,12 +1439,20 @@ select {
   text-align: right;
 }
 
+.text-end {
+  text-align: end;
+}
+
 .font-poppinRegular {
   font-family: PoppinsRegular;
 }
 
 .font-poppinSemiBold {
   font-family: PoppinsMedium;
+}
+
+.font-poppin {
+  font-family: Poppins;
 }
 
 .text-5xl {
@@ -1435,9 +1498,19 @@ select {
   line-height: 1.25rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-\[500\] {
@@ -1454,6 +1527,18 @@ select {
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-extralight {
+  font-weight: 200;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .leading-normal {
@@ -1507,6 +1592,10 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[14\] {
+  color: 14;
 }
 
 .opacity-100 {
@@ -1706,6 +1795,11 @@ select {
     position: fixed;
   }
 
+  .navbarPhone\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
   .navbarPhone\:block {
     display: block;
   }
@@ -1718,8 +1812,16 @@ select {
     width: 296px;
   }
 
+  .navbarPhone\:justify-center {
+    justify-content: center;
+  }
+
   .navbarPhone\:pl-10 {
     padding-left: 2.5rem;
+  }
+
+  .navbarPhone\:text-center {
+    text-align: center;
   }
 }
 
@@ -1833,6 +1935,92 @@ select {
 @media (min-width: 1px) and (max-width: 645px) {
   .SmallScreen\:-mt-6 {
     margin-top: -1.5rem;
+  }
+
+  .SmallScreen\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .SmallScreen\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .SmallScreen\:w-auto {
+    width: auto;
+  }
+
+  .SmallScreen\:justify-center {
+    justify-content: center;
+  }
+
+  .SmallScreen\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .SmallScreen\:px-\[\] {
+    padding-left: ;
+    padding-right: ;
+  }
+
+  .SmallScreen\:px-\[24\] {
+    padding-left: 24;
+    padding-right: 24;
+  }
+
+  .SmallScreen\:px-\[24p\] {
+    padding-left: 24p;
+    padding-right: 24p;
+  }
+
+  .SmallScreen\:px-\[24px\] {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .SmallScreen\:text-center {
+    text-align: center;
+  }
+
+  .SmallScreen\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .SmallScreen\:text-\[16px\] {
+    font-size: 16px;
+  }
+
+  .SmallScreen\:text-\[1px\] {
+    font-size: 1px;
+  }
+
+  .SmallScreen\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .SmallScreen\:text-\[20px\] {
+    font-size: 20px;
+  }
+
+  .SmallScreen\:text-\[11px\] {
+    font-size: 11px;
+  }
+
+  .SmallScreen\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .SmallScreen\:text-\[px\] {
+    color: px;
+  }
+
+  .SmallScreen\:text-\[\] {
+    color: ;
+  }
+
+  .SmallScreen\:text-\[12\] {
+    color: 12;
   }
 }
 

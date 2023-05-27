@@ -11,3 +11,6 @@ def login(request):
 
 def annonce(request):
     return render(request, 'core/annonce.html')
+
+def annonceinfos(request):
+    return render(request, 'core/annonceinfos.html')
