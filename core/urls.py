@@ -15,6 +15,7 @@ urlpatterns = [
     path("annonceinfos/", views.annonceinfos, name="annonceinfos"),
     path("sessionRattrapage/", views.sessionRattrapage, name="sessionRattrapage"),
     path("sessionNormale/", views.sessionNormale, name="sessionNormale"),
-
+    path("gestiondabsence/", views.gestiondabsence, name="gestiondabsence"),
+    
 ]
 

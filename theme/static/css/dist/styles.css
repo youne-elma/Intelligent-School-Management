@@ -785,14 +785,14 @@ select {
   margin-right: 2.5rem;
 }
 
-.mx-3 {
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
-}
-
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.mx-3 {
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
 }
 
 .mx-7 {
@@ -833,6 +833,10 @@ select {
 
 .mb-5 {
   margin-bottom: 1.25rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mb-\[8px\] {
@@ -895,12 +899,12 @@ select {
   margin-left: 16px;
 }
 
-.ml-\[35px\] {
-  margin-left: 35px;
-}
-
 .ml-\[28px\] {
   margin-left: 28px;
+}
+
+.ml-\[35px\] {
+  margin-left: 35px;
 }
 
 .ml-auto {
@@ -1079,6 +1083,10 @@ select {
   height: 2.25rem;
 }
 
+.h-\[100px\] {
+  height: 100px;
+}
+
 .h-\[22px\] {
   height: 22px;
 }
@@ -1117,6 +1125,10 @@ select {
 
 .h-\[80vh\] {
   height: 80vh;
+}
+
+.h-\[90px\] {
+  height: 90px;
 }
 
 .h-screen {
@@ -1231,6 +1243,10 @@ select {
   width: 35px;
 }
 
+.w-\[400px\] {
+  width: 400px;
+}
+
 .w-\[50\%\] {
   width: 50%;
 }
@@ -1249,6 +1265,10 @@ select {
 
 .w-\[90\%\] {
   width: 90%;
+}
+
+.w-\[90px\] {
+  width: 90px;
 }
 
 .w-full {
@@ -1361,6 +1381,10 @@ select {
 
 .gap-20 {
   gap: 5rem;
+}
+
+.gap-24 {
+  gap: 6rem;
 }
 
 .gap-3 {
@@ -1554,6 +1578,11 @@ select {
   background-color: rgb(80 90 181 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#F1F1F1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
+}
+
 .bg-\[white\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1599,6 +1628,16 @@ select {
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
 }
 
+.bg-mediumcoolGray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 144 154 / var(--tw-bg-opacity));
+}
+
+.bg-smoothgreen {
+  --tw-bg-opacity: 1;
+  background-color: rgb(97 136 48 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1615,6 +1654,10 @@ select {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-2\.5 {
+  padding: 0.625rem;
 }
 
 .p-4 {
@@ -1701,6 +1744,10 @@ select {
   padding-bottom: 0.5rem;
 }
 
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1775,10 +1822,6 @@ select {
 
 .font-poppinRegular {
   font-family: PoppinsRegular;
-}
-
-.font-poppinSemiBold {
-  font-family: PoppinsMedium;
 }
 
 .text-2xl {
@@ -1926,6 +1969,11 @@ select {
 .text-bluecharcoal {
   --tw-text-opacity: 1;
   color: rgb(34 40 46 / var(--tw-text-opacity));
+}
+
+.text-darkcolor {
+  --tw-text-opacity: 1;
+  color: rgb(32 32 32 / var(--tw-text-opacity));
 }
 
 .text-denimcolor {
@@ -2595,6 +2643,55 @@ select {
   }
 
   .ajoutAnnonceMobile\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media (max-width: 570px) {
+  .gestionMdabsence\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .gestionMdabsence\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .gestionMdabsence\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .gestionMdabsence\:mr-2 {
+    margin-right: 0.5rem;
+  }
+
+  .gestionMdabsence\:h-\[90px\] {
+    height: 90px;
+  }
+
+  .gestionMdabsence\:h-full {
+    height: 100%;
+  }
+
+  .gestionMdabsence\:w-\[250px\] {
+    width: 250px;
+  }
+
+  .gestionMdabsence\:justify-center {
+    justify-content: center;
+  }
+
+  .gestionMdabsence\:gap-12 {
+    gap: 3rem;
+  }
+
+  .gestionMdabsence\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .gestionMdabsence\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }

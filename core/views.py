@@ -37,3 +37,6 @@ def sessionRattrapage(request):
 
 def sessionNormale(request):
     return render(request, 'admin/sessionNormale.html')
+
+def gestiondabsence(request):
+    return render(request, 'core/gestiondabsence.html')

@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block title %} gestion absence {% endblock  %}
+
+{% block content %}
+  
+<!-- Suprior Card -->
+    <div class="rounded-[5px] shadow-sm bg-[white] pb-20 mx-3 mt-7 gestionMdabsence:mx-0">
+        <div  class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 gestionMdabsence:justify-center">
+            <p class="ml-[35px] text-xl text-lightcolor font-poppin gestionMdabsence:text-lg gestionMdabsence:ml-0"> Gestion d'Absence </p>
+        </div>
+
+
+        <div class="Content flex gap-24 flex-wrap justify-center mt-6 gestionMdabsence:gap-12">
+
+             <!--This is option02-->
+            <a href="">
+             <div class="w-[400px] h-[100px] flex bg-[#F1F1F1] rounded-[5px] shadow-sm justify-between items-center gestionMdabsence:w-[250px] gestionMdabsence:h-[90px]">
+                <div  class="shadow-sm w-[90px] h-[90px] bg-mediumcoolGray rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMdabsence:ml-0 gestionMdabsence:mb-0 gestionMdabsence:h-full">
+                    <img  src="/theme/static/icons/teacher.png" alt="icon">
+                </div>
+                <p class="text-darkcolor text-lg font-poppin mr-8 gestionMdabsence:mr-2 gestionMdabsence:text-sm">Mes Séances</p>
+             </div>
+            </a>
+
+             <!--This is option01-->
+            <a href="">
+             <div class="w-[400px] h-[100px] bg-[#F1F1F1] rounded-[5px] shadow-sm flex justify-between items-center gestionMdabsence:w-[250px] gestionMdabsence:h-[90px]">
+                <div  class="shadow-sm w-[90px] h-[90px] bg-smoothgreen rounded-[5px] flex justify-center items-center p-2.5 mb-8 ml-5 gestionMdabsence:ml-0 gestionMdabsence:mb-0 gestionMdabsence:h-full">
+                    <img  src="/theme/static/icons/teacher.png" alt="icon">
+                </div>
+                  <p class="text-darkcolor text-lg font-poppin mr-8 gestionMdabsence:mr-2 gestionMdabsence:text-sm">Ajout d’une <br> &emsp; nouvelle séance</p>
+             </div>
+            </a>
+
+        </div>
+    </div>
+{% endblock %}
