@@ -71,6 +71,7 @@ module.exports = {
       lightgreen: "#0BAF74",
       white: "#FFFFFF",
       blue: "#517ECD",
+      filter: "rgba(34, 40, 46, 0.12)",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
