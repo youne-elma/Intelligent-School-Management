@@ -48,3 +48,13 @@ def addNotesProf(request):
 
 def upload_success(request):
     return render(request, 'core/upload_success.html')
+
+def Notes(request):
+    return render(request, 'core/Notes.html')
+
+def showNotes(request):
+    notes = Examen.objects.all()
+    context = {
+        'notes': notes
+    }
+    return render(request, 'core/showNotes.html', context)
