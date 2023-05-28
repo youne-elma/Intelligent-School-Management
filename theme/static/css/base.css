@@ -212,6 +212,29 @@ body {
 }
 
 
+.inputUpdateStyle input[type="text"] {
+  border: 1px solid #7E909A;
+  border-radius: 5px;
+}
+
+.inputUpdateStyle input[type="text"]:focus {
+  border-style: none;
+}
+
+.inputUpdateStyle textarea{
+  outline: none;
+  border: 1px solid #7E909A;
+  border-radius: 5px;
+}
+
+.inputUpdateStyle textarea:focus{
+  border-style: none;
+}
+
+.updateSelectStyle {
+  border-radius: 6px;
+}
+
 /* ----------Style the ecours page-------- */
 
 .selectStyle {

@@ -1,4 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
+from core.models import Annonce, Module, Semestre
+from core.forms import AnnonceForm
+
 # Create your views here.
 
 
@@ -8,8 +11,53 @@ def index(request):
 def login(request):
     return render(request, 'core/login.html')
 
+
 def annonce(request):
-    return render(request, 'core/annonce.html')
+    annonces = Annonce.objects.all()
+    context= {
+        'annonces': annonces
+    }
+    return render(request, 'core/annonce.html', context)
+
+
+def deleteAnnonce(request, idAnnonce):
+    annonce = Annonce.objects.get(idannonce = idAnnonce)
+    annonce.delete()
+
+    return redirect('annonce')
+
+
+def updateAnnonce(request, idAnnonce):
+
+    annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
+    modules = Module.objects.all()
+    semestres = Semestre.objects.all()
+
+    if(request.method == 'POST'):
+
+        form = AnnonceForm(request.POST, instance=annonce)
+
+        if form.is_valid():
+
+            annonce.titreannonce = form.cleaned_data['titreannonce']
+            annonce.id_semestre = form.cleaned_data['id_semestre']
+            annonce.id_modmat = form.cleaned_data['id_modmat']
+            annonce.contenu = form.cleaned_data['contenu']
+
+            annonce.save(update_fields=['titreannonce','contenu' , 'id_semestre','id_modmat'])
+        else:
+            print(form.errors)
+
+        return redirect('annonce')
+
+    context = {
+        'annonce': annonce,
+        'modules': modules,
+        'semestres': semestres
+    }
+
+    return render(request, 'core/updateAnnonce.html', context)
+
 
 def searchNote(request):
     return render(request, 'core/searchNote.html')
