@@ -16,6 +16,7 @@ urlpatterns = [
     path("sessionRattrapage/", views.sessionRattrapage, name="sessionRattrapage"),
     path("sessionNormale/", views.sessionNormale, name="sessionNormale"),
     path("gestiondabsence/", views.gestiondabsence, name="gestiondabsence"),
+    path("profile/",views.profile,name="profile"),
     
 ]
 

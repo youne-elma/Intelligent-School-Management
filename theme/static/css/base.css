@@ -202,6 +202,7 @@ body {
   background: #841220;
 }
 
+
 /* ----------Style the ecours page-------- */
 
 .selectStyle {
@@ -231,7 +232,7 @@ body {
   background: #1C4E80;
   padding: 10px 15px;
   cursor: pointer;
-  transition: background .2s ease-in;
+  transition: all .2s ease-in;
 }
 
 .inputFileSession input[type=file]::file-selector-button:hover{
@@ -247,7 +248,19 @@ body {
   border-radius: 4px;
 }
 
+/*---------------------------- Profile Page -----------------------------*/
 
+#profileInfos td{
+  height: 50px;
+  width: 250px;
+}
+
+.changePasswordButton {
+  transition: 0.3s all ease-in;
+}
+.changePasswordButton:hover{
+  background-color: #0F2D4B;
+}
 
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 

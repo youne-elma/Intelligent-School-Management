@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Mon Profile{% endblock %}
+
+{% block content %}
+
+<!-- Suprior Card -->
+    <div class="rounded-[5px] shadow-sm bg-white mb-16 mx-3 mt-7 ">
+
+        <div  class=" relative  items-center bottom-14 justify-center">
+
+            <div class="flex relative  items-center justify-center   ">
+                <img src="../../../theme/static/icons/userzaki.jpg" alt="" class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6"> 
+            </div>
+
+            <div class="mt-4">
+                <h1 class="text-center font-bold text-xl bottom-8">ZAKI Taher</h1>
+                <p class="text-mediumcoolGray text-center">Dept. Informatique</p>
+                <p class="text-mediumcoolGray text-center">184562</p>
+            </div>
+
+        </div>
+
+
+
+        <div class="px-4 relative bottom-14">
+
+            <h1 class="text-loyalblue font-bold mt-10">Informations personnelles: </h1>
+            <hr class="bg-loyalblue rounded h-1/2 border-loyalblue font-poppin">
+
+            <div id="profileInfos" class=" py-6 flex justify-center SmallScreen:flex-col">
+                <table  class="text-sm ">
+                    <tr>
+                        <td class="text-mediumcoolGray w-15">Nom en Francais</td> <td style="color: #6376BF;">Zaki</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">Prénom en Francais</td> <td style="color: #6376BF;">Taher</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">N Somm*</td> <td style="color: #6376BF;">121212</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">Spécialité</td> <td style="color: #6376BF;">Recherche Opérationnelle</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">Departement</td> <td style="color: #6376BF;">Informatique</td>
+                    </tr>
+                </table>
+
+                <table class="text-sm">
+                    <tr>
+                        <td class="text-mediumcoolGray">Nom en Arabe</td> <td style="color: #6376BF;">الزاكي</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">Prénom en Arabe</td> <td style="color: #6376BF;">طاهر</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">C.I.N.</td> <td style="color: #6376BF;">JT01212</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">Adresse Mail</td> <td style="color: #6376BF;">T.Zaki@uiz.ac.ma</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">N Télephone</td> <td style="color: #6376BF;">+212 6890000</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="text-mediumcoolGray text-xs flex justify-center ">si vous souhaitez rectifier ou mettre à jour vos informations personnelles, veuillez prendre contact avec le service scolarité.</p>  
+
+
+
+            <h1 class="text-loyalblue font-bold mt-7">Compte : </h1>
+            <hr class="bg-loyalblue rounded h-1/2 border-loyalblue font-poppin">
+            <div id="profileInfos" class="pt-6 flex justify-between mx-16 SmallScreen:flex-col SmallScreen:mx-0">
+                <table  class="text-sm ">
+                    <tr>
+                        <td class="text-mediumcoolGray w-15">Id</td> <td style="color: #6376BF;">T.Zaki@uiz.ac.ma</td>
+                    </tr>
+                    <tr>
+                        <td class="text-mediumcoolGray">Mot de Passe </td> <td style="color: #6376BF;">************</td>
+                    </tr>
+                </table>
+                <button id="submit" class=" max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:mt-4 SmallScreen:justify-center  ">Changer Password</button>               
+            </div>
+         
+        </div>
+    </div>
+{% endblock %}

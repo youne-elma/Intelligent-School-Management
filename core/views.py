@@ -40,3 +40,6 @@ def sessionNormale(request):
 
 def gestiondabsence(request):
     return render(request, 'core/gestiondabsence.html')
+
+def profile(request):
+    return render(request, 'core/profile.html')
