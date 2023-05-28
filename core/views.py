@@ -29,7 +29,6 @@ def deleteAnnonce(request, idAnnonce):
 
 def updateAnnonce(request, idAnnonce):
 
-    # annonce = Annonce.objects.get(idannonce = idAnnonce)
     annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
     modules = Module.objects.all()
     semestres = Semestre.objects.all()
@@ -41,29 +40,13 @@ def updateAnnonce(request, idAnnonce):
         if form.is_valid():
 
             annonce.titreannonce = form.cleaned_data['titreannonce']
-            
             annonce.id_semestre = form.cleaned_data['id_semestre']
             annonce.id_modmat = form.cleaned_data['id_modmat']
             annonce.contenu = form.cleaned_data['contenu']
 
-            annonce.save()
-
+            annonce.save(update_fields=['titreannonce','contenu' , 'id_semestre','id_modmat'])
         else:
             print(form.errors)
-
-
-        # semestreName = request.POST.get("semestreAnnonce")
-        # moduleName = request.POST.get("moduleAnnonce")
-
-        # semestrePk = Semestre.objects.get(intulite_semestre = semestreName)
-        # modulePk = Module.objects.get(intulite_fr = moduleName)
-        
-        # annonce.titreannonce = request.POST.get("titre")
-        # annonce.contenu = request.POST.get("contenu")
-        # annonce.id_semestre = semestrePk.id_semestre
-        # annonce.id_modmat = modulePk.id_modmat
-
-        # annonce.save()
 
         return redirect('annonce')
 
