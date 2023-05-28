@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-from core.models import Annonce
+from django.shortcuts import render, redirect, get_object_or_404
+from core.models import Annonce, Module, Semestre
+from core.forms import AnnonceForm
 
 # Create your views here.
 
@@ -10,6 +11,7 @@ def index(request):
 def login(request):
     return render(request, 'core/login.html')
 
+
 def annonce(request):
     annonces = Annonce.objects.all()
     context= {
@@ -17,16 +19,62 @@ def annonce(request):
     }
     return render(request, 'core/annonce.html', context)
 
-def deleteAnnonce(request, idAnnonce):
 
+def deleteAnnonce(request, idAnnonce):
     annonce = Annonce.objects.get(idannonce = idAnnonce)
     annonce.delete()
 
     return redirect('annonce')
 
-# context = {}
 
-# return render(request, 'core/annonce.html', context)
+def updateAnnonce(request, idAnnonce):
+
+    # annonce = Annonce.objects.get(idannonce = idAnnonce)
+    annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
+    modules = Module.objects.all()
+    semestres = Semestre.objects.all()
+
+    if(request.method == 'POST'):
+
+        form = AnnonceForm(request.POST, instance=annonce)
+
+        if form.is_valid():
+
+            annonce.titreannonce = form.cleaned_data['titreannonce']
+            
+            annonce.id_semestre = form.cleaned_data['id_semestre']
+            annonce.id_modmat = form.cleaned_data['id_modmat']
+            annonce.contenu = form.cleaned_data['contenu']
+
+            annonce.save()
+
+        else:
+            print(form.errors)
+
+
+        # semestreName = request.POST.get("semestreAnnonce")
+        # moduleName = request.POST.get("moduleAnnonce")
+
+        # semestrePk = Semestre.objects.get(intulite_semestre = semestreName)
+        # modulePk = Module.objects.get(intulite_fr = moduleName)
+        
+        # annonce.titreannonce = request.POST.get("titre")
+        # annonce.contenu = request.POST.get("contenu")
+        # annonce.id_semestre = semestrePk.id_semestre
+        # annonce.id_modmat = modulePk.id_modmat
+
+        # annonce.save()
+
+        return redirect('annonce')
+
+    context = {
+        'annonce': annonce,
+        'modules': modules,
+        'semestres': semestres
+    }
+
+    return render(request, 'core/updateAnnonce.html', context)
+
 
 def searchNote(request):
     return render(request, 'core/searchNote.html')

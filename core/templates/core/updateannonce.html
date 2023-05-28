@@ -1,0 +1,75 @@
+{% extends '../core/base.html' %}
+
+{% block title %} Add Annonce {% endblock %}
+
+{% block content %}
+
+<div class="flex flex-wrap justify-items-center gap-[5px] -mt-20 md:-mt-10 SmallScreen:-mt-6">
+  <img src="../../../theme/static/icons/Home.png"  class="w-5 h-4" alt="icon-home"/>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">Annonce</span>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">updateAnnonce</span>
+</div>
+
+<div class="bg-lightcolor flex flex-col items-align ajoutAnnonceBig:mx-10 inputUpdateStyle">
+    <div
+        class="bg-loyalblue rounded-md flex flex-col pt-4 pb-3 px-6 mx-7 text-lightcolor z-[2] ajoutAnnonceMobile:px-0 ajoutAnnonceTab:justify-center ajoutAnnonceTab:items-center">
+        <h1 class="font-semiPoppin text-xl ajoutAnnonceMobile:text-base">Gestion des annonces</h1>
+        <p class="ajoutAnnonceMobile:text-sm">Ajout d'une annonce</p>
+    </div>
+    <div class="flex justify-center bg-clearwhite relative bottom-8 rounded-md px-10">
+        <form class="pt-16 flex flex-col gap-8 pb-10" method="POST">
+            {% csrf_token %}
+            <div class="inputClass flex items-center gap-7 ">
+                <label for="title"
+                    class="text-bluecharcoal text-base w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Titre</label>
+                <input id="title" type="text" name="titreannonce" class="w-full ajoutAnnonceMobile:max-w-[200px]" value="{{annonce.titreannonce}}"
+                    placeholder="Enter Text" autocomplete="off" />
+            </div>
+
+            <div class="flex items-center ajoutAnnonceTab:justify-center ">
+                <div class="inputClass inputDetailsClass flex gap-7 w-full">
+                    <label for="details"
+                        class="text-bluecharcoal text-base pt-1 w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Details</label>
+                    <textarea id="details" name="contenu" type="text" class="w-full ajoutAnnonceMobile:max-w-[200px]"
+                        placeholder="Enter Text">{{ annonce.contenu }}</textarea>
+                </div>
+            </div>
+
+            <div class="flex gap-9 items-center ajoutAnnonceTab:gap-7 ajoutAnnonceTab:flex-col">
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
+                    <label class="font-poppin">Semestre</label>
+                    <select name="id_semestre" class="flex updateSelectStyle cursor-pointer w-48 ecoursMScreen:w-40 py-1.5 px-4 ecoursMScreen:px-2 ecoursMScreen:text-sm" required>
+                        {% comment %} add a condition to not have the module on repeat {% endcomment %}
+                        <option value="{{ annonce.id_semestre.id_semestre }}" selected>{{annonce.id_semestre.intulite_semestre}}</option> 
+                        {% for semestre in semestres %}
+                            {% if semestre.intulite_semestre != annonce.id_semestre.intulite_semestre %}
+                                <option value="{{ semestre.id_semestre }}">{{ semestre.intulite_semestre }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
+                    <label class="font-poppin">Module</label>
+                    <select name="id_modmat" class="flex updateSelectStyle cursor-pointer w-48 ecoursMScreen:w-40 py-1.5 px-4 ecoursMScreen:px-2 ecoursMScreen:text-sm" required>
+                        <option value="{{ annonce.id_modmat.id_modmat }}" selected>{{ annonce.id_modmat.intulite_fr }}</option>
+                        {% for module in modules %}
+                            {% if annonce.id_modmat.intulite_fr != module.intulite_fr %}
+                                <option value="{{ module.id_modmat }}">{{ module.intulite_fr }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center py-2">
+                <button class="bg-loyalblue py-3 px-5 rounded-md text-lightcolor" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
