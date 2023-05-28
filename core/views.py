@@ -20,8 +20,8 @@ def homeProf(request):
 def chatbot(request):
     return render(request, 'chatbot/chatbot.html')
 
-def addAnounce(request):
-    return render(request, 'core/addanounce.html')
+def addAnnonce(request):
+    return render(request, 'core/addannonce.html')
 
 def correctionNote(request):
     return render(request, 'core/correctionNote.html')
@@ -43,3 +43,6 @@ def gestiondabsence(request):
 
 def profile(request):
     return render(request, 'core/profile.html')
+
+def modifypwd(request):
+    return render(request, 'core/modifypwd.html')

@@ -201,6 +201,15 @@ body {
 .deleteButton:hover {
   background: #841220;
 }
+/*------- Page Modifier Password--------*/
+
+.changePasswordButton {
+  transition: 0.3s all ease-in;
+}
+
+.changePasswordButton:hover{
+  background-color: #0F2D4B;
+}
 
 
 /* ----------Style the ecours page-------- */
@@ -296,3 +305,4 @@ body {
   font-weight: 700;
 }
 
+/* */ 

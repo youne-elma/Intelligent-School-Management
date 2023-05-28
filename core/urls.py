@@ -9,7 +9,7 @@ urlpatterns = [
     path("searchNote/",views.searchNote,name="searchNote"),
     path("homeProf/", views.homeProf, name="homeProf"),
     path("chatbot/", views.chatbot, name="chatbot"),
-    path("addanounce/", views.addAnounce, name="addAnounce"),
+    path("addannonce/", views.addAnnonce, name="addAnnonce"),
     path("correctionNote/", views.correctionNote, name="correctionNote"),
     path("ecours/", views.ecours, name="ecours"),
     path("annonceinfos/", views.annonceinfos, name="annonceinfos"),
@@ -17,6 +17,7 @@ urlpatterns = [
     path("sessionNormale/", views.sessionNormale, name="sessionNormale"),
     path("gestiondabsence/", views.gestiondabsence, name="gestiondabsence"),
     path("profile/",views.profile,name="profile"),
-    
+    path("modifypwd/",views.modifypwd,name="modifypwd"),
+
 ]
 

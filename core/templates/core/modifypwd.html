@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Modifier Mot de Passe{% endblock %}
+
+{% block content %}
+
+<!-- Suprior Card -->
+    <div class="rounded-[5px] shadow-sm bg-white pb-20 mx-3 mt-7 ">
+        <div  class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 navbarPhone:justify-center">
+            <p class="ml-[35px] text-xl text-lightcolor font-semiBold navbarPhone:text-center navbarPhone:mx-2">Modifier Votre Mot de Passe</p>
+        </div>
+
+
+        <div class="flex justify-center">
+            <form class="flex flex-col m-10 items-center gap-6">
+
+                <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2" >
+                    <label for="password" class=" w-60 text-sm block SmallScreen:text-center" style="color:#94a3b8;">Password Actuel</label>
+                    <input  type="password" name="#"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">       
+                </div>
+            
+                <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2">
+                    <label for="password" class=" w-60  text-sm SmallScreen:text-center" style="color:#94a3b8;">Nouveau Password</label>
+                    <input  type="password" name="#"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;" >
+                </div>
+
+                <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2">
+                    <label for="password" class=" w-60 text-sm text-[#97a4b6] SmallScreen:text-center">Reconfirmez Nouveau Password</label>
+                    <input  type="password" name="#"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">
+                </div>
+
+                <div class="flex items-center SmallScreen:justify-center SmallScreen:self-auto self-end" >
+                    <input type="checkbox" name="confirmation"  class="rounded-md  bg-[#e2e2e2] mr-2 border-none">
+                    <label for="confirmation" class="text-sm text-[#97a4b6] ">Je Confirme</label>
+                </div>
+
+                <button id="submit" class="max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:justify-center SmallScreen:self-auto ">Changer Password</button>
+                            
+            </form>
+        </div>
+    </div>
+{% endblock %}
