@@ -4,6 +4,14 @@
 
 {% block content %}
 
+<div class="flex flex-wrap justify-items-center gap-[5px] -mt-20 md:-mt-10 SmallScreen:-mt-6">
+  <img src="../../../theme/static/icons/Home.png"  class="w-5 h-4" alt="icon-home"/>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">Annonce</span>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">annonceInfos</span>
+</div>
+
 <!-- Suprior Card -->
     <div class="rounded-[5px] shadow-sm bg-white pb-10 mx-3 mt-7 ">
         <div  class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 navbarPhone:justify-center w-[60%] SmallScreen:w-auto">
@@ -12,16 +20,20 @@
 
 
         <div class=" justify-start px-[50px] SmallScreen:justify-center SmallScreen:px-[24px]">
-            <h1 class="text-xl font-poppin SmallScreen:text-[18px]">Titre de L'Annonce </h1>
-            <p class="text-[14px] text-mediumcoolGray">00-00-0000 <br> 23:59</p>
+            <h1 class="text-xl font-poppin SmallScreen:text-[18px]">{{ annonce.titreannonce }}</h1>
+            <p class="text-[14px] text-mediumcoolGray">{{ annonce.dateannonce }}</p>
         
-            <p class="text-[14px] font-poppinRegular p-8 SmallScreen:px-4 SmallScreen:text-[12px]"> &thinsp;&thinsp;&thinsp; Nous souhaitons vous informer que l'examen de cristallographie géométrique et cristallochimie I portera exclusivement sur les parties de cours effectuées en présentiel.
-                Il est essentiel de souligner que la cristallographie géométrique et la cristallochimie sont des domaines d'étude fondamentaux dans nos programmes de SMP4 et SMC4. 
-                Ces sujets revêtent une grande importance pour votre compréhension des structures cristallines et des propriétés des matériaux. Afin de garantir une évaluation juste et équitable de vos connaissances,
-                l'examen se concentrera uniquement sur les contenus enseignés lors des séances en présentiel.
+            <p class="text-[14px] font-poppinRegular p-8 SmallScreen:px-4 SmallScreen:text-[12px]"> 
+                {{ annonce.contenu }}
             </p>
             
         </div>
-        <p class="text-right px-10 font-thin text-[14px]  SmallScreen:text-[11px]">Auteur de l’annonce</p>
+        <p class="text-right px-10 font-thin text-[14px]  SmallScreen:text-[11px]">
+            {% if annonce.idadmin %}
+                {{ annonce.idadmin.n_som }}
+            {% else %}
+                {{ annonce.idprof.nomfr }} {{ annonce.idprof.prenomfr }}
+            {% endif %}
+        </p>
     </div>
 {% endblock %}

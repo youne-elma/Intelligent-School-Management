@@ -77,8 +77,14 @@ def correctionNote(request):
 def ecours(request):
     return render(request, 'core/ecours.html')
 
-def annonceinfos(request):
-    return render(request, 'core/annonceinfos.html')
+def annonceinfos(request,idAnnonce):
+    annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
+
+    context= {
+        'annonce': annonce
+    }
+
+    return render(request, 'core/annonceInfos.html', context)
 
 def sessionRattrapage(request):
     return render(request, 'admin/sessionRattrapage.html')
