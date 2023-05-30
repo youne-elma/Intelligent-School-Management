@@ -1386,10 +1386,6 @@ select {
   gap: 0.5rem;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
 .gap-24 {
   gap: 6rem;
 }
@@ -1619,6 +1615,11 @@ select {
 .bg-cornflower {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.bg-daredvilleorange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 106 71 / var(--tw-bg-opacity));
 }
 
 .bg-denimcolor {
@@ -2693,14 +2694,6 @@ select {
 }
 
 @media (max-width: 700px) {
-  .ajoutAnnonceMobile\:w-full {
-    width: 100%;
-  }
-
-  .ajoutAnnonceMobile\:max-w-\[150px\] {
-    max-width: 150px;
-  }
-
   .ajoutAnnonceMobile\:max-w-\[200px\] {
     max-width: 200px;
   }

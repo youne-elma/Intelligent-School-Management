@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre
-from core.forms import AnnonceForm
+from core.models import Annonce, Module, Semestre, Etudiant
+from core.forms import AnnonceForm, AjoutAnnonceForm
+from datetime import datetime
 
 # Create your views here.
 
@@ -58,6 +59,68 @@ def updateAnnonce(request, idAnnonce):
 
     return render(request, 'core/updateAnnonce.html', context)
 
+def addAnnonce(request):
+
+    etudiants = Etudiant.objects.all()
+    modules = Module.objects.all()
+    semestres = Semestre.objects.all()
+
+    print(request.POST)
+
+    if request.method == 'POST':
+
+        form = AnnonceForm(request.POST)
+        
+        if form.is_valid():
+
+            titreannonce = form.cleaned_data['titreannonce']
+            id_semestre = form.cleaned_data['id_semestre']
+            id_modmat = form.cleaned_data['id_modmat']
+            contenu = form.cleaned_data['contenu']
+            apogee_value = request.POST.get('apogee')
+            dateannonce_value = datetime.now()
+
+            if apogee_value == "":
+                Annonce.objects.create(titreannonce= titreannonce, id_semestre= id_semestre, id_modmat= id_modmat, contenu= contenu, dateannonce = dateannonce_value)
+
+                return redirect('annonce')
+
+            for etudiant in etudiants:
+                if(str(etudiant.apogee) == apogee_value):
+                    errorApogee = False
+                    break
+                else:
+                    errorApogee = True
+
+
+            if(errorApogee):
+
+                context = {
+                    'errorApogee': errorApogee,
+                    'modules': modules,
+                    'semestres': semestres,
+                }
+
+                return render(request, 'core/addannonce.html', context)
+            
+            etudiantApogeeValid = Etudiant.objects.get(apogee = int(apogee_value))
+            
+            Annonce.objects.create(titreannonce= titreannonce, id_semestre= id_semestre, id_modmat= id_modmat, contenu= contenu, dateannonce = dateannonce_value, apogee = etudiantApogeeValid)
+
+            return redirect('annonce')
+
+        else:
+            print(form.errors)
+
+    else:
+        form = AjoutAnnonceForm()
+
+    context = {
+        'modules': modules,
+        'semestres': semestres,
+    }
+
+    return render(request, 'core/addannonce.html', context)
 
 def searchNote(request):
     return render(request, 'core/searchNote.html')
@@ -67,9 +130,6 @@ def homeProf(request):
 
 def chatbot(request):
     return render(request, 'chatbot/chatbot.html')
-
-def addAnnonce(request):
-    return render(request, 'core/addannonce.html')
 
 def correctionNote(request):
     return render(request, 'core/correctionNote.html')

@@ -16,7 +16,7 @@
     <div
         class="bg-loyalblue rounded-md flex flex-col pt-4 pb-3 px-6 mx-7 text-lightcolor z-[2] ajoutAnnonceMobile:px-0 ajoutAnnonceTab:justify-center ajoutAnnonceTab:items-center">
         <h1 class="font-semiPoppin text-xl ajoutAnnonceMobile:text-base">Gestion des annonces</h1>
-        <p class="ajoutAnnonceMobile:text-sm">Ajout d'une annonce</p>
+        <p class="ajoutAnnonceMobile:text-sm">Modifier une annonce</p>
     </div>
     <div class="flex justify-center bg-clearwhite relative bottom-8 rounded-md px-10">
         <form class="pt-16 flex flex-col gap-8 pb-10" method="POST">
@@ -25,7 +25,7 @@
                 <label for="title"
                     class="text-bluecharcoal text-base w-24 ajoutAnnonceBig:w-12 ajoutAnnonceTab:w-20 ajoutAnnonceMobile:w-15">Titre</label>
                 <input id="title" type="text" name="titreannonce" class="w-full ajoutAnnonceMobile:max-w-[200px]" value="{{annonce.titreannonce}}"
-                    placeholder="Enter Text" autocomplete="off" />
+                    placeholder="Enter Text" autocomplete="off" required/>
             </div>
 
             <div class="flex items-center ajoutAnnonceTab:justify-center ">
@@ -41,7 +41,6 @@
                 <div class="flex items-center justify-between w-96 ecoursMScreen:w-64 ecoursMScreen:text-sm">
                     <label class="font-poppin">Semestre</label>
                     <select name="id_semestre" class="flex updateSelectStyle cursor-pointer w-48 ecoursMScreen:w-40 py-1.5 px-4 ecoursMScreen:px-2 ecoursMScreen:text-sm" required>
-                        {% comment %} add a condition to not have the module on repeat {% endcomment %}
                         <option value="{{ annonce.id_semestre.id_semestre }}" selected>{{annonce.id_semestre.intulite_semestre}}</option> 
                         {% for semestre in semestres %}
                             {% if semestre.intulite_semestre != annonce.id_semestre.intulite_semestre %}
