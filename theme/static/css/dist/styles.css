@@ -915,10 +915,6 @@ select {
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .hidden {
   display: none;
 }
@@ -1003,10 +999,6 @@ select {
   width: 0.5rem;
 }
 
-.w-24 {
-  width: 6rem;
-}
-
 .w-4 {
   width: 1rem;
 }
@@ -1047,6 +1039,10 @@ select {
   width: 120px;
 }
 
+.w-\[160px\] {
+  width: 160px;
+}
+
 .w-\[200px\] {
   width: 200px;
 }
@@ -1079,20 +1075,12 @@ select {
   width: 70px;
 }
 
+.w-\[80px\] {
+  width: 80px;
+}
+
 .w-full {
   width: 100%;
-}
-
-.w-\[142\] {
-  width: 142;
-}
-
-.w-\[142px\] {
-  width: 142px;
-}
-
-.w-\[160px\] {
-  width: 160px;
 }
 
 .min-w-\[179px\] {
@@ -1137,10 +1125,6 @@ select {
 
 .content-center {
   align-content: center;
-}
-
-.items-start {
-  align-items: flex-start;
 }
 
 .items-center {
@@ -1305,11 +1289,6 @@ select {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-bluecharcoal {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 40 46 / var(--tw-bg-opacity));
-}
-
 .bg-buttonhover {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
@@ -1323,6 +1302,10 @@ select {
 .bg-denimcolor {
   --tw-bg-opacity: 1;
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
+}
+
+.bg-filter {
+  background-color: rgba(34, 40, 46, 0.12);
 }
 
 .bg-lightcolor {
@@ -1353,10 +1336,6 @@ select {
 .bg-whte2 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.bg-filter {
-  background-color: rgba(34, 40, 46, 0.12);
 }
 
 .p-2 {
@@ -1422,11 +1401,6 @@ select {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .pb-2 {
@@ -1643,12 +1617,12 @@ select {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.hover\:bg-buttonhover:hover {
+.hover\:bg-bluecharcoal:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+  background-color: rgb(34 40 46 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-cornflower:hover {
+.hover\:bg-buttonhover:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
 }
@@ -1656,21 +1630,6 @@ select {
 .hover\:bg-skybleu2:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-smoothgreen:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(97 136 48 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-bluecharcoal:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 40 46 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-lightcolor:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
 }
 
 .hover\:fill-blue:hover {

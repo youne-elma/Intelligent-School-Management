@@ -29,23 +29,64 @@
     </div>
 
 
-    <!-- Modal Code -->
-    <section class="modal hidden justify-center">
-        <div class="flex flex-col justify-center items-center gap-2">
-            <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
-            <h4 class="font-poppin font-medium text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?</h4>
-            <p class="text-[12px] font-poppin font-normal opacity-60">“Avis important SMP4: Presence aux TP”</p>
-            <div class="flex gap-[30px] mt-5">
-                <button class="btn-close cancelButton">Cancel</button>
-                <button class="deleteButton">Delete</button>
-            </div>
-        </div>
-    </section>
-    <div class="overlay hidden"></div>
-    <!-- Modal Code -->
 
     <div class="bg-white rounded-[5px] font-poppin font-normal AnnounceViewport:z-0">
+        <div
+            class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+
+            <input id="link-checkbox" type="checkbox" value=""
+                class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+
+            <div
+                class="flex flex-nowrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+
+                <span class=" text-centerw-[120px] text-ellipsis text-sm AnnounceViewport:text-base">Nom et
+                    Prenom</span>
+            </div>
+
+            <span
+                class=" text-center largeScreen:w-[60px] 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">N°Apogee</span>
+            <span
+                class=" text-center text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden">
+                Date</span>
+            <span
+                class="text-center largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Note</span>
+            <span
+                class="text-center largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Resultat</span>
+            <span
+                class="text-center largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Session</span>
+
+
+
+            <span class="text-center text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">Date</span>
+            <div
+                class="w-[80px] flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
+
+            </div>
+
+        </div>
+
         {% for note in notes %}
+        <!-- Modal Code -->
+        <section class="modal hidden justify-center" id={{note.id}}>
+            <div class=" flex flex-col justify-center items-center gap-2">
+                <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
+                <h4 class="font-poppin font-medium text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?
+                </h4>
+                <p class="text-[12px] font-poppin font-normal opacity-60">“Avis important SMP4: Presence aux TP”</p>
+                <div class="flex gap-[30px] mt-5">
+                    <button class="btn-close cancelButton">Cancel</button>
+                    <a href="{% url 'deleteNote' note.id %}">
+                        <button class="deleteButton">
+                            Delete
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="overlay hidden" id={{note.id}}></div>
+        <!-- Modal Code -->
+
         <!--- this an annonce -->
         <div
             class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
@@ -62,20 +103,20 @@
             </div>
 
             <span
-                class="largeScreen:w-[60px] 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.apogee.apogee}}</span>
+                class="largeScreen:w-[60px] text-center 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.apogee.apogee}}</span>
             <span class="  text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden">
                 16-04-2023
                 05:24</span>
             <span
-                class="largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.note}}</span>
+                class="largeScreen:w-[60px] text-center  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.note}}</span>
             <span
-                class="largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.resultat}}</span>
+                class="largeScreen:w-[60px]  text-center 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.resultat}}</span>
             <span
-                class="largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.session}}</span>
+                class="largeScreen:w-[60px] text-center 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.session}}</span>
 
 
 
-            <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
+            <span class="text-center text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">16-04-2023</span>
             <div class="flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
                 <button class="w-4 h-5 hover:fill-blue">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 30 30">
@@ -84,7 +125,7 @@
                         </path>
                     </svg>
                 </button>
-                <button class="btn-open w-4 h-5 hover:fill-daredvilleorange">
+                <button class="btn-open w-4 h-5 hover:fill-daredvilleorange" id={{note.id}}>
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
                         <path
                             d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z">
@@ -104,6 +145,7 @@
                 more</span><img src="../../theme/static/icons/arrowdown.png"></button>
     </div>
 
-    <script src="../../../theme/static/js/modalLogic.js" />
-    </div>
+</div>
+<script src="../../../theme/static/js/modalLogic.js" />
+
 {% endblock%}

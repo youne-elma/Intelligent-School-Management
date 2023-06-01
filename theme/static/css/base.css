@@ -31,7 +31,7 @@ body {
   left: -296px;
 }
 
-.toggleNavbar{
+.toggleNavbar {
   left: 0;
 }
 
@@ -59,7 +59,7 @@ body {
   transition: 2s;
 }
 
-.slide img{
+.slide img {
   height: 600px;
 }
 
@@ -70,7 +70,6 @@ body {
   width: 360px;
   display: flex;
   justify-content: center;
-
 }
 .manual-btn {
   border: 2px solid #d9d9d9;
@@ -80,29 +79,29 @@ body {
   transition: 1s;
 }
 
-.manual-btn:not(:last-child){
+.manual-btn:not(:last-child) {
   margin-right: 20px;
 }
-.manual-btn:hover{
+.manual-btn:hover {
   background: #d9d9d9;
 }
 
-#radio1:checked ~ .first{
+#radio1:checked ~ .first {
   margin-left: 0;
 }
-#radio2:checked ~ .first{
+#radio2:checked ~ .first {
   margin-left: -20%;
 }
-#radio3:checked ~ .first{
+#radio3:checked ~ .first {
   margin-left: -40%;
 }
-#radio4:checked ~ .first{
+#radio4:checked ~ .first {
   margin-left: -60%;
 }
 
 /* css for automatic navigation */
 
-.navigation-auto{
+.navigation-auto {
   position: absolute;
   display: flex;
   bottom: 0;
@@ -111,30 +110,81 @@ body {
   justify-content: center;
 }
 
-.navigation-auto div{
+.navigation-auto div {
   border: 2px solid #d9d9d9;
   padding: 5px;
   border-radius: 10px;
   transition: 1s;
 }
 
-.navigation-auto div:not(:last-child){
+.navigation-auto div:not(:last-child) {
   margin-right: 20px;
 }
 
-#radio1:checked ~ .navigation-auto .auto-btn1{
+#radio1:checked ~ .navigation-auto .auto-btn1 {
   background: #d9d9d9;
 }
-#radio2:checked ~ .navigation-auto .auto-btn2{
+#radio2:checked ~ .navigation-auto .auto-btn2 {
   background: #d9d9d9;
 }
-#radio3:checked ~ .navigation-auto .auto-btn3{
+#radio3:checked ~ .navigation-auto .auto-btn3 {
   background: #d9d9d9;
 }
-#radio4:checked ~ .navigation-auto .auto-btn4{
+#radio4:checked ~ .navigation-auto .auto-btn4 {
   background: #d9d9d9;
 }
 
+/* Modal Style Announce */
+
+.modal {
+  width: 370px;
+  padding: 1.3rem;
+  min-height: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.cancelButton {
+  padding: 0.5rem 2rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  transition: all 0.3s ease-in;
+}
+.cancelButton:hover {
+  color: #ffffff;
+  background: #7e909a;
+}
+
+.deleteButton {
+  color: white;
+  padding: 0.5rem 2rem;
+  background: #d81931;
+  border-radius: 8px;
+  transition: all 0.3s ease-in;
+}
+.deleteButton:hover {
+  background: #841220;
+}
 
 /*---------------------------------------*/
 
