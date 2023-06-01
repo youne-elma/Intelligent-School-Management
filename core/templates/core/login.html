@@ -24,6 +24,7 @@
   {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css%22%3E"> {% endcomment %}
   {% tailwind_css %}
 </head>
+
   <body>
     <section class="bg-lightcolor min-h-screen flex items-center justify-center">
       {% comment %} login container{% endcomment %}
@@ -34,16 +35,20 @@
         {% comment %} div For the containte {% endcomment %}
 
         <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite relative" action="" method="post">
-
+          {% csrf_token %}
           <div class="flex flex-col justify-center items-center">
             <img  class="w-60 mb-5 loginimagehide:mb-0 loginimagehide:mt-5" alt="image" src="{% static 'icons/logo.png' %}" />
           </div>
 
           <div class="flex flex-col items-center justify-center rounded gap-6">
             <h2 class="font-bold text-[#202020]  text-5 center py-4" > Service de Scolarité</h2>
-
-            <input type="email" name="userEmail" placeholder="Adresse e-mail" class= "text-sm w-80 h-9  bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0 mx-10" required>
-            <input type="password" name="Password" placeholder="saisissez votre mot de passe" class= "text-sm w-80 h-9 bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
+            {% if messages%}
+              {% for message in messages %}
+                <p class="alert-{{ message.tags }}">{{ message }}</p>
+              {% endfor %}
+            {% endif %}
+            <input type="username" name="username" placeholder="Username" class= "text-sm w-80 h-9  bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0 mx-10" required>
+            <input type="password" name="password" placeholder="saisissez votre mot de passe" class= "text-sm w-80 h-9 bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
 
             <button type="Submit" class="bg-buttonhover mt-2 rounded w-52 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2
             font-bold ">CONNEXION</button>

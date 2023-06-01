@@ -201,6 +201,16 @@ body {
 .deleteButton:hover {
   background: #841220;
 }
+/*------- login Page Message s color--------*/
+
+.alert-success{
+  color: green;
+}
+.alert-warning{
+  color: #D81931;
+}
+
+
 /*------- Page Modifier Password--------*/
 
 .changePasswordButton {
