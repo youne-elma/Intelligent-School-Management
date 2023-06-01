@@ -9,17 +9,21 @@ from .forms import UserForm
 
 
 def registre(request):
-    form = UserForm()
-   # if request.method == 'POST' :
-    form =UserForm(data=request.POST)
-    if form.is_valid():
-        form.save()
-        messages.success(request, 'Votre Compte a été bien créer !')
-        return redirect('login')
-    else:
-        messages.warning(request, 'Something is Worng ! Try Again ...')
-
-    return render(request, 'core/registre.html', {'form':form})
+    try:
+        form = UserForm()
+    # if request.method == 'POST' :
+        form =UserForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Votre Compte a été bien créer !')
+            return redirect('login')
+        else:
+            messages.warning(request, 'Something is Worng ! Try Again ...')
+        return render(request, 'core/registre.html', {'form':form})
+    except Exception as e:
+        form = UserForm()
+        messages.warning(request, e)
+        return render(request, 'core/registre.html', {'form':form})
 
 def login(request):
     if request.method == 'POST':
