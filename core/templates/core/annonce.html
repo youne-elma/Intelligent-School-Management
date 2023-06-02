@@ -72,7 +72,7 @@
 
       </div>
 
-      <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin"> {{ annonce.titreannonce }} <a href="#" class="text-denimcolor">(lire la suite)</a></span>
+      <span class="3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin"> {{ annonce.titreannonce }} <a href="{% url 'annonceinfos' annonce.idannonce %}" class="text-denimcolor">(lire la suite)</a></span>
       <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> {{annonce.dateannonce}}</span>
       <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block"> {{annonce.dateannonce}} </span>
 

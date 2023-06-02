@@ -1506,10 +1506,6 @@ select {
   border-radius: 0.125rem;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
 .rounded-l-2xl {
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -1578,12 +1574,6 @@ select {
 .border-loyalblue {
   --tw-border-opacity: 1;
   border-color: rgb(28 78 128 / var(--tw-border-opacity));
-}
-
-.border-x-mediumcoolGray {
-  --tw-border-opacity: 1;
-  border-left-color: rgb(126 144 154 / var(--tw-border-opacity));
-  border-right-color: rgb(126 144 154 / var(--tw-border-opacity));
 }
 
 .bg-BroderGris {

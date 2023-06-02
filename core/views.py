@@ -123,8 +123,14 @@ def ecours(request):
     return render(request, 'core/ecours.html')
 
 @login_required
-def annonceinfos(request):
-    return render(request, 'core/annonceinfos.html')
+def annonceinfos(request, idAnnonce):
+    
+    annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
+    context= {
+        'annonce': annonce
+    }
+
+    return render(request, 'core/annonceInfos.html', context)
 
 @login_required
 def sessionRattrapage(request):
