@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre, Etudiant
+from core.models import Annonce, Module, Semestre, Etudiant, utilisateur
 from core.forms import AnnonceForm, AjoutAnnonceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, login as auth_login
@@ -114,6 +114,7 @@ def addAnnonce(request):
         
         if form.is_valid():
 
+            idutilisateur = utilisateur.objects.get(idutilisateur = request.user.idutilisateur)
             titreannonce = form.cleaned_data['titreannonce']
             id_semestre = form.cleaned_data['id_semestre']
             id_modmat = form.cleaned_data['id_modmat']
@@ -122,7 +123,7 @@ def addAnnonce(request):
             dateannonce_value = datetime.now()
 
             if apogee_value == "":
-                Annonce.objects.create(titreannonce= titreannonce, id_semestre= id_semestre, id_modmat= id_modmat, contenu= contenu, dateannonce = dateannonce_value)
+                Annonce.objects.create(titreannonce= titreannonce, id_semestre= id_semestre, id_modmat= id_modmat, contenu= contenu, dateannonce = dateannonce_value, idutilisateur = idutilisateur)
 
                 return redirect('annonce')
 
@@ -146,7 +147,7 @@ def addAnnonce(request):
             
             etudiantApogeeValid = Etudiant.objects.get(apogee = int(apogee_value))
             
-            Annonce.objects.create(titreannonce= titreannonce, id_semestre= id_semestre, id_modmat= id_modmat, contenu= contenu, dateannonce = dateannonce_value, apogee = etudiantApogeeValid)
+            Annonce.objects.create(titreannonce= titreannonce, id_semestre= id_semestre, id_modmat= id_modmat, contenu= contenu, dateannonce = dateannonce_value, apogee = etudiantApogeeValid, idutilisateur = idutilisateur)
 
             return redirect('annonce')
 

@@ -722,6 +722,12 @@ select {
   }
 }
 
+@media (min-width: 1150px) {
+  .container {
+    max-width: 1150px;
+  }
+}
+
 @media (min-width: 1300px) {
   .container {
     max-width: 1300px;
@@ -1214,6 +1220,10 @@ select {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-\[200px\] {
+  width: 200px;
 }
 
 .w-\[213px\] {
@@ -1861,10 +1871,6 @@ select {
   font-family: PoppinsRegular;
 }
 
-.font-poppinSemiBold {
-  font-family: PoppinsMedium;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -2217,10 +2223,6 @@ select {
     margin-left: 0.25rem;
   }
 
-  .navbarTab\:mr-2 {
-    margin-right: 0.5rem;
-  }
-
   .navbarTab\:block {
     display: block;
   }
@@ -2382,7 +2384,7 @@ select {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   .AnnounceViewport\:absolute {
     position: absolute;
   }
@@ -2442,6 +2444,22 @@ select {
   .AnnounceViewport\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1150px) and (max-width: 1400px) {
+  .buttonsAnnonce\:mr-0 {
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .titreAnnonceViewport\:w-\[400px\] {
+    width: 400px;
+  }
+
+  .titreAnnonceViewport\:w-\[48px\] {
+    width: 48px;
   }
 }
 
@@ -2527,6 +2545,10 @@ select {
 }
 
 @media (min-width: 1000px) and (max-width: 1400px) {
+  .xl\:ml-0 {
+    margin-left: 0px;
+  }
+
   .xl\:ml-7 {
     margin-left: 1.75rem;
   }
@@ -2634,6 +2656,10 @@ select {
   .chatonlywide\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
+  }
+
+  .chatonlywide\:w-\[400px\] {
+    width: 400px;
   }
 }
 
