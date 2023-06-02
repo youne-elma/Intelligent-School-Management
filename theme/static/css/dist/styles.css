@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,6 +602,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -649,6 +652,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -1002,10 +1008,6 @@ select {
   margin-top: auto;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .block {
   display: block;
 }
@@ -1270,14 +1272,6 @@ select {
   width: 100%;
 }
 
-.w-56 {
-  width: 14rem;
-}
-
-.w-\[30rem\] {
-  width: 30rem;
-}
-
 .min-w-\[179px\] {
   min-width: 179px;
 }
@@ -1364,20 +1358,12 @@ select {
   justify-content: flex-start;
 }
 
-.justify-end {
-  justify-content: flex-end;
-}
-
 .justify-center {
   justify-content: center;
 }
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
 }
 
 .justify-items-center {
@@ -1464,10 +1450,6 @@ select {
   gap: 60px;
 }
 
-.gap-y-8 {
-  row-gap: 2rem;
-}
-
 .self-end {
   align-self: flex-end;
 }
@@ -1522,6 +1504,10 @@ select {
 
 .rounded-sm {
   border-radius: 0.125rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .rounded-l-2xl {
@@ -1592,6 +1578,12 @@ select {
 .border-loyalblue {
   --tw-border-opacity: 1;
   border-color: rgb(28 78 128 / var(--tw-border-opacity));
+}
+
+.border-x-mediumcoolGray {
+  --tw-border-opacity: 1;
+  border-left-color: rgb(126 144 154 / var(--tw-border-opacity));
+  border-right-color: rgb(126 144 154 / var(--tw-border-opacity));
 }
 
 .bg-BroderGris {
@@ -1686,11 +1678,6 @@ select {
 .bg-whte2 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#A33840\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(163 56 64 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {
@@ -1962,11 +1949,6 @@ select {
   line-height: 1rem;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .font-\[500\] {
   font-weight: 500;
 }
@@ -2077,16 +2059,6 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-\[\#903F45\] {
-  --tw-text-opacity: 1;
-  color: rgb(144 63 69 / var(--tw-text-opacity));
-}
-
-.text-\[\#913F45\] {
-  --tw-text-opacity: 1;
-  color: rgb(145 63 69 / var(--tw-text-opacity));
 }
 
 .opacity-100 {
@@ -2414,30 +2386,8 @@ select {
     display: none;
   }
 
-  .loginimagehide\:w-80 {
-    width: 20rem;
-  }
-
-  .loginimagehide\:w-\[270px\] {
-    width: 270px;
-  }
-
   .loginimagehide\:pt-10 {
     padding-top: 2.5rem;
-  }
-
-  .loginimagehide\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
-
-  .loginimagehide\:text-base {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
-  .loginimagehide\:font-bold {
-    font-weight: 700;
   }
 }
 

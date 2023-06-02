@@ -12,13 +12,13 @@ def registre(request):
     try:
         form = UserForm()
     # if request.method == 'POST' :
-        form =UserForm(data=request.POST)
+        form = UserForm(data=request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Votre Compte a été bien créer !')
             return redirect('login')
         else:
-            messages.warning(request, 'Something is Worng ! Try Again ...')
+            print(form.errors)
         return render(request, 'core/registre.html', {'form':form})
     except Exception as e:
         form = UserForm()

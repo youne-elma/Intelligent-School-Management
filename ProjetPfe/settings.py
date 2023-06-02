@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
 # All these lines are for the tailwind setup please do not touch theme !------
 
-NPM_BIN_PATH = "C:/Program Files (x86)/nodejs/npm.cmd"  # this line is for windows users
+NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"  # this line is for windows users
 
 TAILWIND_APP_NAME = 'theme'
 
@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'ProjetPfe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testgfsaa',
+        'NAME': 'gestion_fsa',
         'USER':'root',
-        'PASSWORD':'',
+        'PASSWORD':'root123',
         'HOST':'127.0.0.1',
     }
 }
