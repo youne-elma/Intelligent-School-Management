@@ -1,5 +1,6 @@
 from django import forms
-from core.models import Annonce
+from django.contrib.auth.forms import UserCreationForm
+from core.models import Annonce, utilisateur, Specialite, Departement
 
 class AnnonceForm(forms.ModelForm):
     class Meta:
@@ -11,4 +12,35 @@ class AjoutAnnonceForm(forms.ModelForm):
         model = Annonce
         fields = ['titreannonce', 'contenu','id_semestre', 'id_modmat', 'apogee']
 
-    # apogee = forms.IntegerField(required=False)
+class UserForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(UserForm, self).__init__(*args, **kwargs)
+        #Choices name from table specialite 
+        specs = Specialite.objects.all()
+        self.fields['idspec'].choices=[(spec.idspec, spec.intitulespec) for spec in specs]
+        #Choices name from table Departement 
+        depts = Departement.objects.all()
+        self.fields['iddept'].choices=[(dept.iddept, dept.intituledept) for dept in depts]
+
+    class Meta:
+        model = utilisateur
+        fields = [
+            'cin',
+            'n_som',
+            'nomar',
+            'prenomar',
+            'nomfr',
+            'prenomfr',
+            'telephone',
+            'email',
+            'username',
+            'password1',
+            'password2',
+            'idspec',
+            'iddept',
+            'isadmine'
+        ]
+        # widgets = {
+        #     'cin':forms.TextInput(attrs={'class': 'text-xl'}),
+        #     'n_som': forms.TextInput(attrs={'class': 'text-xl'}),
+        # }

@@ -201,6 +201,48 @@ body {
 .deleteButton:hover {
   background: #841220;
 }
+/*------- Message s color--------*/
+
+.alert-success{
+  color: green;
+}
+.alert-warning{
+  color: #D81931;
+}
+/*------- styling the registre form --------*/
+#formregistre {
+  text-align: center;
+}
+
+#formregistre select {
+  border-radius: 15px;
+  border: 0;
+  background-color: #139feb1b;
+}
+
+#formregistre input[type=text]{
+  border-radius: 15px;
+  border: 0;
+  background-color: #139feb1b;
+}
+#formregistre input[type=password]{
+  border-radius: 15px;
+  border: 0;
+  background-color: #139feb1b;
+}
+
+
+#formregistre input[type=checkbox]{
+  border-radius: 15px;
+  border: 0;
+  background-color:#139feb1b ;
+  color: #0F2D4B;
+}
+#formregistre input[type=checkbox]:checked{
+  border-radius: 15px;
+  border: 0;
+  background-color:#1a5189 ;
+}
 /*------- Page Modifier Password--------*/
 
 .changePasswordButton {
