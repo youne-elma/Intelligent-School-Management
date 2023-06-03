@@ -1,5 +1,4 @@
 {% extends 'core/base.html' %}
-
 {% block title %}Upload Notes{% endblock %}
 
 {% block content %}
@@ -39,7 +38,27 @@
                 le
                 template</button>
 
+
             <span class="mt-20">Liste des NOTES</span>
+
+
+
+
+            <select class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2" name="module"
+                id="module">
+                {% for module in request.user.module_set.all %}
+                <option value={{module.id_modmat}}>{{ module.intulite_ar }}</option>
+                {% endfor %}
+            </select>
+            {% if messages %}
+            <div class="mt-4 mx-3">
+                {% for message in messages %}
+                <div class="bg-red-500 text-black  px-4 py-2 mb-2 rounded">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
             <input type="file" name="file" accept=".xlsx" id="file"
                 class="py-2 px-4 rounded-[5px] border border-[#e4dfdf]">
             <input type="submit" value="submit"

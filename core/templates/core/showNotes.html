@@ -31,49 +31,38 @@
 
 
     <div class="bg-white rounded-[5px] font-poppin font-normal AnnounceViewport:z-0">
-        <div
-            class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+        <div class=" flex flex-col gap-4">
+            <div class="flex flex-col">
+                <div
+                    class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+                    <input id="link-checkbox" type="checkbox" value=""
+                        class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+                    <p class="ecoursMScreen:text-xs">Nom et Prenom</p>
+                    <p class="ecoursMScreen:text-xs">APOGEE</p>
+                    <p class="ecoursMScreen:text-xs">Note</p>
+                    <p class="ecoursMScreen:text-xs">Resultat</p>
+                    <p class="ecoursMScreen:text-xs">Session</p>
+                    <p class="ecoursMScreen:text-xs">Date</p>
 
-            <input id="link-checkbox" type="checkbox" value=""
-                class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
-
-            <div
-                class="flex flex-nowrap justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
-
-                <span class=" text-centerw-[120px] text-ellipsis text-sm AnnounceViewport:text-base">Nom et
-                    Prenom</span>
-            </div>
-
-            <span
-                class=" text-center largeScreen:w-[60px] 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">N°Apogee</span>
-            <span
-                class=" text-center text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden">
-                Date</span>
-            <span
-                class="text-center largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Note</span>
-            <span
-                class="text-center largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Resultat</span>
-            <span
-                class="text-center largeScreen:w-[60px]  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">Session</span>
+                    <p class="ecoursMScreen:text-xs">Action</p>
 
 
 
-            <span class="text-center text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block">Date</span>
-            <div
-                class="w-[80px] flex flex-wrap gap-4 mr-7 navbarTab:mr-2 AnnounceViewport:absolute AnnounceViewport:right-0">
-
+                </div>
+                <span class="bg-loyalblue w-full h-[2px]"></span>
             </div>
 
         </div>
 
         {% for note in notes %}
         <!-- Modal Code -->
-        <section class="modal hidden justify-center" id={{note.id}}>
+        <section class="modal hidden justify-center" id={{note.id}} info={{note}}>
             <div class=" flex flex-col justify-center items-center gap-2">
                 <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
-                <h4 class="font-poppin font-medium text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?
+                <h4 class="font-poppin font-medium text-center w-72">Êtes-vous sûr de vouloir supprimer cette Note ?
                 </h4>
-                <p class="text-[12px] font-poppin font-normal opacity-60">“Avis important SMP4: Presence aux TP”</p>
+                <p class="text-[12px] font-poppin font-normal opacity-60 modal-text">“Avis important SMP4: Presence aux
+                    TP”</p>
                 <div class="flex gap-[30px] mt-5">
                     <button class="btn-close cancelButton">Cancel</button>
                     <a href="{% url 'deleteNote' note.id %}">
@@ -104,15 +93,15 @@
 
             <span
                 class="largeScreen:w-[60px] text-center 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.apogee.apogee}}</span>
-            <span class="  text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden">
-                16-04-2023
-                05:24</span>
+
             <span
                 class="largeScreen:w-[60px] text-center  3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.note}}</span>
             <span
                 class="largeScreen:w-[60px]  text-center 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.resultat}}</span>
             <span
                 class="largeScreen:w-[60px] text-center 3xl:text-base 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin">{{note.session}}</span>
+            <span class="  text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden">
+                16-04-2023</span>
 
 
 

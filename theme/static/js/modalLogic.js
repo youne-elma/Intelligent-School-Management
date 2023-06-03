@@ -9,8 +9,27 @@ const openModal = function (id) {
     if (modal[i].id == id) {
       modal[i].classList.remove("hidden");
       overlay[i].classList.remove("hidden");
+      console.log(modal[i].info);
     }
   }
+
+  // Make an AJAX request to the Django API endpoint
+  fetch(`/api/objects/${id}/`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Process the retrieved data and update your modal and variables
+
+      const objectInfo = data; // Assuming the entire object is returned in the API response
+      console.log(objectInfo);
+      // Assign the retrieved attributes to variables if needed
+      const attribute1 = objectInfo.Name;
+      console.log(attribute1);
+      // Use the retrieved data as needed
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      // Handle error if the request fails
+    });
 };
 
 openModalBtn.forEach(function (button) {

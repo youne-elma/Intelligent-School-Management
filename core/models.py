@@ -6,17 +6,45 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
 
-class Admin(models.Model):
-    idadmin = models.AutoField(db_column='IDADMIN', primary_key=True)  # Field name made lowercase.
-    n_som = models.CharField(db_column='N_SOM', max_length=30, blank=True, null=True)  # Field name made lowercase.
-    email = models.CharField(db_column='EMAIL', unique=True, max_length=30)  # Field name made lowercase.
-    pwdadmine = models.CharField(db_column='PWDADMINE', max_length=60, blank=True, null=True)  # Field name made lowercase.
+class utilisateur(AbstractUser):
+    idutilisateur = models.AutoField(db_column='idutilisateur', primary_key=True)  # Field name made lowercase.
+    idspec = models.ForeignKey('Specialite', models.DO_NOTHING, db_column='IDSPEC')  # Field name made lowercase.
+    iddept = models.ForeignKey('Departement', models.DO_NOTHING, db_column='IDDEPT')  # Field name made lowercase.
+    cin = models.CharField(db_column='CIN', max_length=20)  # Field name made lowercase.
+    n_som = models.CharField(db_column='N_SOM', max_length=30)  # Field name made lowercase.
+    nomfr = models.CharField(db_column='NOMFR', max_length=30)  # Field name made lowercase.""
+    nomar = models.CharField(db_column='NOMAR', max_length=30)  # Field name made lowercase.
+    prenomfr = models.CharField(db_column='PRENOMFR', max_length=30)  # Field name made lowercase.
+    prenomar = models.CharField(db_column='PRENOMAR', max_length=30)  # Field name made lowercase.
+    telephone = models.CharField(db_column='TELEPHONE', max_length=20)  # Field name made lowercase.
+    password = models.CharField(db_column='PASSWORD',max_length=250)
+    email = models.CharField(db_column='EMAIL',max_length=254)
+    
+    username = models.CharField(db_column='USERNAME',unique=True, max_length=150)
+    is_superuser = models.IntegerField(db_column='is_superuser',default=False)
+    is_active = models.IntegerField(db_column='is_active',default=True)
+    is_staff = models.IntegerField(db_column='is_staff',default=False)
+    isadmine = models.BooleanField(db_column='isadmine',default=False)
+    last_name = None
+    first_name = None
+    last_login = None
+    date_joined = None
+
+    groups = models.ManyToManyField(Group, related_name='core_utilisateurs')
+    user_permissions = models.ManyToManyField(
+        Permission, related_name='core_utilisateurs'
+    )
+
+    def __str__(self):
+        return self.utilisateur.username
 
     class Meta:
         managed = False
-        db_table = 'admin'
+        db_table = 'utilisateur'
+
 
 
 class Adresse(models.Model):
@@ -46,8 +74,7 @@ class Annonce(models.Model):
     id_semestre = models.ForeignKey('Semestre', models.DO_NOTHING, db_column='ID_SEMESTRE')  # Field name made lowercase.
     apogee = models.ForeignKey('Etudiant', models.DO_NOTHING, db_column='APOGEE')  # Field name made lowercase.
     id_modmat = models.ForeignKey('Module', models.DO_NOTHING, db_column='ID_MODMAT')  # Field name made lowercase.
-    idadmin = models.ForeignKey(Admin, models.DO_NOTHING, db_column='IDADMIN')  # Field name made lowercase.
-    idprof = models.ForeignKey('Professeur', models.DO_NOTHING, db_column='IDPROF')  # Field name made lowercase.
+    idutilisateur = models.ForeignKey('utilisateur', models.DO_NOTHING, db_column='IDutilisateur')  # Field name made lowercase.
     dateannonce = models.DateField(db_column='DATEANNONCE')  # Field name made lowercase.
     titreannonce = models.CharField(db_column='TITREANNONCE', max_length=150)  # Field name made lowercase.
     contenu = models.TextField(db_column='CONTENU')  # Field name made lowercase.
@@ -150,7 +177,7 @@ class Demande(models.Model):
 class Departement(models.Model):
     iddept = models.CharField(db_column='IDDEPT', primary_key=True, max_length=30)  # Field name made lowercase.
     intituledept = models.CharField(db_column='INTITULEDEPT', max_length=50)  # Field name made lowercase.
-    id_profchef = models.ForeignKey('Professeur', models.DO_NOTHING, db_column='ID_PROFCHEF', blank=True, null=True)  # Field name made lowercase.
+    id_profchef = models.ForeignKey('utilisateur', models.DO_NOTHING, db_column='ID_PROFCHEF', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -301,7 +328,6 @@ class Examen(models.Model):
         managed = False
         db_table = 'examen'
         unique_together = ('id_local', 'apogee', 'id_modmat', 'n_examen', 'h_debut')
-        
 
 
 class Filiere(models.Model):
@@ -309,7 +335,7 @@ class Filiere(models.Model):
     iddept = models.ForeignKey(Departement, models.DO_NOTHING, db_column='IDDEPT')  # Field name made lowercase.
     intulite_ar = models.CharField(db_column='INTULITE_AR', max_length=50, blank=True, null=True)  # Field name made lowercase.
     intulite_fr = models.CharField(db_column='INTULITE_FR', max_length=50, blank=True, null=True)  # Field name made lowercase.
-    id_profcord = models.ForeignKey('Professeur', models.DO_NOTHING, db_column='ID_PROFCORD')  # Field name made lowercase.
+    id_profcord = models.ForeignKey('utilisateur', models.DO_NOTHING, db_column='ID_PROFCORD')  # Field name made lowercase.
 
     class Meta:
         managed = False
@@ -326,14 +352,14 @@ class Grade(models.Model):
 
 
 class Gradeprof(models.Model):
-    idgrade = models.OneToOneField(Grade, models.DO_NOTHING, db_column='IDGRADE', primary_key=True)  # Field name made lowercase. The composite primary key (IDGRADE, IDPROF) found, that is not supported. The first column is selected.
-    idprof = models.ForeignKey('Professeur', models.DO_NOTHING, db_column='IDPROF')  # Field name made lowercase.
+    idgrade = models.OneToOneField(Grade, models.DO_NOTHING, db_column='IDGRADE', primary_key=True)  # Field name made lowercase. The composite primary key (IDGRADE, idutilisateur) found, that is not supported. The first column is selected.
+    idutilisateur = models.ForeignKey('utilisateur', models.DO_NOTHING, db_column='idutilisateur')  # Field name made lowercase.
     date = models.DateField(db_column='DATE')  # Field name made lowercase.
 
     class Meta:
         managed = False
         db_table = 'gradeprof'
-        unique_together = (('idgrade', 'idprof'),)
+        unique_together = (('idgrade', 'idutilisateur'),)
 
 
 class Handicap(models.Model):
@@ -400,7 +426,7 @@ class Inscritdip(models.Model):
 
 
 class Intervenir(models.Model):
-    idprof = models.OneToOneField('Professeur', models.DO_NOTHING, db_column='IDPROF', primary_key=True)  # Field name made lowercase. The composite primary key (IDPROF, ID_MODMAT) found, that is not supported. The first column is selected.
+    idutilisateur = models.OneToOneField('utilisateur', models.DO_NOTHING, db_column='idutilisateur', primary_key=True)  # Field name made lowercase. The composite primary key (idutilisateur, ID_MODMAT) found, that is not supported. The first column is selected.
     id_modmat = models.ForeignKey('Module', models.DO_NOTHING, db_column='ID_MODMAT')  # Field name made lowercase.
     annee = models.IntegerField(db_column='ANNEE', blank=True, null=True)  # Field name made lowercase.
     type = models.CharField(db_column='TYPE', max_length=30, blank=True, null=True)  # Field name made lowercase.
@@ -408,7 +434,7 @@ class Intervenir(models.Model):
     class Meta:
         managed = False
         db_table = 'intervenir'
-        unique_together = (('idprof', 'id_modmat'),)
+        unique_together = (('idutilisateur', 'id_modmat'),)
 
 
 class Langue(models.Model):
@@ -444,7 +470,7 @@ class ModFilSem(models.Model):
 
 class Module(models.Model):
     id_modmat = models.CharField(db_column='ID_MODMAT', primary_key=True, max_length=30)  # Field name made lowercase.
-    idprof = models.ForeignKey('Professeur', models.DO_NOTHING, db_column='IDPROF')  # Field name made lowercase.
+    idutilisateur = models.ForeignKey('utilisateur', models.DO_NOTHING, db_column='idutilisateur')  # Field name made lowercase.
     intulite_ar = models.CharField(db_column='INTULITE_AR', max_length=50, blank=True, null=True)  # Field name made lowercase.
     intulite_fr = models.CharField(db_column='INTULITE_FR', max_length=50, blank=True, null=True)  # Field name made lowercase.
     volume_horaire = models.IntegerField(db_column='VOLUME_HORAIRE', blank=True, null=True)  # Field name made lowercase.
@@ -487,24 +513,6 @@ class ParcoursTypeDesciplin(models.Model):
         db_table = 'parcours_type_desciplin'
         unique_together = (('id_modmat', 'id_detail'),)
 
-
-class Professeur(models.Model):
-    idprof = models.AutoField(db_column='IDPROF', primary_key=True)  # Field name made lowercase.
-    idspec = models.ForeignKey('Specialite', models.DO_NOTHING, db_column='IDSPEC')  # Field name made lowercase.
-    iddept = models.ForeignKey(Departement, models.DO_NOTHING, db_column='IDDEPT')  # Field name made lowercase.
-    cin = models.CharField(db_column='CIN', max_length=20)  # Field name made lowercase.
-    n_som = models.CharField(db_column='N_SOM', max_length=30)  # Field name made lowercase.
-    nomfr = models.CharField(db_column='NOMFR', max_length=30)  # Field name made lowercase.
-    nomar = models.CharField(db_column='NOMAR', max_length=30)  # Field name made lowercase.
-    prenomfr = models.CharField(db_column='PRENOMFR', max_length=30)  # Field name made lowercase.
-    prenomar = models.CharField(db_column='PRENOMAR', max_length=30)  # Field name made lowercase.
-    telephone = models.CharField(db_column='TELEPHONE', max_length=20)  # Field name made lowercase.
-    email = models.CharField(db_column='EMAIL', unique=True, max_length=30)  # Field name made lowercase.
-    pwd = models.CharField(db_column='PWD', max_length=30)  # Field name made lowercase.
-
-    class Meta:
-        managed = False
-        db_table = 'professeur'
 
 
 class ProffessTypreside(models.Model):

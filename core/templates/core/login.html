@@ -4,12 +4,13 @@
 
 <!DOCTYPE html>
 <html lang="fr">
-<head> 
+
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connexion</title>
 
-    {% comment %} FavIcon for all the platforms {% endcomment %}
+  {% comment %} FavIcon for all the platforms {% endcomment %}
 
   <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">
@@ -21,91 +22,104 @@
   <meta name="theme-color" content="#ffffff">
 
 
-  {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css%22%3E"> {% endcomment %}
+  {% comment %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.4/tailwind.min.css%22%3E">
+  {% endcomment %}
   {% tailwind_css %}
 </head>
-  <body>
-    <section class="bg-lightcolor min-h-screen flex items-center justify-center">
-      {% comment %} login container{% endcomment %}
 
-      {% comment %} Global div {% endcomment %}
-      <div class="bg-whte2 flex shadow-lg max-w-3xl rounded-lg">
+<body>
+  <section class="bg-lightcolor min-h-screen flex items-center justify-center">
+    {% comment %} login container{% endcomment %}
 
-        {% comment %} div For the containte {% endcomment %}
+    {% comment %} Global div {% endcomment %}
+    <div class="bg-whte2 flex shadow-lg max-w-3xl rounded-lg">
 
-        <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite relative" action="" method="post">
+      {% comment %} div For the containte {% endcomment %}
 
-          <div class="flex flex-col justify-center items-center">
-            <img  class="w-60 mb-5 loginimagehide:mb-0 loginimagehide:mt-5" alt="image" src="{% static 'icons/logo.png' %}" />
-          </div>
-
-          <div class="flex flex-col items-center justify-center rounded gap-6">
-            <h2 class="font-bold text-[#202020]  text-5 center py-4" > Service de Scolarité</h2>
-
-            <input type="email" name="userEmail" placeholder="Adresse e-mail" class= "text-sm w-80 h-9  bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none   p-9 border-b-1  border-l-0 border-r-0 border-t-0 mx-10" required>
-            <input type="password" name="Password" placeholder="saisissez votre mot de passe" class= "text-sm w-80 h-9 bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1  border-l-0 border-r-0 border-t-0" required>
-
-            <button type="Submit" class="bg-buttonhover mt-2 rounded w-52 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2
-            font-bold ">CONNEXION</button>
-          </div>
-
-          <div class="p-2 mt-2 grid-cols-3 flex justify-center text-4 ">
-          <button class= "text-[#1C4E80] text-sm">Mot de passe oublié ?</button>
-          </div>
-
-          
-          <footer class="absolute bottom-0 text-mediumcoolGray text-center p-5 loginimagehide:relative loginimagehide:pt-10">
-            <p class="text-xs">univercell AE</p>
-          </footer>
-        
-        </form>
-
-
-
-                {% comment %} div For the image {% endcomment %}
-        <div class="slider relative ml-2 loginimagehide:hidden">
-          
-          <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
-            <input type="radio" name="radio-btn" id="radio2">
-            <input type="radio" name="radio-btn" id="radio3">
-            <input type="radio" name="radio-btn" id="radio4">
-
-            <div class="slide first">
-              <img src="../../../theme/static/image/Img1.png" alt="" />
-            </div>
-            <div class="slide">
-              <img src="../../../theme/static/image/Img2.png" alt="" /> 
-            </div>
-            <div class="slide">
-              <img src="../../../theme/static/image/Img3.png" alt="" /> 
-            </div>
-            <div class="slide">
-              <img src="../../../theme/static/image/Img4.png" alt="" /> 
-            </div>
-            
-            <div class="navigation-auto">
-              <div class="auto-btn1"></div>
-              <div class="auto-btn2"></div>
-              <div class="auto-btn3"></div>
-              <div class="auto-btn4"></div>
-            </div>
-          </div>
-
-          <div class="navigation-manual">
-            <label for="radio1" class="manual-btn"></label>
-            <label for="radio2" class="manual-btn"></label>
-            <label for="radio3" class="manual-btn"></label>
-            <label for="radio4" class="manual-btn"></label>
-          </div>
-
+      <form class="flex flex-col items-center justify-center rounded-md bg-clearwhite relative" action="" method="post">
+        {% csrf_token %}
+        <div class="flex flex-col justify-center items-center">
+          <img class="w-60 mb-5 loginimagehide:mb-0 loginimagehide:mt-5" alt="image"
+            src="{% static 'icons/logo.png' %}" />
         </div>
-        
+
+        <div class="flex flex-col items-center justify-center rounded gap-6">
+          <h2 class="font-bold text-[#202020]  text-5 center py-4"> Service de Scolarité</h2>
+          {% if messages%}
+          {% for message in messages %}
+          <p class="alert-{{ message.tags }}">{{ message }}</p>
+          {% endfor %}
+          {% endif %}
+          <input type="text" name="username" placeholder="Username"
+            class="text-sm w-80 h-9 bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1 border-l-0 border-r-0 border-t-0 mx-10"
+            required>
+          <input type="password" name="password" placeholder="Saisissez votre mot de passe"
+            class="text-sm w-80 h-9 bg-while px-2 py-2 border focus:bg-skybleau focus:outline-none p-9 border-b-1 border-l-0 border-r-0 border-t-0"
+            required>
+
+          <button type="Submit"
+            class="bg-buttonhover mt-2 rounded w-52 h-10 text-[#f1f5f9] hover:bg-skybleu2 active:bg-skybleu2 focus:outline-none focus:ring focus:bg-skybleu2 font-bold ">CONNEXION</button>
+        </div>
+
+        <div class="p-2 mt-2 grid-cols-3 flex justify-center text-4 ">
+          <button class="text-[#1C4E80] text-sm">Mot de passe oublié ?</button>
+        </div>
+
+
+        <footer
+          class="absolute bottom-0 text-mediumcoolGray text-center p-5 loginimagehide:relative loginimagehide:pt-10">
+          <p class="text-xs">univercell AE</p>
+        </footer>
+
+      </form>
+
+
+
+      {% comment %} div For the image {% endcomment %}
+      <div class="slider relative ml-2 loginimagehide:hidden">
+
+        <div class="slides">
+          <input type="radio" name="radio-btn" id="radio1">
+          <input type="radio" name="radio-btn" id="radio2">
+          <input type="radio" name="radio-btn" id="radio3">
+          <input type="radio" name="radio-btn" id="radio4">
+
+          <div class="slide first">
+            <img src="../../../theme/static/image/Img1.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="../../../theme/static/image/Img2.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="../../../theme/static/image/Img3.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="../../../theme/static/image/Img4.png" alt="" />
+          </div>
+
+          <div class="navigation-auto">
+            <div class="auto-btn1"></div>
+            <div class="auto-btn2"></div>
+            <div class="auto-btn3"></div>
+            <div class="auto-btn4"></div>
+          </div>
+        </div>
+
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+        </div>
+
       </div>
 
-    </section>
+    </div>
 
-    <script src="{% static 'js/loginAnimation.js'%}" />
-    {% django_browser_reload_script %}
+  </section>
+
+  <script src="{% static 'js/loginAnimation.js'%}" />
+  {% django_browser_reload_script %}
   </body>
 </html>

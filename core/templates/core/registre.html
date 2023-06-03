@@ -1,0 +1,61 @@
+{% load static tailwind_tags %}
+{% load django_browser_reload %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    {% comment %} FavIcon for all the platforms {% endcomment %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}">
+    <link rel="mask-icon" href="{% static '/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <title>Creer un compte</title>
+    {% tailwind_css %}
+
+</head>
+
+<body class="content-center flex justify-center items-center mt-12">
+    <div class="content-center flex justify-center items-center sScreen:block">
+        <div class="sScreen:items-center w-full">
+            <div class="relative bg-loyalblue flex rounded-md shadow-sm mx-8 z-[2] justify-center">
+                <p class="font-poppin text-center text-xl text-lightcolor p-5">Creer un compte</p>
+            </div>
+            <form method="post" class="relative flex flex-col items-center justify-center bg-white pt-20 pb-8 bottom-8"
+                action="{% url 'registre' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if messages%}
+                {% for message in messages %}
+                <p style="color:red">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+                <div id="formregistre" class="mx-10 items-center flex flex-col m-10 gap-2 ecoursMScreen:text-sm">
+                    {{ form }}
+                </div>
+                <input class="rechercheButton text-sm bg-loyalblue px-5 py-3 text-white rounded-md cursor-pointer"
+                    type="submit" value=" Créer " />
+            </form>
+        </div>
+    </div>
+    {% django_browser_reload_script %}
+    </div>
+    </div>
+    <script src="{% static 'js/script.js'%}" />
+    </body>
+
+</html>
