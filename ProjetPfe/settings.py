@@ -11,12 +11,17 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 AUTH_USER_MODEL = "core.utilisateur"
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MEDIA_URL = '/Media/'
+MEDIA_ROOT = '/Media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Media')
 
+staticfiles_dirs = ( os.path.join(BASE_DIR, 'static'), )
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -46,7 +51,7 @@ INSTALLED_APPS = [
 
 # All these lines are for the tailwind setup please do not touch theme !------
 
-NPM_BIN_PATH = "C:/Program Files/nodejs/npm.cmd"  # this line is for windows users
+NPM_BIN_PATH = "C:/Program Files (x86)/nodejs/npm.cmd"  # this line is for windows users
 
 TAILWIND_APP_NAME = 'theme'
 
@@ -94,9 +99,9 @@ WSGI_APPLICATION = 'ProjetPfe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'gestion_fsa',
+        'NAME': 'testgfsaa',
         'USER':'root',
-        'PASSWORD':'root123',
+        'PASSWORD':'',
         'HOST':'127.0.0.1',
     }
 }

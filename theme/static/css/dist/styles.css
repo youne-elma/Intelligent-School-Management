@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,9 +602,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -652,9 +649,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -1080,6 +1074,10 @@ select {
   height: 100px;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
 .h-\[22px\] {
   height: 22px;
 }
@@ -1214,6 +1212,10 @@ select {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-\[150px\] {
+  width: 150px;
 }
 
 .w-\[213px\] {
@@ -1506,10 +1508,6 @@ select {
   border-radius: 0.125rem;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
-}
-
 .rounded-l-2xl {
   border-top-left-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -1580,12 +1578,6 @@ select {
   border-color: rgb(28 78 128 / var(--tw-border-opacity));
 }
 
-.border-x-mediumcoolGray {
-  --tw-border-opacity: 1;
-  border-left-color: rgb(126 144 154 / var(--tw-border-opacity));
-  border-right-color: rgb(126 144 154 / var(--tw-border-opacity));
-}
-
 .bg-BroderGris {
   background-color: #d9d9d985;
 }
@@ -1633,6 +1625,11 @@ select {
 .bg-cornflower {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.bg-daredvilleorange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 106 71 / var(--tw-bg-opacity));
 }
 
 .bg-denimcolor {

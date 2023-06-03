@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, logout, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserForm
+import os
 # Create your views here.
 
 
@@ -140,6 +141,15 @@ def gestiondabsence(request):
 
 @login_required
 def profile(request):
+    if request.method == 'POST' and request.FILES.get('profile_image'):
+        profile_image = request.FILES['profile_image']
+        user = request.user
+        if user.profilepic:
+            user.profilepic.delete(save=False)
+        request.user.profilepic = profile_image
+        request.user.save()
+        return redirect('profile')
+        
     return render(request, 'core/profile.html')
 
 @login_required
