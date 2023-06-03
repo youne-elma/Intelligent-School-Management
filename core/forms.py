@@ -7,6 +7,11 @@ class AnnonceForm(forms.ModelForm):
         model = Annonce
         fields = ['titreannonce', 'contenu','id_semestre', 'id_modmat']
 
+class AjoutAnnonceForm(forms.ModelForm):
+    class Meta:
+        model = Annonce
+        fields = ['titreannonce', 'contenu','id_semestre', 'id_modmat', 'apogee']
+
 class UserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)

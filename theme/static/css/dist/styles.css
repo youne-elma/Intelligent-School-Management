@@ -722,6 +722,12 @@ select {
   }
 }
 
+@media (min-width: 1150px) {
+  .container {
+    max-width: 1150px;
+  }
+}
+
 @media (min-width: 1300px) {
   .container {
     max-width: 1300px;
@@ -1216,6 +1222,10 @@ select {
   width: 24rem;
 }
 
+.w-\[200px\] {
+  width: 200px;
+}
+
 .w-\[213px\] {
   width: 213px;
 }
@@ -1388,10 +1398,6 @@ select {
 
 .gap-2 {
   gap: 0.5rem;
-}
-
-.gap-20 {
-  gap: 5rem;
 }
 
 .gap-24 {
@@ -1623,6 +1629,11 @@ select {
 .bg-cornflower {
   --tw-bg-opacity: 1;
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
+}
+
+.bg-daredvilleorange {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 106 71 / var(--tw-bg-opacity));
 }
 
 .bg-denimcolor {
@@ -1858,10 +1869,6 @@ select {
 
 .font-poppinRegular {
   font-family: PoppinsRegular;
-}
-
-.font-poppinSemiBold {
-  font-family: PoppinsMedium;
 }
 
 .text-2xl {
@@ -2216,10 +2223,6 @@ select {
     margin-left: 0.25rem;
   }
 
-  .navbarTab\:mr-2 {
-    margin-right: 0.5rem;
-  }
-
   .navbarTab\:block {
     display: block;
   }
@@ -2381,7 +2384,7 @@ select {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   .AnnounceViewport\:absolute {
     position: absolute;
   }
@@ -2441,6 +2444,22 @@ select {
   .AnnounceViewport\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1150px) and (max-width: 1400px) {
+  .buttonsAnnonce\:mr-0 {
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 1150px) {
+  .titreAnnonceViewport\:w-\[400px\] {
+    width: 400px;
+  }
+
+  .titreAnnonceViewport\:w-\[48px\] {
+    width: 48px;
   }
 }
 
@@ -2526,6 +2545,10 @@ select {
 }
 
 @media (min-width: 1000px) and (max-width: 1400px) {
+  .xl\:ml-0 {
+    margin-left: 0px;
+  }
+
   .xl\:ml-7 {
     margin-left: 1.75rem;
   }
@@ -2634,6 +2657,10 @@ select {
     margin-left: 5rem;
     margin-right: 5rem;
   }
+
+  .chatonlywide\:w-\[400px\] {
+    width: 400px;
+  }
 }
 
 @media (min-width: 760px) and (max-width: 1000px) {
@@ -2697,14 +2724,6 @@ select {
 }
 
 @media (max-width: 700px) {
-  .ajoutAnnonceMobile\:w-full {
-    width: 100%;
-  }
-
-  .ajoutAnnonceMobile\:max-w-\[150px\] {
-    max-width: 150px;
-  }
-
   .ajoutAnnonceMobile\:max-w-\[200px\] {
     max-width: 200px;
   }

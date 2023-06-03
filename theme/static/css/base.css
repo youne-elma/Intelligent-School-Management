@@ -263,6 +263,15 @@ body {
   border-style: none;
 }
 
+.inputUpdateStyle input[type="number"] {
+  border: 1px solid #7E909A;
+  border-radius: 5px;
+}
+
+.inputUpdateStyle input[type="number"]:focus {
+  border-style: none;
+}
+
 .inputUpdateStyle textarea{
   outline: none;
   border: 1px solid #7E909A;
