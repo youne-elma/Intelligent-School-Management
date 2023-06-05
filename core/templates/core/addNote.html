@@ -1,0 +1,41 @@
+{% extends '../core/base.html' %}
+
+{% block title %} Add Note {% endblock %}
+
+{% block content %}
+
+<div class="flex flex-wrap justify-items-center gap-[5px] -mt-20 md:-mt-10 SmallScreen:-mt-6">
+    <img src="../../../theme/static/icons/Home.png" class="w-5 h-4" alt="icon-home" />
+    <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+    <span class="text-sm">Gestion des Notes</span>
+    <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+    <span class="text-sm">addNote</span>
+</div>
+
+<div class="bg-lightcolor flex flex-col items-align ajoutAnnonceBig:mx-10 inputUpdateStyle">
+    <div
+        class="bg-loyalblue rounded-md flex flex-col pt-4 pb-3 px-6 mx-7 text-lightcolor z-[2] ajoutAnnonceMobile:px-0 ajoutAnnonceTab:justify-center ajoutAnnonceTab:items-center">
+        <h1 class="font-semiPoppin text-xl ajoutAnnonceMobile:text-base">Gestion des Notes</h1>
+        <p class="ajoutAnnonceMobile:text-sm">Ajout d'une Note</p>
+    </div>
+    <div class="flex justify-center bg-clearwhite relative bottom-8 rounded-md px-10">
+        <form class="pt-16 flex flex-col gap-8 pb-10" method="POST">
+            {% csrf_token %}
+            {{form}}
+
+            {% if errorApogee %}
+            <div class="inputClass flex items-center justify-center bg-daredvilleorange py-2 rounded-sm">
+                <p class=" text-white">This Apogee code does not exist please enter another one</p>
+            </div>
+            {% endif %}
+            <div class="flex justify-center items-center py-2">
+                <button class="bg-loyalblue hover:bg-bluecharcoal py-3 px-5 rounded-md text-lightcolor"
+                    type="submit">New Note</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -6,13 +6,14 @@ class FileUploadForm(forms.Form):
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from core.models import Annonce, utilisateur, Specialite, Departement
+from core.models import Annonce, utilisateur, Specialite, Departement,Examen
 
-class AnnonceForm(forms.ModelForm):
+class NoteForm(forms.ModelForm):
     class Meta:
-        model = Annonce
-        fields = ['titreannonce', 'contenu','id_semestre', 'id_modmat']
-
+        model = Examen
+        fields = ['apogee', 'h_debut', 'session', 'note', 'id_modmat', 'id_local','n_examen']
+    
+    
 class UserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)

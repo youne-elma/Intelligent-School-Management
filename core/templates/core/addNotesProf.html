@@ -39,7 +39,7 @@
                 template</button>
 
 
-            <span class="mt-20">Liste des NOTES</span>
+            <span class="mt-20">Module</span>
 
 
 
@@ -50,19 +50,19 @@
                 <option value={{module.id_modmat}}>{{ module.intulite_ar }}</option>
                 {% endfor %}
             </select>
+            <input type="file" name="file" accept=".xlsx" id="file"
+                class="py-2 px-4 rounded-[5px] border border-[#e4dfdf]">
+            <input type="submit" value="submit"
+                class="cursor-pointer gestionEtudiants:self-center rounded-[5px] bg-smoothgreen text-[white] text-[0.9rem] w-[200px] py-2">
             {% if messages %}
-            <div class="mt-4 mx-3">
+            <div class="">
                 {% for message in messages %}
-                <div class="bg-red-500 text-black  px-4 py-2 mb-2 rounded">
+                <div class="text-daredvilleorange  py-2 mb-2 rounded">
                     {{ message }}
                 </div>
                 {% endfor %}
             </div>
             {% endif %}
-            <input type="file" name="file" accept=".xlsx" id="file"
-                class="py-2 px-4 rounded-[5px] border border-[#e4dfdf]">
-            <input type="submit" value="submit"
-                class="cursor-pointer gestionEtudiants:self-center rounded-[5px] bg-smoothgreen text-[white] text-[0.9rem] w-[200px] py-2">
         </div>
     </form>
 </div>

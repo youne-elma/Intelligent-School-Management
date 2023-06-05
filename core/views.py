@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 import pandas as pd
-from core.models import Examen, Local, Etudiant,Module
-from .forms import FileUploadForm
+from core.models import Examen, Local, Etudiant,Module,utilisateur
+from .forms import FileUploadForm,NoteForm
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.shortcuts import render, redirect, get_object_or_404
@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, logout, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserForm
+from datetime import datetime, time
 
 
 # Create your views here.
@@ -79,7 +80,7 @@ def addNotesProf(request):
                     for column_name in columns:
                         if column_name.lower() == 'id_modmat':
                             if row[column_name] != module_id:
-                                messages.error(request, "Invalid module ID")
+                                messages.error(request, "Invalid module ID, please check your file and try again !")
                                 return redirect('addNotesProf')
                     examen = Examen()
                     for column_name in columns:
@@ -99,11 +100,13 @@ def addNotesProf(request):
                             setattr(examen, column_name.lower(), module)
                         else:
                             setattr(examen, column_name.lower(), row[column_name])
+
                     examen.save()
              
                 return redirect('showNotes')
             except Exception as e:
                 print(e)
+                messages.error(request, "please check your file and try again !" + str(e.args[1]))
                 return redirect('addNotesProf')
     
     return render(request, 'core/addNotesProf.html')
@@ -165,3 +168,26 @@ def get_object(request, object_id):
         return JsonResponse({'error': 'Object not found'}, status=404)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
+    
+
+
+
+@login_required
+def addNote(request):
+    form = NoteForm()
+
+
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Note a été bien ajouter !')
+            return redirect('showNotes')
+        
+    context = {
+        'form': form
+    }    
+    
+        
+
+    return render(request, 'core/addNote.html',context)
