@@ -175,17 +175,21 @@ def get_object(request, object_id):
 @login_required
 def addNote(request):
     form = NoteForm()
-
-
+    etudiants = Etudiant.objects.all()
+    salles = Local.objects.all()
     if request.method == 'POST':
         form = NoteForm(request.POST)
         if form.is_valid():
+
             form.save()
             messages.success(request, 'Note a été bien ajouter !')
             return redirect('showNotes')
         
     context = {
         'form': form
+        ,
+        'etudiants': etudiants,
+        'salles': salles
     }    
     
         

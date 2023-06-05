@@ -19,9 +19,89 @@
         <p class="ajoutAnnonceMobile:text-sm">Ajout d'une Note</p>
     </div>
     <div class="flex justify-center bg-clearwhite relative bottom-8 rounded-md px-10">
-        <form class="pt-16 flex flex-col gap-8 pb-10" method="POST">
+        <form class="pt-16 flex flex-col gap-8 pb-10 w-[50%]" method="POST">
             {% csrf_token %}
-            {{form}}
+            <div
+                class="flex justify-around ajoutAnnonceTab:flex-col ajoutAnnonceTab:gap-2 ajoutAnnonceTab:items-center">
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24 ">Apogee</label>
+                    <select class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                        name="apogee" id="apogee" required>
+                        {% for etudiant in etudiants %}
+                        <option value="{{ etudiant.apogee }}">
+                            {{ etudiant.apogee }} {{etudiant.nomfr}} {{etudiant.prenomfr}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24 ">N°
+                        Examen</label>
+                    <input id="n_examen" type="number" name="n_examen"
+                        class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                        placeholder="Enter le numero d'examen" autocomplete="off" required />
+                </div>
+            </div>
+            <div
+                class="flex justify-around ajoutAnnonceTab:flex-col ajoutAnnonceTab:gap-2 ajoutAnnonceTab:items-center">
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24 ">Session</label>
+                    <select name="session"
+                        class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2" required>
+
+                        <option value="N">Normal</option>
+                        <option value="R">Rattrapage</option>
+
+                    </select>
+                </div>
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24 ">Salle</label>
+                    <select class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                        name="id_local" id="id_local" required>
+                        {% for salle in salles %}
+                        <option value="{{ salle.id_local }}">
+                            {{ salle.id_local }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div
+                class="flex justify-around ajoutAnnonceTab:flex-col ajoutAnnonceTab:gap-2 ajoutAnnonceTab:items-center">
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24 ">Module</label>
+                    <select class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                        name="id_modmat" id="id_modmat" required>
+                        {% for module in request.user.module_set.all %}
+                        <option value="{{ module.id_modmat }}"
+                            {% if module.id_modmat == id_modmat %}selected{% endif %}>
+                            {{ module.intulite_ar }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24">Date
+                        Debut</label>
+                    <input value="h_debut" id="h_debut" type="datetime-local" name="h_debut"
+                        class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                        placeholder="Enter Note" autocomplete="off" required />
+                </div>
+
+            </div>
+            <div
+                class="flex justify-around  ajoutAnnonceTab:flex-col ajoutAnnonceTab:gap-2 ajoutAnnonceTab:items-center">
+                <div class="inputClass flex flex-col  gap-2 ">
+                    <label class="text-bluecharcoal text-base w-24 ">Note</label>
+                    <input id="note" type="number" name="note"
+                        class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                        placeholder="Entrer La note " autocomplete="off" required max="20" min="0" />
+                </div>
+
+
+            </div>
+
+
+
+
+
 
             {% if errorApogee %}
             <div class="inputClass flex items-center justify-center bg-daredvilleorange py-2 rounded-sm">

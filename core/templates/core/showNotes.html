@@ -16,6 +16,13 @@
             <img src="../../../theme/static/icons/ComposeAnnonce.png" class="" alt="compose ">
             <span class="ml-2 font-medium">Add Note</span>
         </button>
+        {% if messages%}
+        {% for message in messages %}
+        <p class="text-lightgreen  addNoteMobile:hidden ">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+
+
 
         <div
             class="flex gap-[50px] flex-wrap justify-items-center items-center self-end AnnounceViewport:place-self-auto AnnounceViewport:gap-3">
@@ -27,7 +34,11 @@
 
         </div>
     </div>
-
+    {% if messages%}
+    {% for message in messages %}
+    <p class="text-lightgreen  addNote:hidden flex justify-center items-center">{{ message }}</p>
+    {% endfor %}
+    {% endif %}
 
 
     <div class="bg-white rounded-[5px] font-poppin font-normal AnnounceViewport:z-0">

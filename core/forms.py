@@ -12,7 +12,7 @@ class NoteForm(forms.ModelForm):
     class Meta:
         model = Examen
         fields = ['apogee', 'h_debut', 'session', 'note', 'id_modmat', 'id_local','n_examen']
-    
+   
     
 class UserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
