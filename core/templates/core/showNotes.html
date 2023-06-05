@@ -11,11 +11,11 @@
 <div class="flex flex-col gap-6">
     <div
         class="Content flex flex-wrap justify-between mt-[40px] items-center justify-items-center AnnounceViewport:gap-4 AnnounceViewport:mt-0">
-        <button
-            class="bg-lightgreen hover:bg-bluecharcoal text-lightcolor py-3 px-4 rounded flex justify-around items-center  w-[160px] hoverButtonTrasitionFast">
-            <img src="../../../theme/static/icons/ComposeAnnonce.png" class="" alt="compose ">
-            <span class="ml-2 font-medium">Add Note</span>
-        </button>
+        <a href="{% url 'addNote'%}"><button
+                class="bg-lightgreen hover:bg-bluecharcoal text-lightcolor py-3 px-4 rounded flex justify-around items-center  w-[160px] hoverButtonTrasitionFast">
+                <img src="../../../theme/static/icons/ComposeAnnonce.png" class="" alt="compose ">
+                <span class="ml-2 font-medium">Add Note</span>
+            </button></a>
         {% if messages%}
         {% for message in messages %}
         <p class="text-lightgreen  addNoteMobile:hidden ">{{ message }}</p>
