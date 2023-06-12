@@ -28,6 +28,7 @@ class utilisateur(AbstractUser):
     is_active = models.IntegerField(db_column='is_active',default=True)
     is_staff = models.IntegerField(db_column='is_staff',default=False)
     isadmine = models.BooleanField(db_column='isadmine',default=False)
+    profilepic  = models.ImageField(db_column='picurl', upload_to='profiles-pics/', null=True, blank=True)
     last_name = None
     first_name = None
     last_login = None

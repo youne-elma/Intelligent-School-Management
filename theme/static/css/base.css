@@ -225,12 +225,12 @@ body {
   border: 0;
   background-color: #139feb1b;
 }
+
 #formregistre input[type=password]{
   border-radius: 15px;
   border: 0;
   background-color: #139feb1b;
 }
-
 
 #formregistre input[type=checkbox]{
   border-radius: 15px;
