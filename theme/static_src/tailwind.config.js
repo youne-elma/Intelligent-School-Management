@@ -106,6 +106,7 @@ module.exports = {
       ajoutAnnonceTab: { max: "1300px" },
       ajoutAnnonceMobile: { max: "700px" },
       gestionMdabsence: { max: "570px" },
+      profileIcon: { max: "450px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",

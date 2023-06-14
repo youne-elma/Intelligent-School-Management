@@ -3,7 +3,7 @@ from core.models import Annonce, Module, Semestre, Etudiant, utilisateur
 from core.forms import AnnonceForm, AjoutAnnonceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, login as auth_login
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib import messages
 from .forms import UserForm
 
@@ -47,6 +47,7 @@ def deconnexion(request):
     logout(request)
     return redirect('login')
 
+# @user_passes_test(lambda user: user.is_superuser == True) protected routes condition for the professor
 @login_required
 def index(request):
     return render(request, 'core/index.html')
@@ -54,7 +55,15 @@ def index(request):
 
 @login_required
 def annonce(request):
-    annonces = Annonce.objects.all()
+    annonces = Annonce.objects.order_by('-dateannonce')
+    context= {
+        'annonces': annonces
+    }
+    return render(request, 'core/annonce.html', context)
+
+@login_required
+def filtredAnnounces(request):
+    annonces = Annonce.objects.filter(idutilisateur = request.user.idutilisateur)
     context= {
         'annonces': annonces
     }
@@ -187,6 +196,7 @@ def ecours(request):
 @login_required
 def annonceinfos(request, idAnnonce):
 
+    print(idAnnonce)
     annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
     context= {
         'annonce': annonce

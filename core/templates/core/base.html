@@ -110,31 +110,33 @@
             <!--Navigation (shows page path)-->
 
             <!--Profile-->
-            <div class="Profile flex gap-[0.5rem] items-center ml-auto ">
-                <a href="{% url "annonce" %}">
-                    <img class="" src="../../../theme/static/icons/notif.png" alt="Notif Icon">   
-                </a>
-                <a href="{% url "profile" %}">
-                    {% if user.profilepic %}
-                        <img class="w-8 h-8" src="{{ user.profilepic }}" alt="{{ user.nomfr }} {{ user.prenomfr }} profile pic">
-                    
-                    {% else %}
-                        <img class="w-9 h-9" src="../../../theme/static/image/UnknownUserImage.png" alt="Default user profile">
-                    {% endif %}
-                </a>
-                <a href="{% url "profile" %}">
-                    <div class="User-Profile flex flex-col text-right">
-                        <span class="User text-[0.875rem] font-normal">{{ user.prenomfr }} {{ user.nomfr }}</span>
-                        <span class="Role text-[0.625rem] font-light text-[#7e7e7e]">
-                            {% if user.isadmine %}
-                                Admin
-                            {% else %}
-                                Professeur
-                            {% endif %}
-                        </span>
-                    </div>
-                </a>
-                <a class="ml-2" href="{% url "deconnexion" %}">
+            <div class="Profile flex gap-[0.5rem] items-center ml-auto profileIcon:flex-col">
+                <div class="flex gap-[0.5rem] items-center">
+                    <a href="{% url "annonce" %}">
+                        <img class="" src="../../../theme/static/icons/notif.png" alt="Notif Icon">   
+                    </a>
+                    <a href="{% url "profile" %}">
+                        {% if user.profilepic %}
+                            <img class="w-8 h-8" src="{{ user.profilepic }}" alt="{{ user.nomfr }} {{ user.prenomfr }} profile pic">
+                        
+                        {% else %}
+                            <img class="w-9 h-9" src="../../../theme/static/image/UnknownUserImage.png" alt="Default user profile">
+                        {% endif %}
+                    </a>
+                    <a href="{% url "profile" %}">
+                        <div class="User-Profile flex flex-col text-right">
+                            <span class="User text-[0.875rem] font-normal">{{ user.prenomfr }} {{ user.nomfr }}</span>
+                            <span class="Role text-[0.625rem] font-light text-[#7e7e7e]">
+                                {% if user.isadmine %}
+                                    Admin
+                                {% else %}
+                                    Professeur
+                                {% endif %}
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <a class="ml-2 profileIcon:self-end" href="{% url "deconnexion" %}">
                     <button class="rechercheButton flex items-center text-white bg-loyalblue rounded gap-4 py-2 px-2 text-xs">
                         Logout
                         <img class="w-4 h-4" src="../../../theme/static/icons/LogoutIcon.png" alt="Logout icon" />

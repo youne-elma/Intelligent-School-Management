@@ -1,7 +1,10 @@
+var loadMoreButton = $('#load-more-button');
+
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const openModalBtn = document.querySelectorAll(".btn-open");
 const closeModalBtn = document.querySelector(".btn-close");
+
 
 const openModal = function () {
 

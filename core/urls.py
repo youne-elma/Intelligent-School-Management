@@ -10,6 +10,7 @@ urlpatterns = [
     path("accounts/login/", views.login, name="login"), 
     path("registre/", views.registre, name="registre"), #registre
     path("annonce/",views.annonce,name="annonce"),
+    path("annonce/filtredAnnounces/",views.filtredAnnounces, name="filtredAnnounces"),
     path("searchNote/",views.searchNote,name="searchNote"),
     path("homeProf/", views.homeProf, name="homeProf"),
     path("chatbot/", views.chatbot, name="chatbot"),

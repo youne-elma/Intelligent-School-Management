@@ -18,85 +18,82 @@
   </a>
 
   <div class="flex gap-[50px] flex-wrap justify-items-center items-center self-end AnnounceViewport:place-self-auto AnnounceViewport:gap-3">
-    <button class="bg-bluecharcoal hover:bg-cornflower text-lightcolor py-2.5 px-4 rounded flex justify-items-center items-center w-24 hoverButtonTrasitionFast">
-      <span class="font-poppinRegular">Filter</span>
-      <img src="../../../theme/static/icons/FilterIcon.png" class="ml-2 w-4 h-4"alt="filter Icon">
-    </button>
-    <button class="bg-bluecharcoal hover:bg-cornflower text-lightcolor py-2.5 px-4 rounded flex justify-items-center items-center w-24 hoverButtonTrasitionFast">
-      <span class="font-poppinRegular">More</span>
-      <img src="../../../theme/static/icons/downArrowIcon.png" class="ml-2 mt-0.5 w-3.5 h-2"alt="downArrow Icon">
-    </button>
+    <form method="GET" action="{% url 'filtredAnnounces' %}">
+      <button class="bg-bluecharcoal hover:bg-cornflower text-lightcolor py-2.5 px-4 rounded flex justify-items-center items-center w-30 hoverButtonTrasitionFast">
+        <span class="font-poppinRegular">Mes annonces</span>
+        <img src="../../../theme/static/icons/FilterIcon.png" class="ml-2 w-4 h-4"alt="filter Icon">
+      </button>
+    </form>
   </div>
 </div>
 
-<div class="bg-white rounded-[5px] font-poppinRegular AnnounceViewport:z-0">
+<div id="data-container" class="bg-white rounded-[5px] font-poppinRegular AnnounceViewport:z-0">
   {% if annonces %}
   <!--- this an annonce -->
-    {% for annonce in annonces %}
+    {% for annonce in annonces|slice:":5" %}
     
-      <!-- Modal Code -->
-    {% if user.isadmine or annonce.idutilisateur.idutilisateur == user.idutilisateur  %}
-      <section class="modal hidden justify-center">
-        <div class="flex flex-col justify-center items-center gap-2">
-          <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
-          <h4 class="font-poppin text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?</h4>
-          <p id="titreAnnonce" class="text-[12px] font-poppinRegular opacity-60"></p>
-          <div class="flex gap-[30px] mt-5">
-            <button class="btn-close cancelButton">Cancel</button>
-            <a href="{% url 'deleteAnnonce' annonce.idannonce %}">
-              <button class="deleteButton">
-                Delete
-              </button>
-            </a>
+        <!-- Modal Code -->
+      {% if user.isadmine or annonce.idutilisateur.idutilisateur == user.idutilisateur  %}
+        <section class="modal hidden justify-center">
+          <div class="flex flex-col justify-center items-center gap-2">
+            <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
+            <h4 class="font-poppin text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?</h4>
+            <p id="titreAnnonce" class="text-[12px] font-poppinRegular opacity-60"></p>
+            <div class="flex gap-[30px] mt-5">
+              <button class="btn-close cancelButton">Cancel</button>
+              <a href="{% url 'deleteAnnonce' annonce.idannonce %}">
+                <button class="deleteButton">
+                  Delete
+                </button>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-      <div class="overlay hidden"></div>
-    {% endif %}
-      <!-- Modal Code -->
-
-    <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
-      {% if user.isadmine %}
-        <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 xl:ml-0 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+        </section>
+        <div class="overlay hidden"></div>
       {% endif %}
-        <div class="flex flex-wrap w-[200px] justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
-          {% if user.profilepic %}
-            <img src="{{ user.profilepic }}"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
-          {% else %}
-            <img src="../../../theme/static/image/UnknownUserImage.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User pic">
-          {% endif %}
-          <span class="text-ellipsis text-sm AnnounceViewport:text-base">
-              {{ annonce.idutilisateur.prenomfr }} {{ annonce.idutilisateur.nomfr }} 
-          </span>
-        </div>
+        <!-- Modal Code -->
 
-        <span class="3xl:text-base titreAnnonceViewport:w-[400px] 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin"> {{ annonce.titreannonce }} <a href="{% url 'annonceinfos' annonce.idannonce %}" class="text-denimcolor">(lire la suite)</a></span>
-        <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> {{annonce.dateannonce}}</span>
-        <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block"> {{annonce.dateannonce}} </span>
-      
-       {% comment %} or annonce.idutilisateur == utilisateur.is_active {% endcomment %}
-      <div class="flex flex-wrap gap-4 titreAnnonceViewport:w-[48px]  buttonsAnnonce:mr-0 mr-7 AnnounceViewport:absolute AnnounceViewport:right-0">
-        {% if user.isadmine or annonce.idutilisateur.idutilisateur == user.idutilisateur %}
-            <a href="{% url 'updateAnnonce' annonce.idannonce %}">
-              <button class="w-4 h-5 hover:fill-lightblue">
+      <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+        {% if user.isadmine %}
+          <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 xl:ml-0 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+        {% endif %}
+          <div class="flex flex-wrap w-[200px] justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+            {% if user.profilepic %}
+              <img src="{{ user.profilepic }}"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
+            {% else %}
+              <img src="../../../theme/static/image/UnknownUserImage.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User pic">
+            {% endif %}
+            <span class="text-ellipsis text-sm AnnounceViewport:text-base">
+                {{ annonce.idutilisateur.prenomfr }} {{ annonce.idutilisateur.nomfr }} 
+            </span>
+          </div>
+
+          <span class="3xl:text-base titreAnnonceViewport:w-[400px] 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin"> {{ annonce.titreannonce }} <a href="{% url 'annonceinfos' annonce.idannonce %}" class="text-denimcolor">(lire la suite)</a></span>
+          <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> {{annonce.dateannonce}}</span>
+          <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block"> {{annonce.dateannonce}} </span>
+
+        <div class="flex flex-wrap gap-4 titreAnnonceViewport:w-[48px]  buttonsAnnonce:mr-0 mr-7 AnnounceViewport:absolute AnnounceViewport:right-0">
+          {% if user.isadmine or annonce.idutilisateur.idutilisateur == user.idutilisateur %}
+              <a href="{% url 'updateAnnonce' annonce.idannonce %}">
+                <button class="w-4 h-5 hover:fill-lightblue">
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                  width="24" height="24"
+                  viewBox="0 0 30 30">
+                      <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+                  </svg>
+                </button>
+              </a>
+              <button class="btn-open w-4 h-5 hover:fill-daredvilleorange" data-item-name="{{annonce.titreannonce}}">
                 <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="24" height="24"
-                viewBox="0 0 30 30">
-                    <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+                  width="24" height="24"
+                  viewBox="0 0 24 24">
+                  <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
                 </svg>
               </button>
-            </a>
-            <button class="btn-open w-4 h-5 hover:fill-daredvilleorange" data-item-name="{{annonce.titreannonce}}">
-              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                width="24" height="24"
-                viewBox="0 0 24 24">
-                <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
-              </svg>
-            </button>
-        {% endif %}
-      </div>
+          {% endif %}
+        </div>
 
-    </div>
+      </div>
 
     {% endfor %}
   {% else %}
@@ -110,9 +107,216 @@
 </div>
 {% if annonces %}
   <div class="flex items-center justify-center mb-10 mx-10 pb-2">
-    <button class="bg-cornflower hover:bg-bluecharcoal py-3 px-4 text-white rounded font-poppinRegular">Load more</button>
+    <button id="load-more-button" class="bg-cornflower hover:bg-bluecharcoal py-3 px-4 text-white rounded font-poppinRegular">Load more</button>
   </div>
 {% endif %}
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    var remainingData = [
+      {% for annonce in annonces|slice:"5:" %}
+        { 
+          titreannonce: "{{ annonce.titreannonce }}",
+          idannonce: "{{ annonce.idannonce }}",
+          dateannonce: "{{ annonce.dateannonce }}",
+          idutilisateur: "{{ annonce.idutilisateur.idutilisateur }}",
+          prenomfr : "{{ annonce.idutilisateur.prenomfr }}",
+          nomfr : "{{ annonce.idutilisateur.nomfr }}",
+          
+        },
+      {% endfor %}
+    ];
+
+    var user = {
+      isadmine: "{{ user.isadmine }}",
+      idutilisateur: "{{ user.idutilisateur }}",
+      prenomfr: "{{ user.prenomfr }}",
+      nomfr: "{{ user.nomfr }}",
+      profilepic: "{{ user.profilepic }}",
+    };
+    
+    var dataContainer = $('#data-container');
+    var loadMoreButton = $('#load-more-button');
+
+    loadMoreButton.click(function() {
+      for (var i = 0; i < remainingData.length; i++) {
+        
+        var annonce = remainingData[i];
+
+        {% if user.isadmine or annonce.idutilisateur.idutilisateur ==  user.idutilisateur %}
+          var modal = `
+            <!-- Modal Code -->
+              <section class="modal hidden justify-center">
+                <div class="flex flex-col justify-center items-center gap-2">
+                  <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
+                  <h4 class="font-poppin text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?</h4>
+                  <p id="titreAnnonce" class="text-[12px] font-poppinRegular opacity-60"></p>
+                  <div class="flex gap-[30px] mt-5">
+                    <button class="btn-close cancelButton">Cancel</button>
+                    <a href="">
+                      <button class="deleteButton">
+                        Delete
+                      </button>
+                    </a>
+                  </div>
+                </div>
+              </section>
+              <div class="overlay hidden"></div>
+            <!-- Modal Code -->
+          `;
+        {% else %}
+          var modal = "";
+        {% endif %}
+
+        var divContent = `
+              <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+        `;
+
+        {% if user.isadmine %}
+          var linkCheckbox = `<input id="link-checkbox" type="checkbox" value="" class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 xl:ml-0 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">`;
+        {% else %}
+          var linkCheckbox = "";
+        {% endif %}
+
+        {% if user.profilepic %}
+          var imageTag = `<img src="`+ user.profilepic +`"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="`+ user.prenomfr + user.nomfr +` user pic">`
+        {% else %}
+          var imageTag = `<img src="../../../theme/static/image/UnknownUserImage.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User pic">`;
+        {% endif %}
+
+        var userProfilContainer = `
+          <div class="flex flex-wrap w-[200px] justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+        `;
+
+        var spanTag = `<span class="text-ellipsis text-sm AnnounceViewport:text-base">
+                    `+ annonce.prenomfr + annonce.nomfr +`
+                </span>`;
+        
+        var idAnnonce = annonce.idannonce
+        console.log(idAnnonce)
+
+        var urlAnnonceInfos = "/annonceinfos/"+ idAnnonce;
+
+        var annonceTitreDate = `<span class="3xl:text-base titreAnnonceViewport:w-[400px] 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin"> ` + annonce.titreannonce +` <a href="`+ urlAnnonceInfos +`" class="text-denimcolor">(lire la suite)</a></span>
+                        <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> `+ annonce.dateannonce +`</span>
+                        <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block"> `+ annonce.dateannonce +` </span>`;
+        var editTag = `<div class="flex flex-wrap gap-4 titreAnnonceViewport:w-[48px]  buttonsAnnonce:mr-0 mr-7 AnnounceViewport:absolute AnnounceViewport:right-0">`;
+
+        {% if user.isadmine or annonce.idutilisateur == user.idutilisateur %}
+          var urlEditAnnonce = "updateAnnonce/" + idAnnonce;
+
+          var editButtons = `<a href="`+ urlEditAnnonce +`">
+                    <button class="w-4 h-5 hover:fill-lightblue">
+                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="24" height="24"
+                      viewBox="0 0 30 30">
+                          <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+                      </svg>
+                    </button>
+                  </a>
+                  <button class="btn-open w-4 h-5 hover:fill-daredvilleorange" data-item-name="` + annonce.titreannonce +`">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="24" height="24"
+                      viewBox="0 0 24 24">
+                      <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
+                    </svg>
+                  </button>`;
+        {% else %}
+          var editButtons = "";
+        {% endif %}
+
+        var divEndContent = `</div>`;
+
+        var itemHtml = modal + divContent + linkCheckbox + userProfilContainer + imageTag + spanTag + divEndContent + annonceTitreDate + editTag + editButtons + divEndContent + divEndContent;
+        
+        dataContainer.append(itemHtml);
+      }
+
+      // Clear the remainingData array
+      remainingData = [];
+
+      // Hide the load more button
+      loadMoreButton.hide();
+    });
+  });
+</script>
 <script src="../../../theme/static/js/modalLogic.js" />
+
 {% endblock%}
+{% comment %} 
+        { 
+          titreannonce: "{{ annonce.titreannonce }}",
+          idannonce: "{{ annonce.idannonce }}",
+          dateannonce: "{{ annonce.dateannonce }}",
+          idutilisateur: "{{ annonce.idutilisateur }}",
+          prenomfr : "{{ annonce.idutilisateur.prenomfr }}",
+          nomfr : "{{ annonce.idutilisateur.nomfr }}",
+        } 
+            var userIdAmine = user.isadmine;
+    var userIdUtilisateur = user.idutilisateur;
+    `
+                <!-- Modal Code -->
+            `+ {% if user.isadmine or annonce.idutilisateur.idutilisateur ==  user.idutilisateur %} +`
+            <section class="modal hidden justify-center">
+              <div class="flex flex-col justify-center items-center gap-2">
+                <img src="../../theme/static/image/TrachImage.png" width="163" height="163" />
+                <h4 class="font-poppin text-center w-72">Êtes-vous sûr de vouloir supprimer cette annonce ?</h4>
+                <p id="titreAnnonce" class="text-[12px] font-poppinRegular opacity-60"></p>
+                <div class="flex gap-[30px] mt-5">
+                  <button class="btn-close cancelButton">Cancel</button>
+                  <a href="">
+                    <button class="deleteButton">
+                      Delete
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </section>
+            <div class="overlay hidden"></div>
+          `+ {% endif %} + `
+            <!-- Modal Code -->
+
+          <div class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+            `+ {% if user.isadmine %} +`
+              <input id="link-checkbox" type="checkbox" value="" class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 xl:ml-0 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
+            `+ {% endif %} +`
+              <div class="flex flex-wrap w-[200px] justify-items-center items-center gap-3 ml-5 navbarTab:ml-1 navbarTab:gap-1 AnnounceViewport:flex-col AnnounceViewport:ml-0">
+                `+ {% if user.profilepic %} +`
+                  <img src="`+ user.profilepic +`"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="`+ user.prenomfr + user.nomfr +` user pic">
+                `+ {% else %} +`
+                  <img src="../../../theme/static/image/UnknownUserImage.png"  class="w-8 h-8 AnnounceViewport:w-12 AnnounceViewport:h-12" alt="User pic">
+                `+ {% endif %} +`
+                <span class="text-ellipsis text-sm AnnounceViewport:text-base">
+                    `+ annonce.idutilisateur.prenomfr + annonce.idutilisateur.nomfr +`
+                </span>
+              </div>
+
+              <span class="3xl:text-base titreAnnonceViewport:w-[400px] 3xl:ml-28 2xl:ml-20 text-sm AnnounceViewport:font-poppin"> ` + annonce.titreannonce +` <a href="" class="text-denimcolor">(lire la suite)</a></span>
+              <span class="text-ellipsis 2xl:ml-20 xl:ml-7 3xl:text-base text-sm 2xl:text-base navbarTab:hidden"> `+ annonce.dateannonce +`</span>
+              <span class="text-ellipsis md:text-base md:ml-20 ml-1 hidden navbarTab:block"> `+ annonce.dateannonce +` </span>
+
+            <div class="flex flex-wrap gap-4 titreAnnonceViewport:w-[48px]  buttonsAnnonce:mr-0 mr-7 AnnounceViewport:absolute AnnounceViewport:right-0">
+              `+ {% if user.isadmine or annonce.idutilisateur.idutilisateur == user.idutilisateur %} +`
+                  <a href="">
+                    <button class="w-4 h-5 hover:fill-lightblue">
+                      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="24" height="24"
+                      viewBox="0 0 30 30">
+                          <path d="M 22.828125 3 C 22.316375 3 21.804562 3.1954375 21.414062 3.5859375 L 19 6 L 24 11 L 26.414062 8.5859375 C 27.195062 7.8049375 27.195062 6.5388125 26.414062 5.7578125 L 24.242188 3.5859375 C 23.851688 3.1954375 23.339875 3 22.828125 3 z M 17 8 L 5.2597656 19.740234 C 5.2597656 19.740234 6.1775313 19.658 6.5195312 20 C 6.8615312 20.342 6.58 22.58 7 23 C 7.42 23.42 9.6438906 23.124359 9.9628906 23.443359 C 10.281891 23.762359 10.259766 24.740234 10.259766 24.740234 L 22 13 L 17 8 z M 4 23 L 3.0566406 25.671875 A 1 1 0 0 0 3 26 A 1 1 0 0 0 4 27 A 1 1 0 0 0 4.328125 26.943359 A 1 1 0 0 0 4.3378906 26.939453 L 4.3632812 26.931641 A 1 1 0 0 0 4.3691406 26.927734 L 7 26 L 5.5 24.5 L 4 23 z"></path>
+                      </svg>
+                    </button>
+                  </a>
+                  <button class="btn-open w-4 h-5 hover:fill-daredvilleorange" data-item-name="` + annonce.titreannonce +`">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+                      width="24" height="24"
+                      viewBox="0 0 24 24">
+                      <path d="M 10 2 L 9 3 L 5 3 C 4.4 3 4 3.4 4 4 C 4 4.6 4.4 5 5 5 L 7 5 L 17 5 L 19 5 C 19.6 5 20 4.6 20 4 C 20 3.4 19.6 3 19 3 L 15 3 L 14 2 L 10 2 z M 5 7 L 5 20 C 5 21.1 5.9 22 7 22 L 17 22 C 18.1 22 19 21.1 19 20 L 19 7 L 5 7 z M 9 9 C 9.6 9 10 9.4 10 10 L 10 19 C 10 19.6 9.6 20 9 20 C 8.4 20 8 19.6 8 19 L 8 10 C 8 9.4 8.4 9 9 9 z M 15 9 C 15.6 9 16 9.4 16 10 L 16 19 C 16 19.6 15.6 20 15 20 C 14.4 20 14 19.6 14 19 L 14 10 C 14 9.4 14.4 9 15 9 z"></path>
+                    </svg>
+                  </button>
+              `+ {% endif %} +`
+            </div>
+
+          </div>
+        `    
+{% endcomment %}

@@ -946,14 +946,6 @@ select {
   margin-right: 16px;
 }
 
-.mt-0 {
-  margin-top: 0px;
-}
-
-.mt-0\.5 {
-  margin-top: 0.125rem;
-}
-
 .mt-1 {
   margin-top: 0.25rem;
 }
@@ -1134,22 +1126,6 @@ select {
   height: 100vh;
 }
 
-.h-\[30px\] {
-  height: 30px;
-}
-
-.h-\[24px\] {
-  height: 24px;
-}
-
-.h-\[20px\] {
-  height: 20px;
-}
-
-.h-\[25px\] {
-  height: 25px;
-}
-
 .max-h-\[15px\] {
   max-height: 15px;
 }
@@ -1176,14 +1152,6 @@ select {
 
 .w-24 {
   width: 6rem;
-}
-
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-3\.5 {
-  width: 0.875rem;
 }
 
 .w-36 {
@@ -1305,18 +1273,6 @@ select {
 .w-max {
   width: -moz-max-content;
   width: max-content;
-}
-
-.w-\[30px\] {
-  width: 30px;
-}
-
-.w-\[24px\] {
-  width: 24px;
-}
-
-.w-\[25px\] {
-  width: 25px;
 }
 
 .min-w-\[179px\] {
@@ -2823,5 +2779,15 @@ select {
   .gestionMdabsence\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .profileIcon\:flex-col {
+    flex-direction: column;
+  }
+
+  .profileIcon\:self-end {
+    align-self: flex-end;
   }
 }

@@ -1,8 +1,8 @@
 const sideBar = document.getElementById("sideBar");
 const mainContent = document.getElementById("mainContent")
 
-console.log("This website was created by Youness Elmarhoum / Mohamed Baarar / Monir Chelh")
-console.log("Github: youne-elma / eddev00 / mconr")
+console.log("This website was created by Monir Chelh / Mohamed Baarar / Youness Elmarhoum")
+console.log("Github: mconr / eddev00 / youne-elma")
 
 function openSidebar() {
 
