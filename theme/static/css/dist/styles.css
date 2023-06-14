@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,6 +602,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -649,6 +652,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -2023,6 +2029,11 @@ select {
   color: rgb(34 40 46 / var(--tw-text-opacity));
 }
 
+.text-daredvilleorange {
+  --tw-text-opacity: 1;
+  color: rgb(234 106 71 / var(--tw-text-opacity));
+}
+
 .text-darkcolor {
   --tw-text-opacity: 1;
   color: rgb(32 32 32 / var(--tw-text-opacity));
@@ -2056,6 +2067,11 @@ select {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-smoothgreen {
+  --tw-text-opacity: 1;
+  color: rgb(97 136 48 / var(--tw-text-opacity));
 }
 
 .opacity-100 {
@@ -2510,6 +2526,11 @@ select {
   .SmallScreen\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .SmallScreen\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 

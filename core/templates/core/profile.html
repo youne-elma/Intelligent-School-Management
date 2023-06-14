@@ -11,17 +11,17 @@
 
             <div class="flex relative  items-center justify-center   ">
 
-                <form action="{% url 'profile' %}" method="POST" id="image-form" enctype="multipart/form-data">
+                <form action="{% url 'profile' %}" method="POST" id="image-form" enctype="multipart/form-data" class="flex flex-col gap-2">
                     {% csrf_token %}
                     <label for="avatar_input" class="rounded-full">
                     {% if user.profilepic %}
-                            <img src="../../../Media/{{ user.profilepic }}" href=""  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 bg-daredvilleorange h-[150px] w-[150px]"  alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
-                        {% else %}
-                            <img src="../../../theme/static/image/UnknownUserImage.png"  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6" alt="User pic">
+                        <img src="../../../Media/{{ user.profilepic }}" href=""  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 bg-daredvilleorange h-[150px] w-[150px]"  alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
+                    {% else %}
+                        <img src="../../../theme/static/image/UnknownUserImage.png"  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6" alt="User pic">
                     {% endif %}
                     </label>
-                    <input type="file" id="avatar_input" name="profile_image" style="display: none;">
-                    <button type="submit" class="border-2">Upload</button>
+                    <input type="file" id="avatar_input" name="profile_image" style="display: none;" />
+                    <button id="buttonUpload" type="submit" class="hidden border-none changePasswordButton text-white bg-loyalblue rounded-md border-2 py-1">Appliquer</button>
               </form>
                 </form>
             </div>
@@ -93,10 +93,33 @@
                         <td class="text-mediumcoolGray">Mot de Passe </td> <td style="color: #6376BF;">************</td>
                     </tr>
                 </table>
-                <button id="submit" class=" max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:mt-4 SmallScreen:justify-center  ">Changer Password</button>               
+                <a href="{% url 'modifypwd' %}">
+                    <button class=" max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:mt-4 SmallScreen:justify-center  ">Changer Password</button>
+                </a>                               
             </div>
          
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Get the input element
+            var myInput = $("#avatar_input");
+
+            // Add an event listener to handle input value changes
+            myInput.on("input", function() {
+                var buttonUpload = $("#buttonUpload");
+                var inputValue = myInput.val().trim();
+
+                // Show or hide the text based on input value
+                if (inputValue) {
+                    buttonUpload.removeClass("hidden");
+                } else {
+                    buttonUpload.addClass("hidden");
+                }
+            });
+        });
+    </script>
 
 {% endblock %}

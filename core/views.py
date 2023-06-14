@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from core.models import Annonce, Module, Semestre
 from core.forms import AnnonceForm
-from django.contrib.auth import authenticate, logout, login as auth_login
+from django.contrib.auth import authenticate, logout, update_session_auth_hash, login as auth_login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from .forms import UserForm
 import os
@@ -155,4 +156,21 @@ def profile(request):
 
 @login_required
 def modifypwd(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data= request.POST, user= request.user)
+        print(request.POST)
+        try: 
+            confirmation = request.POST['confirmation'] == 'on'
+            print(confirmation)
+        except:
+            confirmation = False
+        if form.is_valid() and confirmation :
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return render(request, 'core/modifypwd.html', { 'modifySuccess': True })
+        else:
+            return render(request, 'core/modifypwd.html', {'form':form.errors,'confirmation': confirmation})
+    else:
+        form = PasswordChangeForm(user= request.user)
+    
     return render(request, 'core/modifypwd.html')
