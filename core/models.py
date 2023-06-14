@@ -39,7 +39,7 @@ class utilisateur(AbstractUser):
     )
 
     def __str__(self):
-        return self.utilisateur.username
+        return self.username
 
     class Meta:
         managed = False

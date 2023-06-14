@@ -147,3 +147,8 @@ STATIC_URL = 'theme/static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+#---- session expire en seconde
+SESSION_COOKIE_AGE = 3600

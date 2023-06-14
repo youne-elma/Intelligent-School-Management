@@ -33,6 +33,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None and user.is_active:
             auth_login(request, user)
+            # request.session.set_expiry(15)
             if user.isadmine:
                 return redirect('index')
             else:
