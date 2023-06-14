@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre, Etudiant, utilisateur,Chat
+from core.models import Annonce, Module, Semestre,Reports, Etudiant, utilisateur,Chat
 from core.forms import AnnonceForm, AjoutAnnonceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, login as auth_login
@@ -272,8 +272,22 @@ def getMessages(request):
     
 
 def bugreport(request):
+    
+    if request.method == 'POST':
+        bug = request.POST.get('message')
+        localHist = request.POST.get('localHist')
+        new_bug = Reports.objects.create(report_message  = bug, date = datetime.now(), log = localHist)
+        new_bug.save()
+        print(new_bug)
+        return JsonResponse({"answer": 'ok'})
 
     return JsonResponse({"answer": 'ok'})   
+
+def bugreportsuccess(request):
+    if request.method == "GET":
+         return redirect('chatbot')
+
+    
 
 login_required
 #def getMessages(request, room):

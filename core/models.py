@@ -340,7 +340,15 @@ class Chat(models.Model):
         managed = False
         db_table = 'Chat'
         unique_together = (('user_id', 'date', 'destination'),)
-
+        
+class Reports(models.Model):
+    id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.
+    report_message = models.TextField(db_column='report_message')  # Field name made lowercase. 
+    date = models.DateTimeField(db_column='date')  # Field name made lowercase.
+    log = models.TextField(db_column='log')  # Field name made lowercase.
+    class Meta:
+        managed = False
+        db_table = 'Reports'
 class Filiere(models.Model):
     id_filiere = models.IntegerField(db_column='ID_FILIERE', primary_key=True)  # Field name made lowercase.
     iddept = models.ForeignKey(Departement, models.DO_NOTHING, db_column='IDDEPT')  # Field name made lowercase.

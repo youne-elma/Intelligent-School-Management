@@ -26,6 +26,7 @@ urlpatterns = [
     path("send", views.send, name="send"),
     path("getMessages", views.getMessages, name="getMessages"),
     path("bugreport", views.bugreport, name="bugreport"),
+    path("bugreportsuccess ", views.bugreportsuccess , name="bugreportsuccess "),
 
 ]
 

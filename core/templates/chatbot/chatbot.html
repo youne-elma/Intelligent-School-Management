@@ -8,6 +8,34 @@
 <script>
 
 </script>
+<div id="overlay" class="overlay hidden z-1"></div>
+<div id="bug-report-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+    <div class="bg-white rounded-lg p-6">
+        <h2 class="text-xl font-bold mb-4">Bug Report</h2>
+        <p class="mb-4">Do you want to report a bug?</p>
+        <textarea id="bug-report-message" class="w-full border rounded-lg p-2 mb-4"
+            placeholder="Enter bug report message"></textarea>
+        <div class="flex justify-end">
+            <button id="bug-report-cancel"
+                class="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg mr-2 hover:bg-darkcolor hover:text-white">Cancel</button>
+            <button id="bug-report-submit"
+                class="bg-daredvilleorange  px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-darkcolor hover:text-white">Submit</button>
+        </div>
+    </div>
+</div>
+<div id="success-bug" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+    <div class="bg-white rounded-lg p-6">
+        <h2 class="text-xl font-bold mb-4">Bud Reported successfully!!</h2>
+        <div class="flex justify-end">
+            <a href="/chatbot">
+                <button id="bug-report-success"
+                    class="bg-loyalblue text-white px-4 py-2 bg-gray-300 text-gray-700 rounded-lg mr-2">go
+                    back</button></a>
+
+        </div>
+    </div>
+
+</div>
 <div class="Container flex flex-col chatonlywide:mx-20 gap-14 h-[80vh]">
     {% load static %}
     <form id="post-form" class="flex flex-col gap-8 h-full">
@@ -147,31 +175,53 @@
 
     $(document).on("click", "#bug-report", function (e) {
         e.preventDefault();
+        $("#bug-report-modal").removeClass("hidden");
+        $("#overlay").removeClass("hidden");
+    });
 
-        // Perform the bug report request
+    $(document).on("click", "#bug-report-cancel", function (e) {
+        e.preventDefault();
+        $("#bug-report-modal").addClass("hidden");
+        $("#overlay").addClass("hidden");
+    });
+
+    $(document).on("click", "#bug-report-submit", function (e) {
+        e.preventDefault();
+        var bugReportMessage = $("#bug-report-message").val();
+        console.log("Bug Report:", bugReportMessage);
+
+
+        $("#bug-report-modal").addClass("hidden");
+
         $.ajax({
             type: "POST",
             url: "/bugreport",
             data: {
-                message: "A bug has been reported",
-
+                message: bugReportMessage,
+                localHist: JSON.stringify(localHist),
                 csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
             },
             beforeSend: function () {
                 $("#bug-report").prop("disabled", true);
             },
             success: function (data) {
+
                 // Show success message or perform any other action
                 console.log("Bug report sent successfully");
-                console.log(localHist)
+                console.log(localHist);
                 $("#bug-report").prop("disabled", false);
+
+                $("#success-bug").removeClass("hidden");
             },
             error: function (data) {
                 // Show error message or perform any other action
-                console.error("Failed to send bug report");
+                $("#success-bug").removeClass("hidden");
+                console.log("Failed to send bug report");
                 $("#bug-report").prop("disabled", false);
             },
         });
+
+
     });
 </script>
 
