@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre, Etudiant, utilisateur
+from core.models import Annonce, Module, Semestre, Etudiant, utilisateur,Chat
 from core.forms import AnnonceForm, AjoutAnnonceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.http import HttpResponse, JsonResponse
 from .forms import UserForm
+import requests
+import json
 
 # Create your views here.
 
@@ -174,6 +177,7 @@ def homeProf(request):
 
 @login_required
 def chatbot(request):
+    
     return render(request, 'chatbot/chatbot.html')
 
 @login_required
@@ -213,3 +217,67 @@ def profile(request):
 @login_required
 def modifypwd(request):
     return render(request, 'core/modifypwd.html')
+
+
+@login_required
+def send(request):
+    sender = utilisateur.objects.get(idutilisateur = request.user.idutilisateur)
+    receiver = utilisateur.objects.get(idutilisateur = 10)
+    message = request.POST.get('message')
+    
+    #api
+    url = "https://langchain-chat-v3.herokuapp.com/predict"
+    headers = {'Content-Type': 'application/json'}
+    payload = {
+                "user_input": {
+                    "text": message
+                },
+                "chat_history": {
+                    "list": []
+                }
+            }
+    if request.method == 'POST':
+        response = requests.post(url, data=json.dumps(payload), headers=headers)
+        new_message = Chat.objects.create(user_id=sender, destination=receiver, message=message, date=datetime.now())
+        new_message.save()
+        print (response.status_code)
+        if( response.status_code == 200):
+            try:
+               
+                answer = response.json()['answer'] 
+                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                new_message.save()
+                return JsonResponse({"answer": answer } )
+            except Exception as e:
+                answer = str(e)
+                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                new_message.save()
+
+                return JsonResponse({"answer": str(e) })
+        else : 
+                answer = response.json()['error']
+                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                new_message.save()
+                return JsonResponse({"answer": answer })
+
+    
+    return redirect('chatbot')
+
+def getMessages(request):
+
+    user_messages = Chat.objects.filter(user_id = request.user.idutilisateur)
+    bot_messagees = Chat.objects.filter(destination = request.user.idutilisateur)
+
+    return JsonResponse({"user":list(user_messages.values()) , "bot":list(bot_messagees.values())})
+    
+
+def bugreport(request):
+
+    return JsonResponse({"answer": 'ok'})   
+
+login_required
+#def getMessages(request, room):
+#    room_details = Room.objects.get(name=room)
+#
+#    messages = Message.objects.filter(room=room_details.id)
+#    return JsonResponse({"messages":list(messages.values())})

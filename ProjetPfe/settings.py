@@ -94,9 +94,9 @@ WSGI_APPLICATION = 'ProjetPfe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testgestionfsa',
+        'NAME': 'gestion_fsa',
         'USER':'root',
-        'PASSWORD':'root123',
+        'PASSWORD':'',
         'HOST':'127.0.0.1',
     }
 }

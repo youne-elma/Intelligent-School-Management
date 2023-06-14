@@ -23,6 +23,9 @@ urlpatterns = [
     path("modifypwd/",views.modifypwd,name="modifypwd"),
     path("annonce/updateAnnonce/<str:idAnnonce>", views.updateAnnonce, name="updateAnnonce"),
     path("deleteAnnonce/<str:idAnnonce>/", views.deleteAnnonce, name="deleteAnnonce"),
+    path("send", views.send, name="send"),
+    path("getMessages", views.getMessages, name="getMessages"),
+    path("bugreport", views.bugreport, name="bugreport"),
 
 ]
 

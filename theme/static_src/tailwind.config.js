@@ -49,9 +49,9 @@ module.exports = {
       poppinSemiBold: ["PoppinsMedium"],
       poppinMedium: ["PoppinsMedium"],
     },
-    variants:{
+    variants: {
       extend: {
-        display:['group-focus']
+        display: ["group-focus"],
       },
     },
     colors: {
@@ -74,11 +74,11 @@ module.exports = {
       clearwhite: "#FFFFFF",
       slidebuttonimage: "#D9D9D9",
       slidebuttonimageactive: "#FFFFFF",
-      lightgreen:"#0BAF74",
-      white:"#FFFFFF",
-      BroderGris:"#d9d9d985",
-      gris:"#94a3b8",
-      informationColor:"#7A7A7A",
+      lightgreen: "#0BAF74",
+      white: "#FFFFFF",
+      BroderGris: "#d9d9d985",
+      gris: "#94a3b8",
+      informationColor: "#7A7A7A",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -86,18 +86,18 @@ module.exports = {
       navbarPhone: { max: "760px" },
       navBarNotPhone: { min: "760px" },
       loginimagehide: { max: "770px" },
-      AnnounceViewport: {max:"1150px"},
-      buttonsAnnonce: { min:"1150px", max: "1400px"},
-      titreAnnonceViewport: { min: "1150px"},
-      'SmallScreen':{ min:"1px",max:'645px'},
-      'md': {min:"645px",max:"1000px"},
-      'xl':{min:"1000px",max:"1400px"},
-      '2xl':{min:"1400px",max:"1777px"},
-      '3xl':{min:"1777px", max:"2000px"},
-      'Big':{min:"1777px"},
-      ecoursScreen: { min:"500px", max: "1150px" },
-      ecoursMScreen: {  max: "500px" },
-      smScreen:{min:"1px",max:"300px"},
+      AnnounceViewport: { max: "1150px" },
+      buttonsAnnonce: { min: "1150px", max: "1400px" },
+      titreAnnonceViewport: { min: "1150px" },
+      SmallScreen: { min: "1px", max: "645px" },
+      md: { min: "645px", max: "1000px" },
+      xl: { min: "1000px", max: "1400px" },
+      "2xl": { min: "1400px", max: "1777px" },
+      "3xl": { min: "1777px", max: "2000px" },
+      Big: { min: "1777px" },
+      ecoursScreen: { min: "500px", max: "1150px" },
+      ecoursMScreen: { max: "500px" },
+      smScreen: { min: "1px", max: "300px" },
       chatonlywide: { min: "1000px" },
       chatonlytab: { min: "760px", max: "1000px" },
       chatonlyphone: { max: "760px" },
@@ -131,5 +131,3 @@ module.exports = {
     require("postcss-simple-vars"),
   ],
 };
-
-

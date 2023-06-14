@@ -39,11 +39,12 @@ class utilisateur(AbstractUser):
     )
 
     def __str__(self):
-        return self.utilisateur.username
+        return self.username
 
     class Meta:
         managed = False
         db_table = 'utilisateur'
+
 
 
 
@@ -328,6 +329,17 @@ class Examen(models.Model):
         db_table = 'examen'
         unique_together = (('id_local', 'apogee', 'id_modmat', 'n_examen', 'h_debut'),)
 
+class Chat(models.Model):
+    
+    user_id = models.ForeignKey(utilisateur, models.DO_NOTHING, db_column='user_id', related_name='sent_chat')  # Field name made lowercase.
+    message = models.TextField(db_column='message')  # Field name made lowercase.
+    date = models.DateTimeField(db_column='date')  # Field name made lowercase.
+    destination = models.ForeignKey(utilisateur, models.DO_NOTHING, db_column='destination' ,related_name='received_chat')# Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'Chat'
+        unique_together = (('user_id', 'date', 'destination'),)
 
 class Filiere(models.Model):
     id_filiere = models.IntegerField(db_column='ID_FILIERE', primary_key=True)  # Field name made lowercase.
