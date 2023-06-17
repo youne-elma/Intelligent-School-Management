@@ -193,7 +193,7 @@ def ecours(request):
 
 @login_required
 def annonceinfos(request, idAnnonce):
-    
+
     annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
     context= {
         'annonce': annonce

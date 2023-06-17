@@ -48,41 +48,54 @@
                 <span class="border-t border-solid border-lightcolor opacity-50"></span>
                 <div class="mt-4">
                     <ul>
-                        <li
-                            class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
-                            <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                        {% comment %} <li> // this is an admin navbarLink
+                            <a href="{% url "index" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">    
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
                                 alt="Dashboard Icon" src="{% static 'icons/DashboardIcon.png' %}" />
-                            Administration
+                                Dashboard
+                            </a>
+                        </li> {% endcomment %}
+                        <li>
+                            <a href="{% url "homeProf" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">    
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                                alt="Dashboard Icon" src="{% static 'icons/DashboardIcon.png' %}" />
+                                Home
+                            </a>
                         </li>
-                        <li
-                            class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
-                            <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                        <li>
+                            <a href="{% url "annonce" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">    
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
                                 alt="Dashboard Icon" src="{% static 'icons/AnnounceIcon.png' %}" />
-                            Annonce
+                                Annonce
+                            </a>
                         </li>
-                        <li
-                            class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
-                            <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                        <li>
+                            <a href="{% url "ecours" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">    
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
                                 alt="Dashboard Icon" src="{% static 'icons/SyllabusIcon.png' %}" />
-                            Cours en ligne
+                                Cours en ligne
+                            </a>
                         </li>
-                        <li
-                            class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
-                            <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                        <li>
+                            <a href="{% url "searchNote" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">    
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
                                 alt="Dashboard Icon" src="{% static 'icons/SyllabusGraduatedIcon.png' %}" />
-                            Notes
+                                Notes
+                            </a>
                         </li>
-                        <li
-                            class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
-                            <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
-                                alt="Dashboard Icon" src="{% static 'icons/TestPassedIcon.png' %}" />
-                            Scolarite
+                        <li>
+                            <a href="{% url "gestiondabsence" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                                    alt="Dashboard Icon" src="{% static 'icons/TestPassedIcon.png' %}" />
+                                Gestion d'absence
+                            </a>
                         </li>
-                        <li
-                            class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
-                            <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
+                        <li>
+                            <a href="{% url "chatbot" %}" class="flex gap-[17px] navbarMinTab:gap-2 navbarMinTab:pl-[2vw] pl-[2.7vw] navbarTab:pl-5 pt-[17px] pb-[17px] items-center content-center text-[15px] navbarMinTab:text-xs navbarTab:text-sm navbarPhone:pl-10 text-lightcolor hover:bg-buttonhover cursor-pointer hoverButtonTransition">
+                                <img class="w-[22px] h-[22px] navbarMinTab:w-3 navbarMinTab:h-3 navbarTab:w-5 navbarTab:h-5"
                                 alt="Dashboard Icon" src="{% static 'icons/BotIcon.png' %}" />
-                            Bot Support
+                                Bot Support
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -98,23 +111,41 @@
 
             <!--Profile-->
             <div class="Profile flex gap-[0.5rem] items-center ml-auto ">
-                <img class="" src="../../../theme/static/icons/notif.png" alt="">
-                <div class="User-Profile flex flex-col text-right">
-                    <span class="User text-[0.875rem] font-normal">Monir Chelh</span>
-                    <span class="Role text-[0.625rem] font-light text-[#7e7e7e]">Administrator</span>
-                </div>
-                <img src="../../../theme/static/icons/UserPic.png" alt="">
-
-
-
+                <a href="{% url "annonce" %}">
+                    <img class="" src="../../../theme/static/icons/notif.png" alt="Notif Icon">   
+                </a>
+                <a href="{% url "profile" %}">
+                    {% if user.profilepic %}
+                        <img class="w-8 h-8 drop-shadow-2xl rounded-full" src="../../../Media/{{ user.profilepic }}" alt="{{ user.nomfr }} {{ user.prenomfr }} profile pic">
+                    
+                    {% else %}
+                        <img class="w-9 h-9" src="../../../theme/static/image/UnknownUserImage.png" alt="Default user profile">
+                    {% endif %}
+                </a>
+                <a href="{% url "profile" %}">
+                    <div class="User-Profile flex flex-col text-right">
+                        <span class="User text-[0.875rem] font-normal">{{ user.prenomfr }} {{ user.nomfr }}</span>
+                        <span class="Role text-[0.625rem] font-light text-[#7e7e7e]">
+                            {% if user.isadmine %}
+                                Admin
+                            {% else %}
+                                Professeur
+                            {% endif %}
+                        </span>
+                    </div>
+                </a>
+                <a class="ml-2" href="{% url "deconnexion" %}">
+                    <button class="rechercheButton flex items-center text-white bg-loyalblue rounded gap-4 py-2 px-2 text-xs">
+                        Logout
+                        <img class="w-4 h-4" src="../../../theme/static/icons/LogoutIcon.png" alt="Logout icon" />
+                    </button>
+                </a>
             </div>
             {% block content %}
             {% endblock %}
         </div>
     </div>
-    <script src="{% static 'js/script.js'%}" />
-    
     {% django_browser_reload_script %}
+    <script src="../../../theme/static/js/script.js" />
     </body>
-
 </html>
