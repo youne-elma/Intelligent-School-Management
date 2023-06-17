@@ -336,6 +336,8 @@ body {
 #profileInfos td{
   height: 50px;
   width: 250px;
+  word-wrap: break-word; 
+  word-break: break-all;
 }
 
 .changePasswordButton {

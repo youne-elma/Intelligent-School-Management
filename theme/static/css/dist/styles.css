@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,6 +602,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -649,6 +652,9 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -1092,6 +1098,10 @@ select {
   height: 100px;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
 .h-\[22px\] {
   height: 22px;
 }
@@ -1234,6 +1244,10 @@ select {
 
 .w-96 {
   width: 24rem;
+}
+
+.w-\[150px\] {
+  width: 150px;
 }
 
 .w-\[200px\] {
@@ -2049,6 +2063,11 @@ select {
   color: rgb(34 40 46 / var(--tw-text-opacity));
 }
 
+.text-daredvilleorange {
+  --tw-text-opacity: 1;
+  color: rgb(234 106 71 / var(--tw-text-opacity));
+}
+
 .text-darkcolor {
   --tw-text-opacity: 1;
   color: rgb(32 32 32 / var(--tw-text-opacity));
@@ -2077,6 +2096,11 @@ select {
 .text-mediumcoolGray {
   --tw-text-opacity: 1;
   color: rgb(126 144 154 / var(--tw-text-opacity));
+}
+
+.text-smoothgreen {
+  --tw-text-opacity: 1;
+  color: rgb(97 136 48 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -2163,6 +2187,11 @@ select {
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-darkcolor:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-lightblue:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(165 216 221 / var(--tw-bg-opacity));
@@ -2181,11 +2210,6 @@ select {
 .hover\:bg-smoothgreen:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(97 136 48 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-darkcolor:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
 }
 
 .hover\:fill-daredvilleorange:hover {
@@ -2558,6 +2582,11 @@ select {
   .SmallScreen\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+
+  .SmallScreen\:text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 

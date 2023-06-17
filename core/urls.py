@@ -1,5 +1,5 @@
 from django.urls import path
-
+from django.conf.urls.static import static
 from . import views
 
 
@@ -28,5 +28,5 @@ urlpatterns = [
     path("bugreport", views.bugreport, name="bugreport"),
     path("bugreportsuccess ", views.bugreportsuccess , name="bugreportsuccess "),
 
-]
+] 
 

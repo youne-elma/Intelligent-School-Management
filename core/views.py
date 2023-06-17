@@ -2,13 +2,15 @@ from django.shortcuts import render, redirect, get_object_or_404
 from core.models import Annonce, Module, Semestre,Reports, Etudiant, utilisateur,Chat
 from core.forms import AnnonceForm, AjoutAnnonceForm
 from datetime import datetime
-from django.contrib.auth import authenticate, logout, login as auth_login
+from django.contrib.auth import authenticate, logout, update_session_auth_hash, login as auth_login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
 from .forms import UserForm
 import requests
 import json
+import os
 
 # Create your views here.
 
@@ -36,6 +38,7 @@ def login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None and user.is_active:
             auth_login(request, user)
+            # request.session.set_expiry(15)
             if user.isadmine:
                 return redirect('index')
             else:
@@ -212,10 +215,36 @@ def gestiondabsence(request):
 
 @login_required
 def profile(request):
+    if request.method == 'POST' and request.FILES.get('profile_image'):
+        profile_image = request.FILES['profile_image']
+        user = request.user
+        if user.profilepic:
+            user.profilepic.delete(save=False)
+        request.user.profilepic = profile_image
+        request.user.save()
+        return redirect('profile')
+        
     return render(request, 'core/profile.html')
 
 @login_required
 def modifypwd(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(data= request.POST, user= request.user)
+        print(request.POST)
+        try: 
+            confirmation = request.POST['confirmation'] == 'on'
+            print(confirmation)
+        except:
+            confirmation = False
+        if form.is_valid() and confirmation :
+            form.save()
+            update_session_auth_hash(request, form.user)
+            return render(request, 'core/modifypwd.html', { 'modifySuccess': True })
+        else:
+            return render(request, 'core/modifypwd.html', {'form':form.errors,'confirmation': confirmation})
+    else:
+        form = PasswordChangeForm(user= request.user)
+    
     return render(request, 'core/modifypwd.html')
 
 

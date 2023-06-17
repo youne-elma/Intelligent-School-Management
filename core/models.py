@@ -22,11 +22,11 @@ class utilisateur(AbstractUser):
     telephone = models.CharField(db_column='TELEPHONE', max_length=20)  # Field name made lowercase.
     password = models.CharField(db_column='PASSWORD',max_length=250)
     email = models.CharField(db_column='EMAIL',max_length=254)
-    
+    profilepic  = models.ImageField(db_column='picurl', upload_to='profiles-pics/', null=True, blank=True)
     username = models.CharField(db_column='USERNAME',unique=True, max_length=150)
-    is_superuser = models.IntegerField(db_column='is_superuser',default=False)
-    is_active = models.IntegerField(db_column='is_active',default=True)
-    is_staff = models.IntegerField(db_column='is_staff',default=False)
+    is_superuser = models.BooleanField(db_column='is_superuser',default=False)
+    is_active = models.BooleanField(db_column='is_active',default=True)
+    is_staff = models.BooleanField(db_column='is_staff',default=False)
     isadmine = models.BooleanField(db_column='isadmine',default=False)
     last_name = None
     first_name = None

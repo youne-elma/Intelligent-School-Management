@@ -10,13 +10,26 @@
         <div  class=" relative  items-center bottom-14 justify-center">
 
             <div class="flex relative  items-center justify-center   ">
-                <img src="../../../theme/static/icons/userzaki.jpg" alt="" class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6"> 
+
+                <form action="{% url 'profile' %}" method="POST" id="image-form" enctype="multipart/form-data" class="flex flex-col gap-2">
+                    {% csrf_token %}
+                    <label for="avatar_input" class="rounded-full">
+                    {% if user.profilepic %}
+                        <img src="../../../Media/{{ user.profilepic }}" href=""  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 bg-daredvilleorange h-[150px] w-[150px] cursor-pointer"  alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
+                    {% else %}
+                        <img src="../../../theme/static/image/UnknownUserImage.png"  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 cursor-pointer" alt="User pic">
+                    {% endif %}
+                    </label>
+                    <input type="file" id="avatar_input" name="profile_image" style="display: none;" />
+                    <button id="buttonUpload" type="submit" class="hidden border-none changePasswordButton text-white bg-loyalblue rounded-md border-2 py-1">Appliquer</button>
+              </form>
+                </form>
             </div>
 
             <div class="mt-4">
-                <h1 class="text-center font-bold text-xl bottom-8">ZAKI Taher</h1>
-                <p class="text-mediumcoolGray text-center">Dept. Informatique</p>
-                <p class="text-mediumcoolGray text-center">184562</p>
+                <h1 class="text-center font-bold text-xl bottom-8">{{ user.nomfr }}  {{ user.prenomfr }}</h1>
+                <p class="text-mediumcoolGray text-center">Dept. {{ user.iddept.intituledept }}</p>
+                <p class="text-mediumcoolGray text-center">{{user.n_som}}</p>
             </div>
 
         </div>
@@ -31,37 +44,37 @@
             <div id="profileInfos" class=" py-6 flex justify-center SmallScreen:flex-col">
                 <table  class="text-sm ">
                     <tr>
-                        <td class="text-mediumcoolGray w-15">Nom en Francais</td> <td style="color: #6376BF;">Zaki</td>
+                        <td class="text-mediumcoolGray w-15">Nom en Francais</td> <td style="color: #6376BF;">{{ user.nomfr }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">Prénom en Francais</td> <td style="color: #6376BF;">Taher</td>
+                        <td class="text-mediumcoolGray">Prénom en Francais</td> <td style="color: #6376BF;">{{ user.prenomfr }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">N Somm*</td> <td style="color: #6376BF;">121212</td>
+                        <td class="text-mediumcoolGray">N Somm*</td> <td style="color: #6376BF;">{{ user.n_som }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">Spécialité</td> <td style="color: #6376BF;">Recherche Opérationnelle</td>
+                        <td class="text-mediumcoolGray">Spécialité</td> <td style="color: #6376BF;">{{ user.idspec.intitulespec}}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">Departement</td> <td style="color: #6376BF;">Informatique</td>
+                        <td class="text-mediumcoolGray">Departement</td> <td style="color: #6376BF;">{{ user.iddept.intituledept }}</td>
                     </tr>
                 </table>
 
                 <table class="text-sm">
                     <tr>
-                        <td class="text-mediumcoolGray">Nom en Arabe</td> <td style="color: #6376BF;">الزاكي</td>
+                        <td class="text-mediumcoolGray">Nom en Arabe</td> <td style="color: #6376BF;">{{ user.nomar }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">Prénom en Arabe</td> <td style="color: #6376BF;">طاهر</td>
+                        <td class="text-mediumcoolGray">Prénom en Arabe</td> <td style="color: #6376BF;">{{ user.prenomar }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">C.I.N.</td> <td style="color: #6376BF;">JT01212</td>
+                        <td class="text-mediumcoolGray">C.I.N.</td> <td style="color: #6376BF;">{{ user.cin }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">Adresse Mail</td> <td style="color: #6376BF;">T.Zaki@uiz.ac.ma</td>
+                        <td class="text-mediumcoolGray">Adresse Mail</td> <td style="color: #6376BF;">{{ user.email }}</td>
                     </tr>
                     <tr>
-                        <td class="text-mediumcoolGray">N Télephone</td> <td style="color: #6376BF;">+212 6890000</td>
+                        <td class="text-mediumcoolGray">N Télephone</td> <td style="color: #6376BF;">{{ user.telephone }}</td>
                     </tr>
                 </table>
             </div>
@@ -74,15 +87,39 @@
             <div id="profileInfos" class="pt-6 flex justify-between mx-16 SmallScreen:flex-col SmallScreen:mx-0">
                 <table  class="text-sm ">
                     <tr>
-                        <td class="text-mediumcoolGray w-15">Id</td> <td style="color: #6376BF;">T.Zaki@uiz.ac.ma</td>
+                        <td class="text-mediumcoolGray w-15">Id</td> <td style="color: #6376BF;">{{ user.email }}</td>
                     </tr>
                     <tr>
                         <td class="text-mediumcoolGray">Mot de Passe </td> <td style="color: #6376BF;">************</td>
                     </tr>
                 </table>
-                <button id="submit" class=" max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:mt-4 SmallScreen:justify-center  ">Changer Password</button>               
+                <a href="{% url 'modifypwd' %}">
+                    <button class=" max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:mt-4 SmallScreen:justify-center  ">Changer Password</button>
+                </a>                               
             </div>
          
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Get the input element
+            var myInput = $("#avatar_input");
+
+            // Add an event listener to handle input value changes
+            myInput.on("input", function() {
+                var buttonUpload = $("#buttonUpload");
+                var inputValue = myInput.val().trim();
+
+                // Show or hide the text based on input value
+                if (inputValue) {
+                    buttonUpload.removeClass("hidden");
+                } else {
+                    buttonUpload.addClass("hidden");
+                }
+            });
+        });
+    </script>
+
 {% endblock %}

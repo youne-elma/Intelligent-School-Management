@@ -12,30 +12,56 @@
 
 
         <div class="flex justify-center">
-            <form class="flex flex-col m-10 items-center gap-6">
-
-                <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2" >
-                    <label for="password" class=" w-60 text-sm block SmallScreen:text-center" style="color:#94a3b8;">Password Actuel</label>
-                    <input  type="password" name="#"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">       
+            <form class="flex flex-col m-10 items-center gap-6" method="POST">
+                {% csrf_token %}
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2" >
+                        <label for="old_password" class=" w-60 text-sm block SmallScreen:text-center" style="color:#94a3b8;">Password Actuel</label>
+                        <input  type="text" name="old_password"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">       
+                    </div>
+                    {% if form %}
+                        <div class="text-sm text-daredvilleorange self-end SmallScreen:text-xs SmallScreen:text-center">
+                            {{ form.old_password }}
+                        </div>
+                    {% endif %}
                 </div>
-            
-                <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2">
-                    <label for="password" class=" w-60  text-sm SmallScreen:text-center" style="color:#94a3b8;">Nouveau Password</label>
-                    <input  type="password" name="#"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;" >
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2">
+                        <label for="new_password1" class=" w-60  text-sm SmallScreen:text-center" style="color:#94a3b8;">Nouveau Password</label>
+                        <input  type="password" name="new_password1"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;" >
+                    </div>
+                    {% if form %}
+                        <div class="text-sm text-daredvilleorange self-end SmallScreen:text-xs SmallScreen:text-center">
+                            {{ form.new_password1 }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="flex flex-col justify-center items-center gap-2">
+                    <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2">
+                        <label for="new_password2" class=" w-60 text-sm text-[#97a4b6] SmallScreen:text-center">Reconfirmez Nouveau Password</label>
+                        <input  type="password" name="new_password2"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">
+                    </div>
+                    {% if form %}
+                        <div class="text-sm text-daredvilleorange self-end SmallScreen:text-xs SmallScreen:text-center">
+                            {{ form.new_password2 }}
+                        </div>
+                    {% endif %}
+                </div>
+                <div class="flex gap-2 justify-center items-center SmallScreen:flex-col self-end">
+                    {% if confirmation == False %}
+                        <p class="text-xs text-daredvilleorange text-center">Vous n'avez pas confirmer votre changement</p>
+                    {% endif %}
+                    {% if modifySuccess %}
+                        <p class="text-xs text-smoothgreen text-center">Modification Réussi</p>
+                    {% endif %}
+                    <div class="flex items-center SmallScreen:justify-center SmallScreen:self-auto self-end" >
+                        <input type="checkbox" name="confirmation"  class="rounded-md  bg-[#e2e2e2] mr-2 border-none">
+                        <label for="confirmation" class="text-sm text-[#97a4b6] ">Je Confirme</label>
+                    </div>
                 </div>
 
-                <div class="flex SmallScreen:flex-col SmallScreen:justify-center items-center justify-between gap-2">
-                    <label for="password" class=" w-60 text-sm text-[#97a4b6] SmallScreen:text-center">Reconfirmez Nouveau Password</label>
-                    <input  type="password" name="#"  class="navbarPhone:w-[150px] w-[270px] h-7 px-5 pr-10 rounded-full text-sm required focus:outline-none" style="background-color : #D5DEE8;  border: 0;">
-                </div>
+                <button type="submit" id="submit" class="max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:justify-center SmallScreen:self-auto">Changer Password</button>
 
-                <div class="flex items-center SmallScreen:justify-center SmallScreen:self-auto self-end" >
-                    <input type="checkbox" name="confirmation"  class="rounded-md  bg-[#e2e2e2] mr-2 border-none">
-                    <label for="confirmation" class="text-sm text-[#97a4b6] ">Je Confirme</label>
-                </div>
-
-                <button id="submit" class="max-w-[270px] bg-loyalblue text-white text-sm rounded-md changePasswordButton py-2  px-5 self-end SmallScreen:justify-center SmallScreen:self-auto ">Changer Password</button>
-                            
             </form>
         </div>
     </div>
