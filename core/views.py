@@ -318,7 +318,7 @@ def bugreportsuccess(request):
 
     
 
-login_required
+# login_required
 #def getMessages(request, room):
 #    room_details = Room.objects.get(name=room)
 #
