@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 import pandas as pd
 from core.models import Examen, Local, Etudiant,Module,utilisateur
-from .forms import FileUploadForm,NoteForm
+from .forms import FileUploadForm,NoteForm,UpdateNoteForm
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
 from django.shortcuts import render, redirect, get_object_or_404
@@ -211,3 +211,43 @@ def download(request):
     print(request.user.idutilisateur)
     print("test")
     return response
+
+
+@login_required
+def updateNote(request, idNote):
+
+    examen = get_object_or_404(Examen, id=idNote)
+    modules = request.user.module_set.all()
+    semestres = Semestre.objects.all()
+    etudiant = get_object_or_404(Etudiant, apogee=examen.apogee.apogee)
+    
+    if(request.method == 'POST'):
+          
+        form = UpdateNoteForm(request.POST, instance=examen)
+
+        if form.is_valid():
+           try:
+            
+            examen.h_debut = form.cleaned_data['h_debut']
+            examen.session = form.cleaned_data['session']
+            examen.note = form.cleaned_data['note']
+            examen.id_modmat = form.cleaned_data['id_modmat']
+            examen.id_local = form.cleaned_data['id_local']
+            examen.n_examen = form.cleaned_data['n_examen']
+           
+            examen.save(update_fields=['h_debut','session' , 'note','n_examen','id_local','id_modmat'])
+           except Exception as e:
+               print(e) 
+        else:
+            print(form.errors)
+
+        return redirect('showNotes')
+
+    context = {
+        'note': examen,
+        'modules': modules,
+        'semestres': semestres,
+        
+        'salles' : Local.objects.all()}
+
+    return render(request, 'core/modifyNote.html', context)

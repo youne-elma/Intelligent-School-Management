@@ -17,4 +17,5 @@ urlpatterns = [
     path("registre/", views.registre, name="registre"), #registre
     path("addNote/", views.addNote, name="addNote"), #addNote
     path('download/', views.download, name='download'),
+    path('updateNote/<str:idNote>/', views.updateNote, name='updateNote'),
 ]

@@ -14,6 +14,10 @@ class NoteForm(forms.ModelForm):
         fields = ['apogee', 'h_debut', 'session', 'note', 'id_modmat', 'id_local','n_examen']
    
     
+class UpdateNoteForm(forms.ModelForm):
+    class Meta:
+        model = Examen
+        fields = ['h_debut', 'session', 'note', 'id_modmat', 'id_local','n_examen']    
 class UserForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
         super(UserForm, self).__init__(*args, **kwargs)
