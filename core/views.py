@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre,Reports, Etudiant, utilisateur,Chat
+from core.models import Annonce, Module, Semestre, Reports, Etudiant, utilisateur, Chat, Examen, Local
 from core.forms import AnnonceForm, AjoutAnnonceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, update_session_auth_hash, login as auth_login
@@ -7,10 +7,14 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
-from .forms import UserForm
+from django.shortcuts import render,redirect
+import pandas as pd
+from django.views.decorators.http import require_GET
+from .forms import UserForm, FileUploadForm, NoteForm, UpdateNoteForm
 import requests
 import json
 import os
+import csv
 
 # Create your views here.
 
@@ -112,7 +116,6 @@ def addAnnonce(request):
     modules = Module.objects.all()
     semestres = Semestre.objects.all()
 
-    print(request.POST)
 
     if request.method == 'POST':
 
@@ -230,7 +233,7 @@ def profile(request):
 def modifypwd(request):
     if request.method == 'POST':
         form = PasswordChangeForm(data= request.POST, user= request.user)
-        print(request.POST)
+
         try: 
             confirmation = request.POST['confirmation'] == 'on'
             print(confirmation)
@@ -318,9 +321,199 @@ def bugreportsuccess(request):
 
     
 
-login_required
+# login_required
 #def getMessages(request, room):
 #    room_details = Room.objects.get(name=room)
 #
 #    messages = Message.objects.filter(room=room_details.id)
 #    return JsonResponse({"messages":list(messages.values())})
+
+@login_required
+def addNotesProf(request):
+    if request.method == 'POST':
+        form = FileUploadForm(request.POST, request.FILES)
+        module_id = request.POST.get('module')
+       
+        if Module.objects.filter(id_modmat=module_id, idutilisateur=request.user.idutilisateur).exists():
+            print(module_id , request.user.idutilisateur)
+
+
+        if form.is_valid():
+            file = request.FILES['file']
+            df = pd.read_excel(file)
+            columns = df.columns
+            try:
+                for _, row in df.iterrows():
+                    for column_name in columns:
+                        if column_name.lower() == 'id_modmat':
+                            if row[column_name] != module_id:
+                                messages.error(request, "Invalid module ID, please check your file and try again !")
+                                return redirect('addNotesProf')
+                    examen = Examen()
+                    for column_name in columns:
+                        if column_name.lower() == 'id_local':
+                            
+                            local_value = row[column_name]
+                            local = Local.objects.get(id_local=local_value)
+                            print(local.id_local)
+                            setattr(examen, column_name.lower(), local)
+                        elif column_name.lower() == 'apogee':
+                            apogee_value = row[column_name]
+                            etudiant = Etudiant.objects.get(apogee=apogee_value)    
+                            setattr(examen, column_name.lower(), etudiant)
+                        elif column_name.lower() == 'id_modmat':
+                            module_value = row[column_name]
+                            module = Module.objects.get(id_modmat=module_value)
+                            setattr(examen, column_name.lower(), module)
+                        else:
+                            setattr(examen, column_name.lower(), row[column_name])
+
+                    examen.save()
+             
+                return redirect('showNotes')
+            except Exception as e:
+                print(e)
+                messages.error(request, "please check your file and try again !" + str(e.args[1]))
+                return redirect('addNotesProf')
+    
+    return render(request, 'core/addNotesProf.html')
+
+@login_required
+def upload_success(request):
+    return render(request, 'core/upload_success.html')
+
+@login_required
+def Notes(request):
+    return render(request, 'core/Notes.html')
+
+
+@login_required
+def showNotes(request):
+    notes = Examen.objects.all()
+    context = {
+        'notes': notes
+    }
+    return render(request, 'core/showNotes.html', context)
+
+@login_required
+def deleteNote(request, idNotes):
+
+    examen = Examen.objects.get(id = idNotes)
+    examen.delete()
+
+    
+
+    return redirect('showNotes')
+
+
+def test(request):
+    examen = Examen.objects.all()
+    for examens in examen:
+        print(examens.id_local)
+    return render(request, 'core/test.html')
+
+
+@require_GET
+def get_object(request, object_id):
+    try:
+        # Query the database for the object with the provided ID
+        Note = Examen.objects.get(id=object_id)
+        student = Etudiant.objects.get(apogee=Note.apogee.apogee)
+        # Build the response data
+        data = {
+            'Name': student.nomfr + " " + student.prenomfr,
+            'apogee': Note.apogee.apogee,
+            'note': Note.note,
+            'session': Note.session,
+            'date': Note.h_debut,
+            # ... other attributes
+        }
+        return JsonResponse(data)
+    except Examen.DoesNotExist:
+        return JsonResponse({'error': 'Object not found'}, status=404)
+    except Etudiant.DoesNotExist:
+        return JsonResponse({'error': 'Object not found'}, status=404)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+    
+
+
+
+@login_required
+def addNote(request):
+    form = NoteForm()
+    etudiants = Etudiant.objects.all()
+    salles = Local.objects.all()
+    if request.method == 'POST':
+        form = NoteForm(request.POST)
+        if form.is_valid():
+
+            form.save()
+            messages.success(request, 'Note a été bien ajouter !')
+            return redirect('showNotes')
+        
+    context = {
+        'form': form
+        ,
+        'etudiants': etudiants,
+        'salles': salles
+    }    
+    
+        
+
+    return render(request, 'core/addNote.html',context)
+
+
+@login_required
+def download(request):
+ 
+    # Create a CSV file as an example
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="TemplateNote.csv"'
+
+    # Write data to the CSV file
+    writer = csv.writer(response)
+    writer.writerow(['ID_LOCAL', 'APOGEE', 'ID_MODMAT', 'N_EXAMEN', 'h_Debut', 'h_Fin', 'RESULTAT', 'NOTE', 'SESSION'])
+    print(request.user.idutilisateur)
+    print("test")
+    return response
+
+
+@login_required
+def updateNote(request, idNote):
+
+    examen = get_object_or_404(Examen, id=idNote)
+    modules = request.user.module_set.all()
+    semestres = Semestre.objects.all()
+    etudiant = get_object_or_404(Etudiant, apogee=examen.apogee.apogee)
+    
+    if(request.method == 'POST'):
+          
+        form = UpdateNoteForm(request.POST, instance=examen)
+
+        if form.is_valid():
+           try:
+            
+            examen.h_debut = form.cleaned_data['h_debut']
+            examen.session = form.cleaned_data['session']
+            examen.note = form.cleaned_data['note']
+            examen.id_modmat = form.cleaned_data['id_modmat']
+            examen.id_local = form.cleaned_data['id_local']
+            examen.n_examen = form.cleaned_data['n_examen']
+           
+            examen.save(update_fields=['h_debut','session' , 'note','n_examen','id_local','id_modmat'])
+           except Exception as e:
+               print(e) 
+        else:
+            print(form.errors)
+
+        return redirect('showNotes')
+
+    context = {
+        'note': examen,
+        'modules': modules,
+        'semestres': semestres,
+        
+        'salles' : Local.objects.all()}
+
+    return render(request, 'core/modifyNote.html', context)

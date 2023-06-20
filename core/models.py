@@ -46,9 +46,6 @@ class utilisateur(AbstractUser):
         managed = False
         db_table = 'utilisateur'
 
-
-
-
 class Adresse(models.Model):
     idadre = models.IntegerField(db_column='IDADRE', primary_key=True)  # Field name made lowercase.
     codepostal = models.ForeignKey('Ville', models.DO_NOTHING, db_column='CODEPOSTAL')  # Field name made lowercase.
@@ -315,7 +312,8 @@ class Etudiant(models.Model):
 
 
 class Examen(models.Model):
-    id_local = models.OneToOneField('Local', models.DO_NOTHING, db_column='ID_LOCAL', primary_key=True)  # Field name made lowercase. The composite primary key (ID_LOCAL, APOGEE, ID_MODMAT, N_EXAMEN, h_Debut) found, that is not supported. The first column is selected.
+    id = models.AutoField(db_column='id', primary_key=True)  # Field name made lowercase.
+    id_local = models.ForeignKey('Local', models.DO_NOTHING, db_column='ID_LOCAL')  # Field name made lowercase. The composite primary key (ID_LOCAL, APOGEE, ID_MODMAT, N_EXAMEN, h_Debut) found, that is not supported. The first column is selected.
     apogee = models.ForeignKey(Etudiant, models.DO_NOTHING, db_column='APOGEE')  # Field name made lowercase.
     id_modmat = models.ForeignKey('Module', models.DO_NOTHING, db_column='ID_MODMAT')  # Field name made lowercase.
     n_examen = models.IntegerField(db_column='N_EXAMEN')  # Field name made lowercase.
@@ -328,7 +326,7 @@ class Examen(models.Model):
     class Meta:
         managed = False
         db_table = 'examen'
-        unique_together = (('id_local', 'apogee', 'id_modmat', 'n_examen', 'h_debut'),)
+        unique_together = (('id_local', 'apogee', 'id_modmat', 'n_examen', 'h_debut'))
 
 class Chat(models.Model):
     

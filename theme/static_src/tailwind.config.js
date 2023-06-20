@@ -79,6 +79,8 @@ module.exports = {
       BroderGris: "#d9d9d985",
       gris: "#94a3b8",
       informationColor: "#7A7A7A",
+      blue: "#517ECD",
+      filter: "rgba(34, 40, 46, 0.12)",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -90,6 +92,9 @@ module.exports = {
       buttonsAnnonce: { min: "1150px", max: "1400px" },
       titreAnnonceViewport: { min: "1150px" },
       SmallScreen: { min: "1px", max: "645px" },
+      AnnounceViewportNew: { max: "1000px" },
+      SmallScreen: { min: "1px", max: "645px" },
+      largeScreen: { min: "1000px" },
       md: { min: "645px", max: "1000px" },
       xl: { min: "1000px", max: "1400px" },
       "2xl": { min: "1400px", max: "1777px" },
@@ -106,6 +111,8 @@ module.exports = {
       ajoutAnnonceTab: { max: "1300px" },
       ajoutAnnonceMobile: { max: "700px" },
       gestionMdabsence: { max: "570px" },
+      addNote: { min: "1000px" },
+      addNoteMobile: { max: "1000px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",

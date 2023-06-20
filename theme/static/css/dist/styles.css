@@ -822,6 +822,11 @@ select {
   margin-right: 0.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-7 {
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -860,6 +865,10 @@ select {
 
 .mb-16 {
   margin-bottom: 4rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .mb-4 {
@@ -984,6 +993,10 @@ select {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
 }
 
 .mt-4 {
@@ -1134,6 +1147,10 @@ select {
   height: 52px;
 }
 
+.h-\[57px\] {
+  height: 57px;
+}
+
 .h-\[70px\] {
   height: 70px;
 }
@@ -1250,8 +1267,16 @@ select {
   width: 24rem;
 }
 
+.w-\[120px\] {
+  width: 120px;
+}
+
 .w-\[150px\] {
   width: 150px;
+}
+
+.w-\[160px\] {
+  width: 160px;
 }
 
 .w-\[200px\] {
@@ -1278,6 +1303,10 @@ select {
   width: 3.188rem;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
 .w-\[35px\] {
   width: 35px;
 }
@@ -1296,6 +1325,10 @@ select {
 
 .w-\[60\%\] {
   width: 60%;
+}
+
+.w-\[62px\] {
+  width: 62px;
 }
 
 .w-\[70px\] {
@@ -1321,6 +1354,10 @@ select {
 
 .min-w-\[179px\] {
   min-width: 179px;
+}
+
+.min-w-\[90px\] {
+  min-width: 90px;
 }
 
 .min-w-full {
@@ -1389,6 +1426,10 @@ select {
   flex-wrap: wrap;
 }
 
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 .content-center {
   align-content: center;
 }
@@ -1417,6 +1458,10 @@ select {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .justify-items-center {
   justify-items: center;
 }
@@ -1427,6 +1472,10 @@ select {
 
 .gap-10 {
   gap: 2.5rem;
+}
+
+.gap-11 {
+  gap: 2.75rem;
 }
 
 .gap-12 {
@@ -1612,6 +1661,11 @@ select {
   border-color: #d9d9d985;
 }
 
+.border-\[\#e4dfdf\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(228 223 223 / var(--tw-border-opacity));
+}
+
 .border-darkcolor {
   --tw-border-opacity: 1;
   border-color: rgb(32 32 32 / var(--tw-border-opacity));
@@ -1684,6 +1738,10 @@ select {
 .bg-denimcolor {
   --tw-bg-opacity: 1;
   background-color: rgb(0 145 213 / var(--tw-bg-opacity));
+}
+
+.bg-filter {
+  background-color: rgba(34, 40, 46, 0.12);
 }
 
 .bg-informationColor {
@@ -1781,6 +1839,16 @@ select {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.px-\[35px\] {
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .px-\[50px\] {
@@ -1938,6 +2006,10 @@ select {
   font-size: 0.875rem;
 }
 
+.text-\[0\.9rem\] {
+  font-size: 0.9rem;
+}
+
 .text-\[1\.25rem\] {
   font-size: 1.25rem;
 }
@@ -1964,6 +2036,10 @@ select {
 
 .text-\[15px\] {
   font-size: 15px;
+}
+
+.text-\[1rem\] {
+  font-size: 1rem;
 }
 
 .text-\[24px\] {
@@ -2013,6 +2089,10 @@ select {
 
 .font-normal {
   font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .font-thin {
@@ -2095,6 +2175,11 @@ select {
 .text-lightcolor {
   --tw-text-opacity: 1;
   color: rgb(241 241 241 / var(--tw-text-opacity));
+}
+
+.text-lightgreen {
+  --tw-text-opacity: 1;
+  color: rgb(11 175 116 / var(--tw-text-opacity));
 }
 
 .text-loyalblue {
@@ -2221,12 +2306,21 @@ select {
   background-color: rgb(97 136 48 / var(--tw-bg-opacity));
 }
 
+.hover\:fill-blue:hover {
+  fill: #517ECD;
+}
+
 .hover\:fill-daredvilleorange:hover {
   fill: #EA6A47;
 }
 
 .hover\:fill-lightblue:hover {
   fill: #A5D8DD;
+}
+
+.hover\:text-\[white\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {
@@ -2290,6 +2384,10 @@ select {
 
   .navbarTab\:ml-1 {
     margin-left: 0.25rem;
+  }
+
+  .navbarTab\:mr-2 {
+    margin-right: 0.5rem;
   }
 
   .navbarTab\:block {
@@ -2599,6 +2697,12 @@ select {
   }
 }
 
+@media (min-width: 1000px) {
+  .largeScreen\:w-\[60px\] {
+    width: 60px;
+  }
+}
+
 @media (min-width: 645px) and (max-width: 1000px) {
   .md\:-mt-10 {
     margin-top: -2.5rem;
@@ -2642,6 +2746,18 @@ select {
 @media (min-width: 1777px) and (max-width: 2000px) {
   .\33xl\:ml-28 {
     margin-left: 7rem;
+  }
+
+  .\33xl\:ml-\[2rem\] {
+    margin-left: 2rem;
+  }
+
+  .\33xl\:ml-\[3rem\] {
+    margin-left: 3rem;
+  }
+
+  .\33xl\:ml-\[4rem\] {
+    margin-left: 4rem;
   }
 
   .\33xl\:text-base {
@@ -2788,6 +2904,10 @@ select {
     justify-content: center;
   }
 
+  .ajoutAnnonceTab\:gap-2 {
+    gap: 0.5rem;
+  }
+
   .ajoutAnnonceTab\:gap-7 {
     gap: 1.75rem;
   }
@@ -2860,5 +2980,17 @@ select {
   .gestionMdabsence\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .addNote\:hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .addNoteMobile\:hidden {
+    display: none;
   }
 }

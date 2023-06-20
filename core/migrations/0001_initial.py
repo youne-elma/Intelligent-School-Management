@@ -322,6 +322,22 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
+            name='Examen',
+            fields=[
+                ('id', models.AutoField(db_column='id', primary_key=True, serialize=False)),
+                ('n_examen', models.IntegerField(db_column='N_EXAMEN')),
+                ('h_debut', models.DateTimeField(db_column='h_Debut')),
+                ('h_fin', models.DateTimeField(db_column='h_Fin')),
+                ('note', models.DecimalField(blank=True, db_column='NOTE', decimal_places=2, max_digits=4, null=True)),
+                ('resultat', models.IntegerField(blank=True, db_column='RESULTAT', null=True)),
+                ('session', models.CharField(blank=True, db_column='SESSION', max_length=150, null=True)),
+            ],
+            options={
+                'db_table': 'examen',
+                'managed': False,
+            },
+        ),
+        migrations.CreateModel(
             name='Filiere',
             fields=[
                 ('id_filiere', models.IntegerField(db_column='ID_FILIERE', primary_key=True, serialize=False)),
