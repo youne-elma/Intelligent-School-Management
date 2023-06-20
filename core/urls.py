@@ -16,5 +16,5 @@ urlpatterns = [
     path("accounts/login/", views.login, name="login"), 
     path("registre/", views.registre, name="registre"), #registre
     path("addNote/", views.addNote, name="addNote"), #addNote
-
+    path('download/', views.download, name='download'),
 ]

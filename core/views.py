@@ -12,7 +12,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserForm
 from datetime import datetime, time
-
+import csv
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -195,3 +196,18 @@ def addNote(request):
         
 
     return render(request, 'core/addNote.html',context)
+
+
+@login_required
+def download(request):
+ 
+    # Create a CSV file as an example
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="TemplateNote.csv"'
+
+    # Write data to the CSV file
+    writer = csv.writer(response)
+    writer.writerow(['ID_LOCAL', 'APOGEE', 'ID_MODMAT', 'N_EXAMEN', 'h_Debut', 'h_Fin', 'RESULTAT', 'NOTE', 'SESSION'])
+    print(request.user.idutilisateur)
+    print("test")
+    return response
