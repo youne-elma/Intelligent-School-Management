@@ -1020,6 +1020,18 @@ select {
   margin-top: auto;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
+.ml-28 {
+  margin-left: 7rem;
+}
+
+.ml-36 {
+  margin-left: 9rem;
+}
+
 .block {
   display: block;
 }
@@ -1054,6 +1066,10 @@ select {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-11 {
+  height: 2.75rem;
 }
 
 .h-14 {
@@ -1164,6 +1180,10 @@ select {
   width: 20%;
 }
 
+.w-11 {
+  width: 2.75rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -1230,6 +1250,10 @@ select {
 
 .w-80 {
   width: 20rem;
+}
+
+.w-9 {
+  width: 2.25rem;
 }
 
 .w-96 {
@@ -2163,6 +2187,11 @@ select {
   background-color: rgb(28 78 128 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-darkcolor:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-lightblue:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(165 216 221 / var(--tw-bg-opacity));
@@ -2181,11 +2210,6 @@ select {
 .hover\:bg-smoothgreen:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(97 136 48 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-darkcolor:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(32 32 32 / var(--tw-bg-opacity));
 }
 
 .hover\:fill-daredvilleorange:hover {
@@ -2756,6 +2780,10 @@ select {
 }
 
 @media (max-width: 700px) {
+  .ajoutAnnonceMobile\:ml-0 {
+    margin-left: 0px;
+  }
+
   .ajoutAnnonceMobile\:max-w-\[200px\] {
     max-width: 200px;
   }

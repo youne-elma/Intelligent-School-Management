@@ -334,12 +334,11 @@ class Chat(models.Model):
     user_id = models.ForeignKey(utilisateur, models.DO_NOTHING, db_column='user_id', related_name='sent_chat')  # Field name made lowercase.
     message = models.TextField(db_column='message')  # Field name made lowercase.
     date = models.DateTimeField(db_column='date')  # Field name made lowercase.
-    destination = models.ForeignKey(utilisateur, models.DO_NOTHING, db_column='destination' ,related_name='received_chat')# Field name made lowercase.
 
     class Meta:
         managed = False
-        db_table = 'Chat'
-        unique_together = (('user_id', 'date', 'destination'),)
+        db_table = 'chat_history'
+        unique_together = (('user_id', 'date','message'),)
         
 class Reports(models.Model):
     id = models.AutoField(db_column='ID', primary_key=True)  # Field name made lowercase.

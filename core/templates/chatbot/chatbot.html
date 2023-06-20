@@ -23,7 +23,8 @@
         </div>
     </div>
 </div>
-<div id="success-bug" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+<div id="success-bug"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 ajoutAnnonceMobile:ml-0 ml-36 hidden">
     <div class="bg-white rounded-lg p-6">
         <h2 class="text-xl font-bold mb-4">Bud Reported successfully!!</h2>
         <div class="flex justify-end">
@@ -92,7 +93,7 @@
         var userMessageContainer =
             '<div class="human-chat max-w-[80%] flex gap-5 flex-row-reverse self-end">' +
             '<div class="shrink-0 chatonlyphone:w-[2.3rem] chatonlyphone:h-[2.3rem] w-[3.188rem] h-[3.188rem] chatonlytab:w-[2.5rem] chatonlytab:h-[2.5rem] rounded-[50%] bg-[white] flex items-center justify-center self-end">' +
-            '<img src="{% static "image/human.png"%}" class="rounded-[50%] shadow-lm" alt="">' +
+            '<img class="w-11 h-11" src="../../../theme/static/image/UnknownUserImage.png" class="rounded-[50%] shadow-lm" alt="">' +
             '</div>' +
             '<div class="human-chat-message text-sm font-medium text-[black] bg-[white] px-5 py-3 rounded-t-2xl rounded-l-2xl drop-shadow-sm chattextportable:text-xs">' +
             '<span>' + userMessage + '</span>' +

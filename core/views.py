@@ -222,7 +222,6 @@ def modifypwd(request):
 @login_required
 def send(request):
     sender = utilisateur.objects.get(idutilisateur = request.user.idutilisateur)
-    receiver = utilisateur.objects.get(idutilisateur = 10)
     message = request.POST.get('message')
     
     #api
@@ -238,31 +237,30 @@ def send(request):
             }
     if request.method == 'POST':
         response = requests.post(url, data=json.dumps(payload), headers=headers)
-        new_message = Chat.objects.create(user_id=sender, destination=receiver, message=message, date=datetime.now())
-        new_message.save()
         print (response.status_code)
         if( response.status_code == 200):
             try:
-               
+                question_answer = {"Human": message, "Bot": response.json()['answer']}
                 answer = response.json()['answer'] 
-                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                new_message = Chat.objects.create(user_id=sender, message=question_answer, date=datetime.now())
                 new_message.save()
                 return JsonResponse({"answer": answer } )
             except Exception as e:
-                answer = str(e)
-                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                question_answer = {"Human": message, "Bot": str(e)}
+                new_message = Chat.objects.create(user_id=sender, message=question_answer, date=datetime.now())
                 new_message.save()
 
                 return JsonResponse({"answer": str(e) })
         else : 
-                answer = response.json()['error']
-                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                question_answer = {"Human": message, "Bot": response.json()['error']}
+                new_message = Chat.objects.create(user_id=sender, message=question_answer, date=datetime.now())
                 new_message.save()
-                return JsonResponse({"answer": answer })
+                return JsonResponse({"answer": question_answer })
 
     
     return redirect('chatbot')
 
+@login_required
 def getMessages(request):
 
     user_messages = Chat.objects.filter(user_id = request.user.idutilisateur)
@@ -270,7 +268,7 @@ def getMessages(request):
 
     return JsonResponse({"user":list(user_messages.values()) , "bot":list(bot_messagees.values())})
     
-
+@login_required
 def bugreport(request):
     
     if request.method == 'POST':
