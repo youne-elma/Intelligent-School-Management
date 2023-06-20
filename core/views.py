@@ -14,7 +14,7 @@ from .forms import UserForm
 from datetime import datetime, time
 import csv
 from django.http import HttpResponse
-
+from .filters import NoteFilter
 # Create your views here.
 
 def registre(request):
@@ -123,9 +123,14 @@ def Notes(request):
 
 @login_required
 def showNotes(request):
+    Etudiants = Etudiant.objects.all()
     notes = Examen.objects.all()
+    myFilter = NoteFilter(request.GET, queryset=notes)
+    notes = myFilter.qs
     context = {
-        'notes': notes
+        'notes': notes,
+        'Etudiants': Etudiants,
+        'myFilter': myFilter
     }
     return render(request, 'core/showNotes.html', context)
 

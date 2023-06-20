@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'django_browser_reload',
+    'django_filters'
 ]
 
 # All these lines are for the tailwind setup please do not touch theme !------
