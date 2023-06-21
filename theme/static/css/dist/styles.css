@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -602,9 +602,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -652,9 +649,6 @@ select {
   --tw-pan-y:  ;
   --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-gradient-from-position:  ;
-  --tw-gradient-via-position:  ;
-  --tw-gradient-to-position:  ;
   --tw-ordinal:  ;
   --tw-slashed-zero:  ;
   --tw-numeric-figure:  ;
@@ -1730,6 +1724,10 @@ select {
   --tw-bg-opacity: 0.5;
 }
 
+.p-10 {
+  padding: 2.5rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -2050,6 +2048,11 @@ select {
 .text-\[\#97a4b6\] {
   --tw-text-opacity: 1;
   color: rgb(151 164 182 / var(--tw-text-opacity));
+}
+
+.text-\[\#e93d3d\] {
+  --tw-text-opacity: 1;
+  color: rgb(233 61 61 / var(--tw-text-opacity));
 }
 
 .text-\[\#f1f5f9\] {
