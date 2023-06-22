@@ -346,6 +346,43 @@ body {
   background-color: #0F2D4B;
 }
 
+
+/*---------------------------------------*/
+
+/*------------------AjoutSeance Style---------------------*/
+
+.inputStyle {
+  border: 1px solid #B0B0B0;
+  border-radius: 6px;
+}
+.inputClass input[type="text"],.inputClass input[type="date"],.inputClass input[type="time"],.inputClass textarea{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  border: 1px solid #B0B0B0;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  color: #22282E;
+}
+.inputStyle::placeholder{
+  color: #B0B0B0;
+}
+.inputDetailsClass textarea{
+  padding-bottom: 56px;
+}
+.inputFSM input[type="text"] {
+  width: 100%;
+  max-width: 150px;
+}
+.flexColumn{
+  flex-direction: column;
+}
+
+/*---------------------------------------*/
+
 /* Importing The fonts for tailwind work :: //Younelma Edited this. */
 
 @font-face {
@@ -373,6 +410,13 @@ body {
   font-family: "Poppins";
   src: url("../fonts/Poppins-Bold.ttf") format("truetype");
   font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SemiPoppins";
+  src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: semibold;
   font-style: normal;
 }
 

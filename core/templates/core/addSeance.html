@@ -1,0 +1,93 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Ajout Seance{% endblock %}
+
+{% block content %}
+
+<div class="flex flex-wrap justify-items-center gap-[5px] -mt-20 md:-mt-10 SmallScreen:-mt-6 w-max">
+  <img src="../../../theme/static/icons/Home.png"  class="w-5 h-4" alt="icon-home"/>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">Seance</span>
+  <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
+  <span class="text-sm">addSeance</span>
+</div>
+
+<div class="bg-lightcolor flex flex-col items-align mx-10 ajoutSeanceMobile:mx-0">
+    <div class="bg-loyalblue rounded-md flex flex-col pt-4 pb-3 px-6 mx-7 text-lightcolor z-[2] ajoutSeanceMobile:px-0 ajoutSeanceTab:justify-center ajoutSeanceTab:items-center">
+        <h1 class="font-semiPoppin text-xl ajoutSeanceMobile:text-base">Gestion des séances</h1>
+        <p class="ajoutSeanceMobile:text-sm">Ajout d'une séance</p>
+    </div>
+    <div class="flex justify-center bg-clearwhite relative bottom-8 rounded-md ajoutSeanceMobile:px-10">
+        <form class="pt-16 flex flex-col gap-8 pb-10" action="" method="POST">
+            {% csrf_token %}
+            <div class="flex items-center gap-7 ajoutSeanceTab:justify-center">
+                <p class="text-bluecharcoal text-base">Annee universitaire</p>
+                {% comment %} add a little logic for this year input below {% endcomment %}
+                <span class="inputStyle px-3 py-1 text-gray69">2022/2023</span>
+            </div>
+            <div class="flex gap-9 items-center ajoutSeanceTab:flex-col ajoutSeanceTab:gap-7">
+                <div class="inputClass flex items-center gap-7">
+                    <label for="titreseance" class="text-bluecharcoal text-base w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Titre</label>
+                    <input id="titreseance" name="titreseance" type="text" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[200px]" placeholder="Enter Text" required/>
+                </div>
+                <div class="inputClass flex items-center gap-7">
+                    <label for="salle" class="text-bluecharcoal text-base w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Salle</label>
+                    <input id="salle" name="salle" type="text" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[200px]" placeholder="Enter Text (optionnal)"/>
+                </div>
+            </div>
+            <div class="flex items-center ajoutSeanceTab:justify-center">
+                <div class="inputClass inputDetailsClass flex gap-7">
+                    <label for="details" class="text-bluecharcoal text-base pt-1 w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Details</label>
+                    <textarea id="details" name="details" type="text" class="inputStyle detailsStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[200px]" placeholder="Enter Text"></textarea>
+                </div>
+            </div>
+            <div class="flex gap-14 items-center justify-between ajoutSeanceTab:flex-col ajoutSeanceTab:gap-7">
+                <div class="inputClass inputFSM flex items-center gap-7">
+                    <label for="filiere" class="text-bluecharcoal text-base pt-1 w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Filiere</label>
+                    <input id="filiere" name="filiere" type="text" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[200px]" placeholder="Enter Text"/>
+                </div>
+                <div class="inputClass inputFSM flex items-center gap-7">
+                    <label for="id_semestre" class="text-bluecharcoal text-base pt-1 w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Semestre</label>
+                    <select name="id_semestre" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[200px] w-[150px]" required>
+                        {% for semestre in semestres %}
+                                <option value="{{ semestre.id_semestre }}">{{ semestre.intulite_semestre }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="inputClass inputFSM flex items-center gap-7">
+                    <label for="id_modmat" class="text-bluecharcoal text-base pt-1 w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Module</label>
+                    <select name="id_modmat" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[200px] w-[150px] p-2" required>
+                        {% for module in modules %}
+                                <option value="{{ module.id_modmat }}">{{ module.intulite_fr }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="flex gap-9 items-center ajoutSeanceTab:gap-7 ajoutSeanceTab:flex-col">
+                <div class="inputClass flex items-center gap-7">
+                    <label for="groupe" class="text-bluecharcoal text-base w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Groupe</label>
+                    <input id="groupe" name="groupe" type="text" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[150px]" placeholder="(optionnal)"/>
+                </div>
+                <div class="inputClass flex items-center gap-7">
+                    <label for="section" class="text-bluecharcoal text-base w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Section</label>
+                    <input id="section" name="section" type="text" class="inputStyle ajoutSeanceMobile:w-full ajoutSeanceMobile:max-w-[150px]" placeholder="(optionnal)"/>
+                </div>
+            </div>
+            <div class="flex gap-9 ajoutSeanceTab:gap-0 ajoutSeanceTab:justify-between ajoutSeanceMobile:flex-col ajoutSeanceMobile:gap-7">
+                <div class="inputClass flex gap-7 ajoutSeanceMobile:items-center ajoutSeanceMobile:justify-center">
+                    <label for="datedebut" class="text-bluecharcoal text-base pt-1 w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Date debut</label>
+                    <input id="datedebut" name="datedebut" type="datetime-local" class="inputStyle rounded-md border-[#B0B0B0] text-[#555555]" placeholder="Enter Text"/>
+                </div>
+                <div class="inputClass flex gap-7 ajoutSeanceMobile:items-center ajoutSeanceMobile:justify-center">
+                    <label for="datefin" class="text-bluecharcoal text-base pt-1 w-24 ajoutSeanceBig:w-12 ajoutSeanceTab:w-20 ajoutSeanceMobile:w-15">Date fin</label>
+                    <input id="datefin" name="datefin" type="datetime-local" class="inputStyle rounded-md border-[#B0B0B0] text-[#555555]" placeholder="Enter Text"/>
+                </div>
+            </div>
+            <div class="flex justify-center items-center py-2">
+                <button type="submit" class="bg-loyalblue py-3 px-5 rounded-md text-lightcolor">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

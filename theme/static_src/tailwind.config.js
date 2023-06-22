@@ -48,6 +48,7 @@ module.exports = {
       poppinRegular: ["PoppinsRegular"],
       poppinSemiBold: ["PoppinsMedium"],
       poppinMedium: ["PoppinsMedium"],
+      semiPoppin: ["semiPoppins"],
     },
     variants: {
       extend: {
@@ -81,6 +82,7 @@ module.exports = {
       informationColor: "#7A7A7A",
       blue: "#517ECD",
       filter: "rgba(34, 40, 46, 0.12)",
+      gray69: "#B0B0B0",
     },
     screens: {
       navbarTab: { min: "1000px", max: "1200px" },
@@ -113,6 +115,9 @@ module.exports = {
       gestionMdabsence: { max: "570px" },
       addNote: { min: "1000px" },
       addNoteMobile: { max: "1000px" },
+      ajoutSeanceBig: { min:"1300px", max: "1430px" },
+      ajoutSeanceTab: { max:"1300px" },
+      ajoutSeanceMobile: { max: "700px" },
     },
     boxShadow: {
       sm: "0px 4px 4px rgba(0, 0, 0, 0.25)",

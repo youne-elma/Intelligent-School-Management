@@ -1,16 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre, Reports, Etudiant, utilisateur, Chat, Examen, Local
-from core.forms import AnnonceForm, AjoutAnnonceForm
+from core.models import Annonce, Module, Semestre, Reports, Etudiant, utilisateur, Chat, Examen, Local, Seance
+from core.forms import AnnonceForm, AjoutAnnonceForm, SeanceForm, AddSeanceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, update_session_auth_hash, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib import messages
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render,redirect
-import pandas as pd
+from django.shortcuts import render, redirect
+import pandas as pd 
 from django.views.decorators.http import require_GET
-from .forms import UserForm, FileUploadForm, NoteForm, UpdateNoteForm
+from .forms import UserForm, FileUploadForm, NoteForm, UpdateNoteForm, UpdateSeanceForm
 import requests
 import json
 import os
@@ -517,3 +517,132 @@ def updateNote(request, idNote):
         'salles' : Local.objects.all()}
 
     return render(request, 'core/modifyNote.html', context)
+
+@login_required
+def gestionSeance(request):
+    return render(request, 'core/gestionSeance.html')
+
+@login_required
+def showSeances(request):
+    seances = Seance.objects.filter(idutilisateur = request.user.idutilisateur)
+
+    context = {
+        'seances': seances,
+    }
+    return render(request, 'core/showSeances.html', context)
+
+
+@login_required
+def addSeance(request):
+    modules = Module.objects.all()
+    semestres = Semestre.objects.all()
+
+
+    if request.method == 'POST':
+
+        form = AddSeanceForm(request.POST)
+        
+        
+        if form.is_valid():
+
+            idutilisateur = utilisateur.objects.get(idutilisateur = request.user.idutilisateur)
+            titreseance = form.cleaned_data['titreseance']
+            id_modmat = form.cleaned_data['id_modmat']
+            id_semestre = form.cleaned_data['id_semestre']
+            datedebut = request.POST.get('datedebut')
+            datefin = request.POST.get('datefin')
+
+            details = request.POST.get('details')
+            groupe = request.POST.get('groupe')
+            filiere = request.POST.get('filiere')
+            section = request.POST.get('section')
+
+            datedebut = datedebut.replace("T", " ")
+            datefin = datefin.replace("T", " ")
+
+            if datedebut == "" or datefin == "":
+                Seance.objects.create(titreseance= titreseance, id_semestre= id_semestre, id_modmat= id_modmat, details= details, idutilisateur= idutilisateur, groupe= groupe, filiere= filiere, section= section)
+            else :
+                Seance.objects.create(titreseance= titreseance, id_semestre= id_semestre, id_modmat= id_modmat, details= details, datedebut= datedebut, datefin= datefin, idutilisateur= idutilisateur, groupe= groupe, filiere= filiere, section= section)
+
+            return redirect('showSeances')
+
+        else:
+            print(form.errors)
+
+    else:
+        form = SeanceForm()
+
+    context = {
+        'modules': modules,
+        'semestres': semestres,
+
+    }
+    
+    return render(request, 'core/addSeance.html', context)
+
+@login_required
+def deleteSeance(request, idSeance):
+    seance = Seance.objects.get(idseance = idSeance)
+    seance.delete()
+
+    return redirect('showSeances')
+
+
+
+def updateSeance(request, idSeance):
+    seance = get_object_or_404(Seance, idseance=idSeance)
+    modules = Module.objects.all()
+    semestres = Semestre.objects.all()
+    
+    if(request.method == 'POST'):
+        
+        form = UpdateSeanceForm(request.POST, instance=seance)
+
+        if form.is_valid():
+           try:
+            
+            seance.id_modmat = form.cleaned_data['id_modmat']
+            seance.titreseance = form.cleaned_data['titreseance']
+            datedebut = request.POST.get('datedebut')
+            datefin = request.POST.get('datefin')
+            seance.details = request.POST.get('details')
+            seance.groupe = request.POST.get('groupe')
+            seance.filiere = request.POST.get('filiere')
+            seance.section = request.POST.get('section')
+
+            seance.datedebut = datedebut.replace("T", " ")
+            seance.datefin = datefin.replace("T", " ")
+            
+            if datedebut == "" and datefin != "":
+                seance.save(update_fields=['id_modmat', 'titreseance', 'details', 'groupe', 'filiere', 'section', 'datefin'])
+            elif datedebut != "" and datefin == "" :
+                seance.save(update_fields=['id_modmat', 'titreseance', 'details', 'groupe', 'filiere', 'section', 'datedebut'])
+            else:
+                seance.save(update_fields=['id_modmat', 'titreseance', 'datedebut', 'datefin', 'details', 'groupe', 'filiere', 'section'])
+           except Exception as e:
+               print(e)
+        else:
+            print(form.errors)
+
+        return redirect('showSeances')
+
+
+
+    context = {
+        'seance': seance,
+        'modules': modules,
+        'semestres': semestres,
+    }
+
+    return render(request, 'core/updateSeance.html', context)
+
+
+@login_required
+def seanceInfos(request,idSeance):
+    seance = get_object_or_404(Seance, idseance= idSeance)
+    context= {
+        'seance': seance,
+    }
+
+    return render(request, 'core/seanceInfos.html', context)

@@ -1,35 +1,39 @@
 {% extends 'core/base.html' %}
 
-{% block title %}AnnonceInfos{% endblock %}
+{% block title %}SeanceInfos{% endblock %}
 
 {% block content %}
 
 <div class="flex flex-wrap justify-items-center gap-[5px] -mt-20 md:-mt-10 SmallScreen:-mt-6 w-max">
   <img src="../../../theme/static/icons/Home.png"  class="w-5 h-4" alt="icon-home"/>
   <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
-  <span class="text-sm">Annonce</span>
+  <span class="text-sm">Seance</span>
   <img src="../../../theme/static/icons/nextIcon.png" class="w-2 h-2 mt-1.5" alt="next home icon" />
-  <span class="text-sm">annonceInfos</span>
+  <span class="text-sm">seanceInfos</span>
 </div>
 
 <!-- Suprior Card -->
     <div class="rounded-[5px] shadow-sm bg-white pb-10 mx-3 mt-7 ">
         <div  class="shadow-sm py-6 bg-[#1C4E80] relative ml-5 mr-5 rounded-[5px] flex items-center bottom-8 navbarPhone:justify-center w-[60%] SmallScreen:w-auto">
-            <p class="ml-[35px] text-2xl text-lightcolor font-poppin SmallScreen:text-xl navbarPhone:text-center navbarPhone:mx-2">Infos Annonce</p>
+            <p class="ml-[35px] text-2xl text-lightcolor font-poppin SmallScreen:text-xl navbarPhone:text-center navbarPhone:mx-2">Infos Séance</p>
         </div>
 
 
         <div class=" justify-start px-[50px] SmallScreen:justify-center SmallScreen:px-[24px]">
-            <h1 class="text-xl font-poppin SmallScreen:text-[18px]">{{ annonce.titreannonce }}</h1>
-            <p class="text-[14px] text-mediumcoolGray">{{ annonce.dateannonce }}</p>
+            <h1 class="text-xl font-poppin SmallScreen:text-[18px]">{{ seance.titreseance }}</h1>
+            <p class="text-[14px] text-mediumcoolGray">{{ seance.datedebut }} / {{seance.datefin}}</p>
+
+            <p class="text-[14px] text-smoothgreen">Groupe: {{seance.groupe}}</p>
+            <p class="text-[14px] text-smoothgreen">Semestre: {{seance.id_semestre.intulite_semestre}}</p>
+            <p class="text-[14px] text-smoothgreen">Filiere: {{seance.filiere}}</p>
         
             <p class="text-[14px] font-poppinRegular p-8 SmallScreen:px-4 SmallScreen:text-[12px]"> 
-                {{ annonce.contenu }}
+                {{ seance.details }}
             </p>
             
         </div>
         <p class="text-right px-10 font-thin text-[14px]  SmallScreen:text-[11px]">
-            {{ annonce.idutilisateur.nomfr }} {{ annonce.idutilisateur.prenomfr }}
+            {{ seance.idutilisateur.nomfr }} {{ seance.idutilisateur.prenomfr }}
         </p>
     </div>
 {% endblock %}

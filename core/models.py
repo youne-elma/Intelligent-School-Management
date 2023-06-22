@@ -46,6 +46,24 @@ class utilisateur(AbstractUser):
         managed = False
         db_table = 'utilisateur'
 
+class Seance(models.Model):
+    idseance = models.IntegerField(db_column='IDSEANCE', primary_key=True) # Field name made lowercase.
+    idutilisateur = models.ForeignKey('utilisateur', models.DO_NOTHING, db_column='IDutilisateur') # Field name made lowercase.
+    id_semestre = models.ForeignKey('Semestre', models.DO_NOTHING, db_column='ID_SEMESTRE')  # Field name made lowercase.
+    id_modmat = models.ForeignKey('Module', models.DO_NOTHING, db_column='ID_MODMAT') # Field name made lowercase.
+    titreseance = models.CharField(db_column='TITRESEANCE', max_length=150) # Field name made lowercase.
+    datedebut = models.DateTimeField(db_column='DATEDEBUT', null=True) # Field name made lowercase.
+    datefin = models.DateTimeField(db_column='DATEFIN', null=True) # Field name made lowercase.
+    details = models.CharField(db_column='DETAILS', max_length=150) # Field name made lowercase.
+    section = models.CharField(db_column='SECTION', max_length=30) # Field name made lowercase.
+    groupe = models.CharField(db_column='GROUPE', max_length=30) # Field name made lowercase.
+    filiere = models.CharField(db_column='FILIERE', max_length=30) # Field name made lowercase.
+    salle = models.CharField(db_column='SALLE', max_length=30) # Field name made lowercase.)
+
+    class Meta:
+        managed = False
+        db_table = 'seance'
+
 class Adresse(models.Model):
     idadre = models.IntegerField(db_column='IDADRE', primary_key=True)  # Field name made lowercase.
     codepostal = models.ForeignKey('Ville', models.DO_NOTHING, db_column='CODEPOSTAL')  # Field name made lowercase.
@@ -61,7 +79,7 @@ class Adresse(models.Model):
 class Adresseetud(models.Model):
     idadre = models.OneToOneField(Adresse, models.DO_NOTHING, db_column='IDADRE', primary_key=True)  # Field name made lowercase. The composite primary key (IDADRE, APOGEE) found, that is not supported. The first column is selected.
     apogee = models.ForeignKey('Etudiant', models.DO_NOTHING, db_column='APOGEE')  # Field name made lowercase.
-
+    
     class Meta:
         managed = False
         db_table = 'adresseetud'

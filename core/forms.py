@@ -1,6 +1,21 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from core.models import Annonce, utilisateur, Specialite, Departement ,Examen
+from core.models import Annonce, utilisateur, Specialite, Departement, Examen, Seance
+
+class UpdateSeanceForm(forms.ModelForm):
+    class Meta:
+        model = Seance
+        fields= ['titreseance', 'id_modmat', 'id_semestre']
+
+class SeanceForm(forms.ModelForm):
+    class Meta:
+        model = Seance
+        fields = ['titreseance', 'id_modmat', 'id_semestre', 'groupe', 'filiere', 'datefin', 'datedebut', 'details', 'section', 'salle']
+
+class AddSeanceForm(forms.ModelForm):
+    class Meta:
+        model = Seance
+        fields = ['titreseance', 'id_modmat', 'id_semestre']
 
 class AnnonceForm(forms.ModelForm):
     class Meta:
@@ -10,7 +25,7 @@ class AnnonceForm(forms.ModelForm):
 class AjoutAnnonceForm(forms.ModelForm):
     class Meta:
         model = Annonce
-        fields = ['titreannonce', 'contenu','id_semestre', 'id_modmat', 'apogee']
+        fields = ['titreannonce', 'contenu' ,'id_semestre', 'id_modmat', 'apogee']
 
 
 class FileUploadForm(forms.Form):

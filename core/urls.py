@@ -39,6 +39,13 @@ urlpatterns = [
     path("addNote/", views.addNote, name="addNote"), #addNote
     path('download/', views.download, name='download'),
     path('updateNote/<str:idNote>/', views.updateNote, name='updateNote'),
+    path('gestionSeance/', views.gestionSeance, name='gestionSeance'),
+    path('gestionSeance/showSeances/', views.showSeances, name="showSeances"),
+    path('gestionSeance/addSeance/', views.addSeance, name="addSeance"),
+    path('gestionSeance/updateSeance/<str:idSeance>', views.updateSeance, name="updateSeance"),
+    path("gestionSeance/deleteSeance/<str:idSeance>/", views.deleteSeance, name="deleteSeance"),
+    path("gestionSeance/addSeance/", views.addSeance, name="addSeance"),
+    path("gestionSeance/seanceInfos/<str:idSeance>", views.seanceInfos, name="seanceInfos"),
 
 ] 
 
