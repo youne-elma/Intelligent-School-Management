@@ -26,14 +26,60 @@
 
         <div
             class="flex gap-[50px] flex-wrap justify-items-center items-center self-end AnnounceViewport:place-self-auto AnnounceViewport:gap-3">
-            <button
+            <button id="thisss"
                 class="bg-filter hover:bg-bluecharcoal hover:text-[white] text-[black] font-semibold py-2.5 px-4 rounded flex justify-center items-center w-[160px] hoverButtonTrasitionFast">
                 <span class="">Filter</span>
                 <img src="../../../theme/static/icons/FilterIcon.png" class=" ml-2 w-4 h-4" alt="filter Icon">
+
             </button>
 
+
         </div>
+
     </div>
+    <form id="filter-this" method="GET" class="flex flex-col self-end gap-6">
+        <div class="flex self-end gap-2">
+            <div class="inputClass flex  gap-2 items-center">
+                <label class="text-bluecharcoal text-base">Apogee</label>
+                <select class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2" name="apogee"
+                    id="apogee">
+                    <option value>----</option>
+                    {% for etudiant in Etudiants %}
+                    <option value="{{ etudiant.apogee }}">
+                        {{ etudiant.apogee }} {{etudiant.nomfr}} {{etudiant.prenomfr}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="inputClass flex items-center  gap-2 ">
+                <label class="text-bluecharcoal text-base ">Session</label>
+                <select name="session" class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2">
+                    <option value>----</option>
+                    <option value="N">Normal</option>
+                    <option value="R">Rattrapage</option>
+
+                </select>
+            </div>
+            <div class="inputClass flex items-center  gap-2 ">
+                <label class="text-bluecharcoal text-base ">Date</label>
+                <input value="start_date" id="start_date" type="date" name="start_date"
+                    class="gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2"
+                    placeholder="Enter Note" autocomplete="off" />
+            </div>
+        </div>
+        <div
+            class="flex gap-[50px] flex-wrap justify-items-center items-center self-end AnnounceViewport:place-self-auto AnnounceViewport:gap-3 ">
+            <button type="submit"
+                class="bg-buttonhover hover:bg-bluecharcoal text-[white] hover:text-[black] font-semibold py-2.5 px-4 rounded flex justify-center items-center w-[160px] hoverButtonTrasitionFast">
+                <span class="">search</span>
+
+
+            </button>
+
+
+        </div>
+
+    </form>
+
     {% if messages%}
     {% for message in messages %}
     <p class="text-lightgreen  addNote:hidden flex justify-center items-center">{{ message }}</p>
@@ -143,6 +189,22 @@
     </div>
 
 </div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var toggleButton = document.getElementById("thisss");
+        console.log(toggleButton);
+        var filter = document.getElementById("filter-this");
+
+        toggleButton.addEventListener("click", function () {
+            if (filter.classList.contains("hidden")) {
+                filter.classList.remove("hidden");
+            } else {
+                filter.classList.add("hidden");
+            }
+        });
+    });
+</script>
 <script src="../../../theme/static/js/modalLogic.js" />
+
 
 {% endblock%}
