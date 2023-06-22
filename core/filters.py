@@ -1,6 +1,6 @@
 import django_filters
 from .models import *
-from django_filters import DateFilter
+from django_filters import DateFilter, CharFilter
 
 from django import forms
 
@@ -40,3 +40,38 @@ class NoteFilter(django_filters.FilterSet):
             # Add more overrides for other field types as needed
         }
         
+
+class SeanceFilter(django_filters.FilterSet):
+    titreseance = CharFilter(field_name="titreseance", lookup_expr='icontains')
+    id_modmat = django_filters.ModelChoiceFilter(
+        queryset=Module.objects.all(),
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+    id_semestre = django_filters.ModelChoiceFilter(
+        queryset=Semestre.objects.all(),
+        widget=forms.Select(attrs={'class': 'form-control'})
+    )
+    class Meta:
+        model  = Seance
+        fields = ['titreseance','id_semestre','id_modmat']
+        filter_overrides = {
+            models.CharField: {
+                'filter_class': django_filters.CharFilter,
+                'extra': lambda f: {
+                    'widget': forms.TextInput(attrs={'class': 'gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2'})
+                },
+            },
+            models.ForeignKey: {
+                'filter_class': django_filters.ChoiceFilter,
+                'extra': lambda f: {
+                    'widget': forms.DateInput(attrs={'class': 'gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2', 'type': 'date'})
+                },
+            },
+            models.ForeignKey: {
+                'filter_class': django_filters.ChoiceFilter,
+                'extra': lambda f: {
+                    'widget': forms.Select(attrs={'class': 'gestionEtudiants:self-center rounded-[5px] text-[0.9rem] w-[200px] py-2'})
+                },
+            },
+            # Add more overrides for other field types as needed
+        }

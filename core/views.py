@@ -16,7 +16,7 @@ import json
 import os
 import csv
 from django.http import HttpResponse
-from .filters import NoteFilter
+from .filters import NoteFilter, SeanceFilter
 
 # Create your views here.
 
@@ -460,8 +460,7 @@ def addNote(request):
             return redirect('showNotes')
         
     context = {
-        'form': form
-        ,
+        'form': form,
         'etudiants': etudiants,
         'salles': salles
     }    
@@ -532,9 +531,15 @@ def gestionSeance(request):
 @login_required
 def showSeances(request):
     seances = Seance.objects.filter(idutilisateur = request.user.idutilisateur)
+    modules = Module.objects.all()
+    semestres = Semestre.objects.all()
+    myFilter = SeanceFilter(request.GET, queryset=seances)
+    seances = myFilter.qs
 
     context = {
         'seances': seances,
+        'modules': modules,
+        'semestres': semestres,
     }
     return render(request, 'core/showSeances.html', context)
 
@@ -567,11 +572,13 @@ def addSeance(request):
             datedebut = datedebut.replace("T", " ")
             datefin = datefin.replace("T", " ")
 
+
             if datedebut == "" or datefin == "":
                 Seance.objects.create(titreseance= titreseance, id_semestre= id_semestre, id_modmat= id_modmat, details= details, idutilisateur= idutilisateur, groupe= groupe, filiere= filiere, section= section)
             else :
                 Seance.objects.create(titreseance= titreseance, id_semestre= id_semestre, id_modmat= id_modmat, details= details, datedebut= datedebut, datefin= datefin, idutilisateur= idutilisateur, groupe= groupe, filiere= filiere, section= section)
 
+            messages.success(request, 'Séance a été bien ajouter !')
             return redirect('showSeances')
 
         else:
@@ -593,6 +600,7 @@ def deleteSeance(request, idSeance):
     seance = Seance.objects.get(idseance = idSeance)
     seance.delete()
 
+    messages.success(request, 'Séance a bien été supprimé !')
     return redirect('showSeances')
 
 

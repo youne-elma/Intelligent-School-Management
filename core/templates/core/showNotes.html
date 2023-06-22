@@ -37,7 +37,7 @@
         </div>
 
     </div>
-    <form id="filter-this" method="GET" class="flex flex-col self-end gap-6">
+    <form id="filter-this" method="GET" class="flex flex-col self-end gap-6 hidden">
         <div class="flex self-end gap-2">
             <div class="inputClass flex  gap-2 items-center">
                 <label class="text-bluecharcoal text-base">Apogee</label>
@@ -81,9 +81,9 @@
     </form>
 
     {% if messages%}
-    {% for message in messages %}
-    <p class="text-lightgreen  addNote:hidden flex justify-center items-center">{{ message }}</p>
-    {% endfor %}
+        {% for message in messages %}
+            <p class="text-lightgreen  addNote:hidden flex justify-center items-center">{{ message }}</p>
+        {% endfor %}
     {% endif %}
 
 
