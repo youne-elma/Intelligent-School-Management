@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'testgestionfsa',
         'USER':'root',
         'PASSWORD':'root123',
-        'HOST':'127.0.0.1',
+        'HOST':'localhost',
     }
 }
 AUTH_USER_MODEL = "core.utilisateur"
@@ -152,3 +152,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #---- session expire en seconde
 SESSION_COOKIE_AGE = 3600
+
+#-/-/-/- Email reset pwd// envoyer l'email par console !
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
