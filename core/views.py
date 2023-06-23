@@ -256,9 +256,8 @@ def modifypwd(request):
 @login_required
 def send(request):
     sender = utilisateur.objects.get(idutilisateur = request.user.idutilisateur)
-    receiver = utilisateur.objects.get(idutilisateur = 10)
     message = request.POST.get('message')
-    
+
     #api
     url = "https://langchain-chat-v3.herokuapp.com/predict"
     headers = {'Content-Type': 'application/json'}
@@ -272,29 +271,27 @@ def send(request):
             }
     if request.method == 'POST':
         response = requests.post(url, data=json.dumps(payload), headers=headers)
-        new_message = Chat.objects.create(user_id=sender, destination=receiver, message=message, date=datetime.now())
-        new_message.save()
         print (response.status_code)
         if( response.status_code == 200):
             try:
-               
+                question_answer = {"Human": message, "Bot": response.json()['answer']}
                 answer = response.json()['answer'] 
-                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                new_message = Chat.objects.create(user_id=sender, message=question_answer, date=datetime.now())
                 new_message.save()
                 return JsonResponse({"answer": answer } )
             except Exception as e:
-                answer = str(e)
-                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                question_answer = {"Human": message, "Bot": str(e)}
+                new_message = Chat.objects.create(user_id=sender, message=question_answer, date=datetime.now())
                 new_message.save()
 
                 return JsonResponse({"answer": str(e) })
         else : 
-                answer = response.json()['error']
-                new_message = Chat.objects.create(user_id=receiver, destination=sender, message=answer, date=datetime.now())
+                question_answer = {"Human": message, "Bot": response.json()['error']}
+                new_message = Chat.objects.create(user_id=sender, message=question_answer, date=datetime.now())
                 new_message.save()
-                return JsonResponse({"answer": answer })
+                return JsonResponse({"answer": question_answer })
 
-    
+
     return redirect('chatbot')
 
 def getMessages(request):
@@ -305,8 +302,9 @@ def getMessages(request):
     return JsonResponse({"user":list(user_messages.values()) , "bot":list(bot_messagees.values())})
     
 
+@login_required
 def bugreport(request):
-    
+
     if request.method == 'POST':
         bug = request.POST.get('message')
         localHist = request.POST.get('localHist')
@@ -315,7 +313,7 @@ def bugreport(request):
         print(new_bug)
         return JsonResponse({"answer": 'ok'})
 
-    return JsonResponse({"answer": 'ok'})   
+    return JsonResponse({"answer": 'ok'})
 
 def bugreportsuccess(request):
     if request.method == "GET":
