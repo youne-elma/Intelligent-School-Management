@@ -95,6 +95,7 @@ class Annonce(models.Model):
     dateannonce = models.DateField(db_column='DATEANNONCE')  # Field name made lowercase.
     titreannonce = models.CharField(db_column='TITREANNONCE', max_length=150)  # Field name made lowercase.
     contenu = models.TextField(db_column='CONTENU')  # Field name made lowercase.
+    is_read = models.BooleanField(db_column='is_read',default=False)
 
     class Meta:
         managed = False

@@ -66,7 +66,7 @@ def index(request):
 
 @login_required
 def annonce(request):
-    annonces = Annonce.objects.all()
+    annonces = Annonce.objects.all().order_by('-idannonce')
     context= {
         'annonces': annonces
     }
@@ -200,6 +200,10 @@ def ecours(request):
 def annonceinfos(request, idAnnonce):
 
     annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
+    # Mettre à jour la valeur is_read à True
+    annonce.is_read = True
+    annonce.save()
+
     context= {
         'annonce': annonce
     }

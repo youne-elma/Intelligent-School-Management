@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<div class="bg-white rounded-[5px] font-poppinRegular AnnounceViewport:z-0">
+<div class=" rounded-[5px] font-poppinRegular AnnounceViewport:z-0 shadow-sm">
   {% if annonces %}
   <!--- this an annonce -->
   {% for annonce in annonces %}
@@ -60,8 +60,12 @@
     {% endif %}
     <!-- Modal Code -->
 
-    <div
-      class="Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative">
+    <div  class=" Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative
+                  {% if not annonce.is_read %}
+                    bg-white
+                  {% else %}  
+                    bg-slidebuttonimage
+                  {% endif %}">
       {% if user.isadmine %}
       <input id="link-checkbox" type="checkbox" value=""
         class="cursor-pointer h-5 w-5 rounded-sm text-blue-600 border-darkcolor border-2 opacity-60 ml-4 xl:ml-0 navbarTab:ml-0  AnnounceViewport:absolute AnnounceViewport:left-4 AnnounceViewport:ml-0 focus:text-primary focus:ring-offset-0 focus:ring-0">
