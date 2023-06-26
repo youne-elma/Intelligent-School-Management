@@ -13,12 +13,27 @@
 
                 <form action="{% url 'profile' %}" method="POST" id="image-form" enctype="multipart/form-data" class="flex flex-col gap-2">
                     {% csrf_token %}
-                    <label for="avatar_input" class="rounded-full">
-                    {% if user.profilepic %}
-                        <img src="../../../Media/{{ user.profilepic }}" href=""  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 bg-daredvilleorange h-[150px] w-[150px] cursor-pointer"  alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
-                    {% else %}
-                        <img src="../../../theme/static/image/UnknownUserImage.png"  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 cursor-pointer" alt="User pic">
-                    {% endif %}
+                    <label id="userprof" for="avatar_input" class="rounded-full">
+                        <div class="userpic">
+                            {% if user.profilepic %}
+                                <img src="../../../Media/{{ user.profilepic }}" href=""  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 bg-daredvilleorange h-[150px] w-[150px] cursor-pointer"  alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
+                                <div class="userpic-info h-auto w-auto">
+                                    <div class="userpic-info-content">
+                                      <h5 class="text-white font-light ">Changer Votre Photo</h5>
+                                      <span class="text-white font-bold">↓↑</span>
+                                    </div>
+                                </div>
+                            {% else %}
+                                <img src="../../../theme/static/image/UnknownUserImage.png"  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 cursor-pointer" alt="User pic">
+                                <div class="userpic-info h-auto w-auto">
+                                    <div class="userpic-info-content ">
+                                      <h5 class="text-white font-light">Ajouter Une Photo</h5>
+                                      <span class="text-white font-poppin" >+</span>
+                                    </div>
+                                </div>
+                            {% endif %}  
+                        </div>
+
                     </label>
                     <input type="file" id="avatar_input" name="profile_image" style="display: none;" />
                     <button id="buttonUpload" type="submit" class="hidden border-none changePasswordButton text-white bg-loyalblue rounded-md border-2 py-1">Appliquer</button>
