@@ -1,0 +1,13 @@
+-- Creer une table Lecture avec idustilisateur et idannonce et un champs boolean nommé is_read ou essayer de faire la migrations et django va faire le job
+-- dans le database phpmyadmine executer les deux requetes suivantes 
+--  1 etape
+CREATE TRIGGER after_insert_utilisateur
+AFTER INSERT ON utilisateur
+FOR EACH ROW
+INSERT INTO lecture (idannonce, idutilisateur) SELECT idannonce, NEW.idutilisateur FROM annonce;
+
+-- 2 etape
+CREATE TRIGGER after_insert_annonce
+AFTER INSERT ON annonce
+FOR EACH ROW
+INSERT INTO lecture (idannonce, idutilisateur) SELECT NEW.idannonce, idutilisateur FROM utilisateur;

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from core.models import Annonce, Module, Semestre, Reports, Etudiant, utilisateur, Chat, Examen, Local, Seance
+from core.models import Annonce, Module, Semestre, Reports, Etudiant, utilisateur, Chat, Examen, Local, Seance, Lecture 
 from core.forms import AnnonceForm, AjoutAnnonceForm, SeanceForm, AddSeanceForm
 from datetime import datetime
 from django.contrib.auth import authenticate, logout, update_session_auth_hash, login as auth_login
@@ -198,16 +198,17 @@ def ecours(request):
 
 @login_required
 def annonceinfos(request, idAnnonce):
+    utilisateur_id = request.user.idutilisateur
 
     annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
-    # Mettre à jour la valeur is_read à True
-    annonce.is_read = True
-    annonce.save()
+    # Mettre à jour la valeur is_read à True cad l'annonce est marqué comme lue
+    lecture = Lecture.objects.get(idannonce=idAnnonce, idutilisateur=utilisateur_id)
+    lecture.is_read = True
+    lecture.save()
 
-    context= {
+    context = {
         'annonce': annonce
     }
-
     return render(request, 'core/annonceInfos.html', context)
 
 @login_required

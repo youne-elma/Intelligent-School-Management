@@ -59,12 +59,12 @@
     <div class="overlay hidden" id="{{annonce.id}}"></div>
     {% endif %}
     <!-- Modal Code -->
-
+    
     <div  class=" Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative
-                  {% if not annonce.is_read %}
-                    bg-white
+                  {% if annonce|is_read:user %}
+                    bg-lightgreen
                   {% else %}  
-                    bg-slidebuttonimage
+                    bg-daredvilleorange
                   {% endif %}">
       {% if user.isadmine %}
       <input id="link-checkbox" type="checkbox" value=""
