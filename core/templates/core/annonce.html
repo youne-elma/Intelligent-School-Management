@@ -61,10 +61,10 @@
     <!-- Modal Code -->
     
     <div  class=" Content flex flex-wrap items-center justify-items-center justify-between p-4 borderBottomStyle AnnounceViewport:flex-col AnnounceViewport:gap-3 AnnounceViewport:relative
-                  {% if annonce|is_read:user %}
-                    bg-lightgreen
+                  {% if not annonce|is_read:user %}
+                    bg-clearwhite
                   {% else %}  
-                    bg-daredvilleorange
+                    bg-slidebuttonimage
                   {% endif %}">
       {% if user.isadmine %}
       <input id="link-checkbox" type="checkbox" value=""

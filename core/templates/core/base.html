@@ -118,9 +118,13 @@
 
             <!--Profile-->
             <div class="Profile flex gap-[0.5rem] items-center ml-auto ">
-                <a href="{% url "annonce" %}">
-                    <img class="" src="../../../theme/static/icons/notif.png" alt="Notif Icon">   
-                </a>
+                    <a href="{% url "annonce" %}" class="relative inline-block">
+                        <img class="" src="../../../theme/static/icons/notif.png" alt="Notif Icon">   
+                        {% if annonces_non_lues > 0 %}
+                        <div class="  rounded-full absolute bottom-0 right-0" style="height: 10px; width: 10px; background-color: #FF0000;"></div>
+                        {% endif %}
+
+                    </a>
                 <a href="{% url "profile" %}">
                     {% if user.profilepic %}
                         <img class="w-8 h-8 drop-shadow-2xl rounded-full" src="../../../Media/{{ user.profilepic }}" alt="{{ user.nomfr }} {{ user.prenomfr }} profile pic">
