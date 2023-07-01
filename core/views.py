@@ -85,6 +85,7 @@ def updateAnnonce(request, idAnnonce):
     annonce = get_object_or_404(Annonce, idannonce=idAnnonce)
     modules = Module.objects.all()
     semestres = Semestre.objects.all()
+    utilisateur_id = request.user.idutilisateur
 
     if(request.method == 'POST'):
 
@@ -98,6 +99,10 @@ def updateAnnonce(request, idAnnonce):
             annonce.contenu = form.cleaned_data['contenu']
 
             annonce.save(update_fields=['titreannonce','contenu' , 'id_semestre','id_modmat'])
+
+            lecture = Lecture.objects.get(idannonce=idAnnonce, idutilisateur=utilisateur_id)
+            lecture.is_read = 0
+            lecture.save()
         else:
             print(form.errors)
 
