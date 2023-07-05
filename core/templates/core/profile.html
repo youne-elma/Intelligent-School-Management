@@ -13,7 +13,7 @@
 
                 <form action="{% url 'profile' %}" method="POST" id="image-form" enctype="multipart/form-data" class="flex flex-col gap-2">
                     {% csrf_token %}
-                    <label id="userprof" for="avatar_input" class="rounded-full">
+                    <label id="userprof" for="avatar_input" class="rounded-full cursor-pointer">
                         <div class="userpic">
                             {% if user.profilepic %}
                                 <img src="../../../Media/{{ user.profilepic }}" href=""  class="max-w-[166px] max-h-[171px] drop-shadow-2xl rounded-full border-2 border-loyalblue border-spacing-6 bg-daredvilleorange h-[150px] w-[150px] cursor-pointer"  alt="{{ user.prenomfr }} {{ user.nomfr }} user pic">
