@@ -43,7 +43,7 @@ class utilisateur(AbstractUser):
         return self.username
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'utilisateur'
 
 class Seance(models.Model):
